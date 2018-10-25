@@ -6,3 +6,8 @@ require_once 'app/core/Controller.php';
 $app = new App();
 
 ?>
+
+<html>
+<head>
+</head>
+</html>

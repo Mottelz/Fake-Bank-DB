@@ -3,7 +3,7 @@
 </head>
 
 <body>
-	<div>LOGIN</div>
+	<div>SIGN UP</div>
 
 	<br />
 
@@ -14,13 +14,14 @@
 
 	Field 2<br />
 	<div><input type="text" /></div>
-
-	<br />
-
-	<div><a href="/COMP-353/account">Login</a></div>
 		
 	<br />
+
+	Field ...<br />
+	<div><input type="text" /></div>
 		
-	<div><a href="/COMP-353/signup">Sign Up</a></div>
+	<br />
+	
+	<a href="/COMP-353/login">Sign Up</a>
 </body>
 </html>
