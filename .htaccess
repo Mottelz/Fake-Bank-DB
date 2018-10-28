@@ -1,7 +1,4 @@
-Options -Indexes
 RewriteEngine On
-
-RewriteBase /COMP-353
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
