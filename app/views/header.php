@@ -5,13 +5,13 @@
 <body>
 	<div>
 		HEADER
-		<a href="/COMP-353/account">Account Summary</a>
-		<a href="/COMP-353/payment">Payment</a>
-		<a href="/COMP-353/transfer">Transfer</a>
-		<a href="/COMP-353/profile">Profile</a>
-		<a href="/COMP-353/client">Clients</a>
-		<a href="/COMP-353/employee">Employees</a>
-		<a href="/COMP-353/login">Sign Out</a>
+		<a href="/account">Account Summary</a>
+		<a href="/payment">Payment</a>
+		<a href="/transfer">Transfer</a>
+		<a href="/profile">Profile</a>
+		<a href="/client">Clients</a>
+		<a href="/employee">Employees</a>
+		<a href="/login">Sign Out</a>
 	</div>
 </body>
 </html>

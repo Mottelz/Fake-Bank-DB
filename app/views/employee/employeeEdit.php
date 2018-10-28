@@ -26,10 +26,10 @@
 
 	<br />
 
-	<div><a href="/COMP-353/employee">Edit Employee</a></div>
+	<div><a href="/employee">Edit Employee</a></div>
 
 	<br />
 
-	<div><a href="/COMP-353/employee">Go Back</a></div>
+	<div><a href="/employee">Go Back</a></div>
 </body>
 </html>

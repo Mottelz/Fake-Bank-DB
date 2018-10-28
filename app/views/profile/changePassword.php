@@ -26,6 +26,6 @@
 		
 	<br />
 	
-	<a href="/COMP-353/profile">Change Password</a>
+	<a href="/profile">Change Password</a>
 </body>
 </html>

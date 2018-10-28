@@ -22,6 +22,6 @@
 		
 	<br />
 	
-	<a href="/COMP-353/login">Sign Up</a>
+	<a href="/login">Sign Up</a>
 </body>
 </html>

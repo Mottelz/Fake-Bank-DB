@@ -17,10 +17,10 @@
 
 	<br />
 
-	<div><a href="/COMP-353/account">Login</a></div>
+	<div><a href="/account">Login</a></div>
 		
 	<br />
 		
-	<div><a href="/COMP-353/signup">Sign Up</a></div>
+	<div><a href="/signup">Sign Up</a></div>
 </body>
 </html>

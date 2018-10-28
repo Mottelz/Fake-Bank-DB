@@ -13,23 +13,23 @@
 
 	<div>Account 1</div>
 	<div>Balance</div>
-	<div><a href="/COMP-353/account/details">View Details</a></div>
+	<div><a href="/account/details">View Details</a></div>
 
 	<br />
 
 	<div>Account 2</div>
 	<div>Balance</div>
-	<div><a href="/COMP-353/account/details">View Details</a></div>
+	<div><a href="/account/details">View Details</a></div>
 
 	<br />
 
 	<div>Account ...</div>
 	<div>Balance</div>
-	<div><a href="/COMP-353/account/details">View Details</a></div>
+	<div><a href="/account/details">View Details</a></div>
 
 	<br />
 
-	<div><a href="/COMP-353/account/new">Open New Account</a></div>
+	<div><a href="/account/new">Open New Account</a></div>
 
 	<br />
 
