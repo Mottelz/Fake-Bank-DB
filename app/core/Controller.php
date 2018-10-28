@@ -12,6 +12,13 @@ class Controller
 	{
 		require 'app/views/' . $view . '.php';
 	}
+
+
+
+	public function header()
+	{
+		$this->view('header');
+	}
 }
 
 ?>
