@@ -72,7 +72,7 @@ class employee extends Controller
 	public function editDay($sched_id)
 	{
 
-		$scheduleModel = $this->model('scheduleModel');
+		$scheduleModel = $this->model('ScheduleModel');
 		$schedule = $scheduleModel->schedules[0]; //Arbitrary schedule (NEED QUERY FOR sched_id)
 		
 		$this->checkEditDayData($schedule->employee_id, $sched_id);
