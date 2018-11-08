@@ -1,3 +1,7 @@
+<?
+	$accounts = $data['accounts'];
+?>
+
 <html>
 <head>
 </head>
@@ -15,21 +19,55 @@
 
 	<br />
 
-	To<br />
-	<div><input type="text" /></div>
+	<form method="POST" action="/transfer">
+		<div>
+			To<br />
+			<select name="to" required>
+				<option selected disabled value="">---Select Account---</option>
+				<?
+					for($index = 0; $index < count($accounts); $index++) 
+					{
+						$account = $accounts[$index];
+						$account_id = $account->account_id;
+						$type = $account->type;
+				?>
+						<option value="<?= $account_id ?>"><?= $type ?></option>
+				<?
+					}
+				?>
+			</select>
+		</div>
 
-	<br />
+		<br />
 
-	From<br />
-	<div><input type="text" /></div>
+		<div>
+			From<br />
+			<select name="from" required>
+				<option selected disabled value="">---Select Account---</option>
+				<?
+					for($index = 0; $index < count($accounts); $index++) 
+					{
+						$account = $accounts[$index];
+						$account_id = $account->account_id;
+						$type = $account->type;
+				?>
+						<option value="<?= $account_id ?>"><?= $type ?></option>
+				<?
+					}
+				?>
+			</select>
+		</div>
+			
+		<br />
+
+		<div>
+			Amount<br />
+			<input type="number" name="amount" step="0.01" required />
+		</div>
+			
+		<br />
 		
-	<br />
-
-	Amount<br />
-	<div><input type="text" /></div>
-		
-	<br />
-	
-	<a href="">Verify Transfer</a>
+		<button type="submit" name="maketransfer" value="true">Verify Transfer</button>
+	</form>
 </body>
 </html>

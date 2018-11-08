@@ -1,19 +1,18 @@
 <?
-	$client = $data['client'];
-	$client_id = $client->client_id;
-	$client_branch_id = $client->branch_id;
-	$first_name = $client->first_name;
-	$last_name = $client->last_name;
-	$street_address = $client->street_address;
-	$join_date = $client->join_date;
-	$email = $client->email;
-	$phone = $client->phone;
+	$user = $data['user'];
+	$login_type = $data['login_type'];
+	$user_id = $login_type == 'Client' ? $user->client_id : $user->employee_id;
+	$branch_id = $user->branch_id;
+	$first_name = $user->first_name;
+	$last_name = $user->last_name;
+	$street_address = $user->street_address;
+	$join_date = $user->join_date;
+	$email = $user->email;
+	$phone = $user->phone;
 
 	$address = $data['address'];
 	$postal_code = $address->postal_code;
 	$city = $address->city; 
-
-	$branches = $data['branches'];
 ?>
 
 <html>
@@ -22,14 +21,14 @@
 
 <body>
 	<?= $this->header() ?>
-	
-	<br />
-
-	<div>EDIT CLIENT</div>
 
 	<br />
 
-	<form method="POST" action="/client/edit/<?= $client_id ?>">
+	<div>EDIT CONTACT INFORMATION</div>
+
+	<br />
+
+	<form method="POST" action="/profile/edit">
 		<div>
 			First Name<br />
 			<input type="text" name="first_name" value="<?= $first_name ?>" required />
@@ -40,25 +39,6 @@
 		<div>
 			Last Name<br />
 			<input type="text" name="last_name" value="<?= $last_name ?>" required />
-		</div>
-
-		<br />
-
-		<div>
-			Branch #<br />
-			<select name="branch_id" required>
-				<option disabled value="">---Select Branch---</option>
-				<?
-					for($index = 0; $index < count($branches); $index++)
-					{
-						$branch = $branches[$index];
-						$branch_id = $branch->branch_id;
-				?>
-						<option <?= $client_branch_id == $branch_id ? 'selected' : ''; ?>><?= $branch_id ?></option>
-				<?
-					}
-				?>
-			</select>
 		</div>
 
 		<br />
@@ -97,12 +77,12 @@
 		</div>
 
 		<br />
-		<button type="submit" name="editclient" value="true">Edit Client</button>
-	</form>
 
+		<button type="submit" name="editcontactinformation" value="true">Edit Contact Information</button>
+	</form>
 
 	<br />
 
-	<div><a href="/client">Go Back</a></div>
+	<div><a href="/profile">Go Back</a></div>
 </body>
 </html>

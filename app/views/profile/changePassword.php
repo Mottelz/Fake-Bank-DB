@@ -11,21 +11,33 @@
 
 	<br />
 
-	Current Password<br />
-	<div><input type="text" /></div>
+	<form method="POST" action="/profile/changePassword">
+		<div>
+			Current Password<br />
+			<input type="password" name="password" required />
+		</div>
 
-	<br />
+		<br />
 
-	New Password<br />
-	<div><input type="text" /></div>
+		<div>
+			New Password<br />
+			<input type="password" name="newpassword" required />
+		</div>
+			
+		<br />
+
+		<div>
+			Confirm Password<br />
+			<input type="password" name="confirmpassword" required />
+		</div>
+			
+		<br />
 		
-	<br />
+		<button type="submit" name="changepassword" value="true">Change Password</button>
+	</form>
 
-	Confirm Passwor<br />
-	<div><input type="text" /></div>
-		
 	<br />
-	
-	<a href="/profile">Change Password</a>
+	<div><a href="/profile">Go Back</a></div>
+
 </body>
 </html>
