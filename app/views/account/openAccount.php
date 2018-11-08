@@ -51,6 +51,7 @@
 
 		<button type="submit" name="openaccount" value="true">Open New Account</button>
 	</form>
+
 	<br />
 
 	<div><a href="/account">Go Back</a></div>

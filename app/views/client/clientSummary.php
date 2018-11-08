@@ -16,7 +16,6 @@
 	<br />
 
 	<div><a href="/client/add">Add Client</a></div>
-
 	<br />
 
 	<table>
@@ -56,5 +55,6 @@
 		}
 	?>
 	</table>
+
 </body>
 </html>

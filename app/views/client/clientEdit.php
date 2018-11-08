@@ -97,9 +97,9 @@
 		</div>
 
 		<br />
-
 		<button type="submit" name="editclient" value="true">Edit Client</button>
 	</form>
+
 
 	<br />
 

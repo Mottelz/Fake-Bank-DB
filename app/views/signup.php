@@ -84,7 +84,7 @@
 	</form>
 
 	<br />
-
 	<div><a href="/login">Go Back</a></div>
+
 </body>
 </html>

@@ -27,6 +27,7 @@
 
 			<button type="submit" name="signout" value="true">Sign Out</button>
 		</form>
+
 	</div>
 </body>
 </html>

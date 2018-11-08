@@ -18,6 +18,7 @@
 
 	<br />
 
+
 	<div><a href="/account/new">Open New Account</a></div>
 
 	<?

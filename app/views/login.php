@@ -20,8 +20,10 @@
 
 		<br />
 
+
 		<button type="submit" name="login" value="client">Login</button>
 	</form>
+
 		
 	<div><a href="/signup">Sign Up</a></div>
 
@@ -47,5 +49,6 @@
 
 		<button type="submit" name="login" value="employee">Login</button>
 	</form>
+
 </body>
 </html>

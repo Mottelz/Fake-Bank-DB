@@ -37,7 +37,7 @@
 	</form>
 
 	<br />
-
 	<div><a href="/profile">Go Back</a></div>
+
 </body>
 </html>
