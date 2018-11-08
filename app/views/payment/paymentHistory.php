@@ -1,3 +1,7 @@
+<?
+	$transactions = $data['transactions'];
+?>
+
 <html>
 <head>
 </head>
@@ -13,25 +17,35 @@
 
 	<div>PAYMENT HISTORY</div>
 
-	<br />
+	<table>
+		<tr>
+			<th>Date</th>
+			<th>To</th>
+			<th>From</th>
+			<th>Amount</th>
+			<th>By</th>
+		</tr>
 
-	<div>Payment 1</div>
-	<div>Payee</div>
-	<div>Amount</div>
-	<div>Date</div>
-
-	<br />
-
-	<div>Payment 2</div>
-	<div>Payee</div>
-	<div>Amount</div>
-	<div>Date</div>
-
-	<br />
-
-	<div>Payment ...</div>
-	<div>Payee</div>
-	<div>Amount</div>
-	<div>Date</div>
+		<?
+			for($index = 0; $index < count($transactions); $index++)
+			{
+				$transaction = $transactions[$index];
+				$to = $transaction->to;
+				$from = $transaction->from;
+				$amount = $transaction->amount;
+				$by = $transaction->by;
+				$date = $transaction->date;
+		?>
+				<tr>
+					<td><?= $date ?></td>
+					<td><?= $to ?></td>
+					<td><?= $from ?></td>
+					<td><?= $amount ?></td>
+					<td><?= $by ?></td>
+				</tr>
+		<?
+			}
+		?>
+	</table>
 </body>
 </html>

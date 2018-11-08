@@ -5,9 +5,9 @@
 <body>
 	<div>
 		PAYMENT HEADER
-		<a href="/COMP-353/payment">Make a Payment</a>
-		<a href="/COMP-353/payment/setupPayment">Setup Future Payments</a>
-		<a href="/COMP-353/payment/history">Payment History</a>
+		<a href="/payment">Make a Payment</a>
+		<a href="/payment/futurePayments">Future Payments</a>
+		<a href="/payment/history">Payment History</a>
 	</div>
 </body>
 </html>

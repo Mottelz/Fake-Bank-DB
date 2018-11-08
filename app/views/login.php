@@ -3,24 +3,49 @@
 </head>
 
 <body>
-	<div>LOGIN</div>
+	<div>CLIENT LOGIN</div>
 
 	<br />
 
-	Field 1<br />
-	<div><input type="text" /></div>
+	<form method="POST" action="/login">
+		Client #<br />
+		<div><input type="text" name="client_id" required /></div>
 
-	<br />
+		<br />
 
-	Field 2<br />
-	<div><input type="text" /></div>
+		<div>
+			Password<br />
+			<input type="password" name="password" required />
+		</div>
 
-	<br />
+		<br />
 
-	<div><a href="/COMP-353/account">Login</a></div>
+		<button type="submit" name="login" value="client">Login</button>
+	</form>
 		
+	<div><a href="/signup">Sign Up</a></div>
+
 	<br />
-		
-	<div><a href="/COMP-353/signup">Sign Up</a></div>
+	<br />
+
+	<div>EMPLOYEE LOGIN</div>
+
+	<br />
+
+	<form method="POST" action="/login">
+		Employee #<br />
+		<div><input type="text" name="employee_id" required /></div>
+
+		<br />
+
+		<div>
+			Password<br />
+			<input type="password" name="password" required />
+		</div>
+
+		<br />
+
+		<button type="submit" name="login" value="employee">Login</button>
+	</form>
 </body>
 </html>
