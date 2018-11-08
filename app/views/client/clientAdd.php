@@ -26,10 +26,10 @@
 
 	<br />
 
-	<div><a href="/COMP-353/client">Add Client</a></div>
+	<div><a href="/client">Add Client</a></div>
 
 	<br />
 
-	<div><a href="/COMP-353/client">Go Back</a></div>
+	<div><a href="/client">Go Back</a></div>
 </body>
 </html>

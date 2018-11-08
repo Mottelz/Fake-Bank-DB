@@ -11,7 +11,7 @@
 
 	<br />
 
-	<div><a href="/COMP-353/client/add">Add Client</a></div>
+	<div><a href="/client/add">Add Client</a></div>
 
 	<br />
 
@@ -19,8 +19,8 @@
 	<div>Name</div>
 	<div>Join Date</div>
 	<div>...</div>
-	<div><a href="/COMP-353/client/details">View Details</a></div>
-	<div><a href="/COMP-353/client/edit">Edit</a></div>
+	<div><a href="/client/details">View Details</a></div>
+	<div><a href="/client/edit">Edit</a></div>
 
 	<br />
 
@@ -28,8 +28,8 @@
 	<div>Name</div>
 	<div>Join Date</div>
 	<div>...</div>
-	<div><a href="/COMP-353/client/details">View Details</a></div>
-	<div><a href="/COMP-353/client/edit">Edit</a></div>
+	<div><a href="/client/details">View Details</a></div>
+	<div><a href="/client/edit">Edit</a></div>
 
 	<br />
 
@@ -37,7 +37,7 @@
 	<div>Name</div>
 	<div>Join Date</div>
 	<div>...</div>
-	<div><a href="/COMP-353/client/details">View Details</a></div>
-	<div><a href="/COMP-353/client/edit">Edit</a></div>
+	<div><a href="/client/details">View Details</a></div>
+	<div><a href="/client/edit">Edit</a></div>
 </body>
 </html>

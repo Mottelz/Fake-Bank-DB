@@ -26,10 +26,10 @@
 
 	<br />
 
-	<div><a href="/COMP-353/account">Open New Account</a></div>
+	<div><a href="/account">Open New Account</a></div>
 
 	<br />
 
-	<div><a href="/COMP-353/account">Go Back</a></div>
+	<div><a href="/account">Go Back</a></div>
 </body>
 </html>

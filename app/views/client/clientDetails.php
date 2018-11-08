@@ -23,6 +23,6 @@
 
 	<br />
 
-	<div><a href="/COMP-353/client">Go Back</a></div>
+	<div><a href="/client">Go Back</a></div>
 </body>
 </html>
