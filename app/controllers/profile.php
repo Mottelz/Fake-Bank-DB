@@ -20,7 +20,7 @@ class profile extends Controller
 		$addressModel = $this->model('AddressModel');
 		$address = $addressModel->addresses[0]; //Arbitrary address (NEED QUERY FOR street_address)
 
-		$countryModel = $this->model('countryModel');
+		$countryModel = $this->model('CountryModel');
 		$country = $countryModel->countries[0]; //Arbitrary country (NEED QUERY FOR city)
 
 		$this->view('profile/contactInformation', 
