@@ -10,12 +10,12 @@ class payment extends Controller
 
 		if($_SESSION['login_type'] == 'Client')
 		{
-			$accountModel = $this->model('accountModel');
+			$accountModel = $this->model('AccountModel');
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR client_id)
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
-			$accountModel = $this->model('accountModel');
+			$accountModel = $this->model('AccountModel');
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR employee_id)
 		}
 
@@ -31,12 +31,12 @@ class payment extends Controller
 	{
 		if($_SESSION['login_type'] == 'Client')
 		{
-			$futurePaymentModel = $this->model('futurePaymentModel');
+			$futurePaymentModel = $this->model('FuturePaymentModel');
 			$futurePayments = $futurePaymentModel->futurePayments; //All future payments (NEED QUERY FOR account_id and client_id)
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
-			$futurePaymentModel = $this->model('futurePaymentModel');
+			$futurePaymentModel = $this->model('FuturePaymentModel');
 			$futurePayments = $futurePaymentModel->futurePayments; //All future payments (NEED QUERY FOR account_id and employee_id)
 		}
 
@@ -49,12 +49,12 @@ class payment extends Controller
 
 		if($_SESSION['login_type'] == 'Client')
 		{
-			$accountModel = $this->model('accountModel');
+			$accountModel = $this->model('AccountModel');
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR client_id)
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
-			$accountModel = $this->model('accountModel');
+			$accountModel = $this->model('AccountModel');
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR employee_id)
 		}
 
@@ -65,17 +65,17 @@ class payment extends Controller
 	{
 		$this->checkEditFuturePaymentsData($payment_id);
 
-		$futurePaymentModel = $this->model('futurePaymentModel');
+		$futurePaymentModel = $this->model('FuturePaymentModel');
 		$futurePayment = $futurePaymentModel->futurePayments[0]; //Arbitrary future payments (NEED QUERY FOR payment_id HERE)
 
 		if($_SESSION['login_type'] == 'Client')
 		{
-			$accountModel = $this->model('accountModel');
+			$accountModel = $this->model('AccountModel');
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR client_id)
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
-			$accountModel = $this->model('accountModel');
+			$accountModel = $this->model('AccountModel');
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR employee_id)
 		}
 
@@ -89,12 +89,12 @@ class payment extends Controller
 	{
 		if($_SESSION['login_type'] == 'Client')
 		{
-			$transactionModel = $this->model('transactionModel');
+			$transactionModel = $this->model('TransactionModel');
 			$transactions = $transactionModel->transactions; //All transactions (NEED QUERY FOR account_id, client_id and type)
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
-			$transactionModel = $this->model('transactionModel');
+			$transactionModel = $this->model('TransactionModel');
 			$transactions = $transactionModel->transactions; //All transactions (NEED QUERY FOR account_id, employee_id and type)
 		}
 
