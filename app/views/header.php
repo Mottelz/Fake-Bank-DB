@@ -1,33 +1,60 @@
-<?
+<?php
 	$account_type = $data['account_type'];
 	$acc_toggle = $data['acc_toggle'];
 ?>
 
-<html>
-<head>
-</head>
+  <html>
 
-<body>
-	<div>
-		<form method="POST" action="/login">
-			HEADER
-			<a href="/account">Account Summary</a>
-			<a href="/payment">Payment</a>
-			<a href="/transfer">Transfer</a>
-			<a href="/profile">Profile</a>
-
-			<? if(true/*$account_type == 'Employee'*/) { ?>
-				<a href="/client">Clients</a>
-			<? } ?>
-
-			<? if(true/*$acc_toggle == 'Business'*/) { ?>
-				<a href="/employee">Employees</a>
-			<? } ?>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 
-			<button type="submit" name="signout" value="true">Sign Out</button>
-		</form>
+    <form method="POST" action="/login" style="margin-bottom:0px;">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">SuperBank</a>
 
-	</div>
-</body>
-</html>
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/account">Account summary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/payment">Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/transfer">Transfer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+        </ul>
+				<div style="margin-left:20px;">
+        <a class="navbar-brand" href="#">
+          <button type="submit" class="btn btn-outline-danger"> Sign Out</button>
+        </a>
+			</div>
+				<div style="margin-left:auto;">
+        <?php if(true/*$account_type == 'Employee'*/) { ?>
+          <a href="/client" class="btn btn-primary btn-sm">Clients</a>
+          <?php } ?>
+
+            <?php if(true/*$acc_toggle == 'Business'*/) { ?>
+              <a href="/employee" class="btn btn-secondary btn-sm">Employees</a>
+              <?php } ?>
+					</div>
+      </nav>
+
+    </form>
+  </head>
+
+  <body>
+
+  </body>
+
+  </html>

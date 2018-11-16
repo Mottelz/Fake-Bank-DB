@@ -1,4 +1,4 @@
-<?
+<?php
 	$client = $data['client'];
 	$client_id = $client->client_id;
 	$branch_id = $client->branch_id;
@@ -11,7 +11,7 @@
 
 	$address = $data['address'];
 	$postal_code = $address->postal_code;
-	$city = $address->city; 
+	$city = $address->city;
 
 	$countryT = $data['country'];
 	$country = $countryT->country;
@@ -20,30 +20,38 @@
 
 <html>
 <head>
+	<?= $this->header() ?>
 </head>
 
 <body>
-	<?= $this->header() ?>
+	<div class="templateux-cover" style="background-image: url(../../images/slider-1.jpg);resize:verticle;overflow:auto;">
+		<div class="container">
+			<div class="col-md-8">
+
 
 	<br />
 
-	<div>CLIENT DETAILS</div>
+	<div><h2>Client Details</h2></div>
 
 	<br />
-
-	<div>Client #: <?= $client_id ?></div>
-	<div>Branch #: <?= $branch_id ?></div>
-	<div>Name: <?= "$first_name $last_name" ?></div>
-	<div>Street Address: <?= $street_address ?></div>
-	<div>City: <?= $city ?></div>
-	<div>Province: <?= $province ?></div>
-	<div>Postal Code: <?= $postal_code ?></div>
-	<div>Phone: <?= $phone ?></div>
-	<div>Email: <?= $email ?></div>
-	<div>Join Date: <?= $join_date ?></div>
-
+<table class="table table-striped">
+	<tr><th>Client #: <?= $client_id ?></th></tr>
+	<tr><th>Branch #: <?= $branch_id ?></th></tr>
+	<tr><th>Name: <?= "$first_name $last_name" ?></th></tr>
+	<tr><th>Street Address: <?= $street_address ?></th></tr>
+	<tr><th>City: <?= $city ?></th></tr>
+	<tr><th>Province: <?= $province ?></th></tr>
+	<tr><th>Postal Code: <?= $postal_code ?></th></tr>
+	<tr><th>Phone: <?= $phone ?></th></tr>
+	<tr><th>Email: <?= $email ?></th></tr>
+	<tr><th>Join Date: <?= $join_date ?></th></tr>
+</table>
 	<br />
 
-	<div><a href="/client">Go Back</a></div>
+	<div><a href="/client"><button type="button" class="btn btn-outline-danger">Go Back</button></a></div>
+<br />
+</div>
+</div>
+</div>
 </body>
 </html>

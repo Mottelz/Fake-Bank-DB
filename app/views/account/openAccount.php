@@ -1,20 +1,20 @@
 <html>
 <head>
+	<?= $this->header() ?>
 </head>
 
 <body>
-	<?= $this->header() ?>
-	
+	<div class="templateux-cover" style="background-image: url(../images/slider-1.jpg);resize: both;">
+		<div class="container">
+			<div class="col-md-8">
+
 	<br />
 
 	<form method="POST" action="/account/new">
-		<div>OPEN NEW ACCOUNT</div>
+		<div>Open A New Account</div>
 
-		<br />
-
-		<div>
-			Type<br />
-			<select name="type" required>
+		<div class="form-group" style="display: inline-block">	 Type
+			<select name="type" class="form-control" required>
 				<option selected disabled value="">---Select Type---</option>
 				<option>Checking</option>
 				<option>Savings</option>
@@ -25,9 +25,9 @@
 
 		<br />
 
-		<div>
+		<div class="form-group" style="display: inline-block">
 			Option<br />
-			<select name="option" required>
+			<select name="option" class="form-control" required>
 				<option selected disabled value="">---Select Option---</option>
 				<option>Option 1</option>
 				<option>Option 2</option>
@@ -37,9 +37,9 @@
 
 		<br />
 
-		<div>
+		<div class="form-group" style="display: inline-block">
 			Service<br />
-			<select name="service" required>
+			<select name="service" class="form-control" required>
 				<option selected disabled value="">---Select Service---</option>
 				<option>Service 1</option>
 				<option>Service 2</option>
@@ -49,11 +49,14 @@
 
 		<br />
 
-		<button type="submit" name="openaccount" value="true">Open New Account</button>
+		<button type="submit" name="openaccount" value="true" class="btn btn-outline-success">Open New Account</button>
 	</form>
-
 	<br />
 
-	<div><a href="/account">Go Back</a></div>
+	<div><a href="/account"><button type="button" class="btn btn-outline-danger">Go Back</button></a></div>
+	</br>
+</div>
+</div>
+</div>
 </body>
 </html>

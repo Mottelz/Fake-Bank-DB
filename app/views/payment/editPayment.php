@@ -1,4 +1,4 @@
-<?
+<?php
 	$payment_id = $data['payment_id'];
 
 	$futurePayment = $data['futurePayment'];
@@ -14,82 +14,85 @@
 
 <html>
 <head>
+	<?= $this->header() ?>
 </head>
 
 <body>
-	<?= $this->header() ?>
+	<div class="templateux-cover" style="background-image: url(../../images/slider-1.jpg);resize:verticle;overflow:auto;">
+		<?= $this->subHeader() ?>
+		<div class="container">
+			<div class="col-md-8">
 
 	<br />
 
-	<?= $this->subHeader() ?>
-
-	<br />
-
-	<div>EDIT FUTURE PAYMENTS</div>
+	<div><h2>Edit Future Payments</h2></div>
 
 	<br />
 
 	<form method="POST" action="/payment/editPayment/<?= $payment_id ?>">
 		<div>
 			Payee<br />
-			<input type="text" name="to" value="<?= $to ?>" required />
+			<input type="text" name="to" value="<?= $to ?>" required class="form-control" style="width:auto;" />
 		</div>
-
 		<br />
-
 		<div>
 			From<br />
-			<select name="from" required>
+			<select name="from" required class="form-control" style="width:auto;">
 				<option disabled value="">---Select Account---</option>
-				<?
-					for($index = 0; $index < count($accounts); $index++) 
+				<?php
+					for($index = 0; $index < count($accounts); $index++)
 					{
 						$account = $accounts[$index];
 						$account_id = $account->account_id;
 						$type = $account->type;
 				?>
 						<option value="<?= $account_id ?>" <?= $from == $account_id ? 'selected' : ''; ?>><?= $type ?></option>
-				<?
+				<?php
 					}
 				?>
 			</select>
 		</div>
-			
+
 		<br />
 
 		<div>
 			Amount<br />
-			<input type="number" name="amount" step="0.01" value="<?= $amount ?>" required />
+			<input type="number" name="amount" step="0.01" value="<?= $amount ?>" required class="form-control" style="width:auto;" />
 		</div>
 
 		<br />
 
 		<div>
 			Start Date<br />
-			<input type="date" name="start_date" value="<?= $start_date ?>" required />
+			<input type="date" name="start_date" value="<?= $start_date ?>" required class="form-control" style="width:auto;"/>
 		</div>
-			
+
 		<br />
 
 		<div>
 			Frequency (in days)<br />
-			<input type="number" name="frequency" value="<?= $frequency ?>" required />
+			<input type="number" name="frequency" value="<?= $frequency ?>" required class="form-control" style="width:auto;"/>
 		</div>
-			
+
 		<br />
 
 		<div>
 			End Date<br />
-			<input type="date" name="end_date" value="<?= $end_date ?>" />
+			<input type="date" name="end_date" value="<?= $end_date ?>" class="form-control" style="width:auto;"/>
 		</div>
-			
+
 		<br />
-		
-		<button type="submit" name="editfuturepayments" value="true">Verify Payment</button>
+
+		<button type="submit" name="editfuturepayments" class="btn btn-warning" value="true">Verify Payment</button>
 	</form>
 
 	<br />
 
-	<div><a href="/payment/futurePayments">Go Back</a></div>
+	<div><a href="/payment/futurePayments"><button type="button" class="btn btn-outline-danger">Go Back</button></a></div>
+</br>
+
+</div>
+</div>
+</div>
 </body>
 </html>

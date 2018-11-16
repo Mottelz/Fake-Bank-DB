@@ -1,47 +1,51 @@
-<?
+<?php
 	$branches = $data['branches'];
 ?>
 
 <html>
 <head>
+		<?= $this->header() ?>
 </head>
 
 <body>
-	<?= $this->header() ?>
-	
+	<div class="templateux-cover" style="background-image: url(images/slider-1.jpg);resize:verticle;overflow:auto;">
+		<div class="container">
+			<div class="col-md-8">
+
+
 	<br />
 
-	<div>ADD CLIENT</div>
+	<div><h2>Add New Client</h2></div>
 
 	<br />
 
 	<form method="POST" action="/client/add">
 		<div>
 			First Name<br />
-			<input type="text" name="first_name" required />
+			<input type="text" class="form-control" name="first_name" required style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			Last Name<br />
-			<input type="text" name="last_name" required />
+			<input type="text" class="form-control" name="last_name" required style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			Branch #<br />
-			<select name="branch_id" required>
+			<select name="branch_id" class="form-control" required style="width:auto;">
 				<option selected disabled value="">---Select Branch---</option>
-				<?
+				<?php
 					for($index = 0; $index < count($branches); $index++)
 					{
 						$branch = $branches[$index];
 						$branch_id = $branch->branch_id;
 				?>
 						<option><?= $branch_id ?></option>
-				<?
+				<?php
 					}
 				?>
 			</select>
@@ -51,45 +55,48 @@
 
 		<div>
 			Street Address<br />
-			<input type="text" name="street_address" required />
+			<input type="text" class="form-control" name="street_address" required style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			City<br />
-			<input type="text" name="city" required />
+			<input type="text" class="form-control" name="city" required style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			Postal Code<br />
-			<input type="text" name="postal_code" required />
+			<input type="text" class="form-control" name="postal_code" required style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			Phone<br />
-			<input type="text" name="phone" required />
+			<input type="text" class="form-control" name="phone" required style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			Email<br />
-			<input type="text" name="email" required />
+			<input type="text" class="form-control" name="email" required style="width:auto;"/>
 		</div>
 
 		<br />
-    
-		<button type="submit" name="addclient" value="true">Add Client</button>
-	</form>
 
+		<button type="submit" class="btn btn-outline-success" name="addclient" value="true">Add Client</button>
+	</form>
 
 	<br />
 
-	<div><a href="/client">Go Back</a></div>
+	<div><a href="/client"><button type="button" class="btn btn-outline-danger">Go Back</button></a></div>
+	<br />
+</div>
+</div>
+</div>
 </body>
 </html>

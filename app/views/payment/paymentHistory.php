@@ -1,32 +1,34 @@
-<?
+<?php
 	$transactions = $data['transactions'];
 ?>
 
 <html>
 <head>
+	<?= $this->header() ?>
 </head>
 
 <body>
-	<?= $this->header() ?>
 
+	<div class="templateux-cover" style="background-image: url(../images/slider-1.jpg);resize:verticle;overflow:auto;">
+			<?= $this->subHeader() ?>
+		<div class="container">
+			<div class="col-md-8">
 	<br />
 
-	<?= $this->subHeader() ?>
+	<div><h2>Payment History</h2></div>
 
-	<br />
-
-	<div>PAYMENT HISTORY</div>
-
-	<table>
-		<tr>
+	<table class="table table-striped">
+		<thead>
+			<tr>
 			<th>Date</th>
 			<th>To</th>
 			<th>From</th>
 			<th>Amount</th>
 			<th>By</th>
 		</tr>
-
-		<?
+</thead>
+<tbody>
+		<?php
 			for($index = 0; $index < count($transactions); $index++)
 			{
 				$transaction = $transactions[$index];
@@ -43,9 +45,14 @@
 					<td><?= $amount ?></td>
 					<td><?= $by ?></td>
 				</tr>
-		<?
+		<?php
 			}
 		?>
+		<tbody>
 	</table>
+</br>
+</div>
+</div>
+</div>
 </body>
 </html>

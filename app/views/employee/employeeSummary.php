@@ -1,26 +1,30 @@
-<?
+<?php
 	$employees = $data['employees'];
 ?>
 
 <html>
 <head>
+	<?= $this->header() ?>
 </head>
 
 <body>
-	<?= $this->header() ?>
-	
+
+	<div class="templateux-cover" style="background-image: url(images/slider-1.jpg);resize:verticle;overflow:auto;">
+		<div class="container">
+			<div class="col-md-8">
 	<br />
 
-	<div>EMPLOYEE SUMMARY</div>
+	<div><h2>Employee Summary</h2></div>
 
 	<br />
 
-	<div><a href="/employee/add">Add Employee</a></div>
+	<div><a href="/employee/add"><button type="button" class="btn btn-outline-success">Add Employee</button></a></div>
 
 	<br />
 
-	<table>
-		<tr>
+	<table class="table table-striped">
+		<thead>
+			<tr>
 			<th>Employee #</th>
 			<th>Branch #</th>
 			<th>Department</th>
@@ -30,7 +34,9 @@
 			<th>Start Date</th>
 			<th>Active</th>
 		</tr>
-	<?
+	</thead>
+	<tbody>
+	<?php
 		for($index = 0; $index < count($employees); $index++)
 		{
 			$employee = $employees[$index];
@@ -43,7 +49,7 @@
 			$salary = $employee->salary;
 			$start_date = $employee->start_date;
 			$active = $employee->active;
-	?>	
+	?>
 			<tr>
 				<td><?= $employee_id ?></td>
 				<td><?= $branch_id ?></td>
@@ -56,10 +62,13 @@
 				<td><a href="/employee/details/<?= $employee_id ?>">View Details</a></td>
 				<td><a href="/employee/edit/<?= $employee_id ?>">Edit</a></td>
 			</tr>
-	<?
+	<?php
 		}
 	?>
-	</table>
 
+	</table>
+</div>
+</div>
+</div>
 </body>
 </html>

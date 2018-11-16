@@ -1,30 +1,32 @@
-<?
+<?php
 	$futurePayments = $data['futurePayments'];
 ?>
 
 <html>
 <head>
+		<?= $this->header() ?>
 </head>
 
 <body>
-	<?= $this->header() ?>
+	<br />
+
+	<div class="templateux-cover" style="background-image: url(../images/slider-1.jpg);resize:verticle;overflow:auto;">
+		<?= $this->subHeader() ?>
+		<div class="container">
+			<div class="col-md-8">
+	<br />
+
+	<div><h2>Future Payments</h2></div>
 
 	<br />
 
-	<?= $this->subHeader() ?>
+	<div><a href="/payment/setupPayment"><button type="button" class="btn btn-outline-info">Setup Future Payments</button></a></div>
 
 	<br />
 
-	<div>FUTURE PAYMENTS</div>
-
-	<br />
-
-	<div><a href="/payment/setupPayment">Setup Future Payments</a></div>
-
-	<br />
-
-	<table>
-		<tr>
+	<table class="table table-striped">
+		<thead>
+			<tr>
 			<th>Payee</th>
 			<th>From</th>
 			<th>Amount</th>
@@ -32,8 +34,9 @@
 			<th>Frequency (in days)</th>
 			<th>End Date</th>
 		</tr>
-
-		<?
+	</thead>
+<body>
+		<?php
 			for($index = 0; $index < count($futurePayments); $index++)
 			{
 				$futurePayment = $futurePayments[$index];
@@ -54,9 +57,15 @@
 					<td><?= $end_date ?></td>
 					<td><a href="/payment/editPayment/<?= $payment_id ?>">Edit</a></td>
 				</tr>
-		<?
+		<?php
 			}
 		?>
+	</body>
 	</table>
+	</br>
+</div>
+</div>
+</div>
+
 </body>
 </html>

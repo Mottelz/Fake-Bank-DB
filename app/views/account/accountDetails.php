@@ -1,4 +1,4 @@
-<?
+<?php
 	$account = $data['account'];
 	$account_id = $account->account_id;
 	$type = $account->type;
@@ -14,38 +14,43 @@
 
 <html>
 <head>
+	<?= $this->header() ?>
 </head>
 
 <body>
-	<?= $this->header() ?>
+
+	<div class="templateux-cover" style="background-image: url(../../images/slider-1.jpg);resize:verticle;overflow:auto;">
+		<div class="container">
+			<div class="col-md-8">
+
+
+	<div><h2>Account Details</h2></div>
+
+
+<table class="table table-striped">
+		<tr> <td><b>Account #:</b> &nbsp;<?= $account_id ?></td>
+			<td><b>Type:</b>&nbsp;<?= $type ?></td>
+			<td><b>Option:</b>&nbsp;<?= $balance ?></td>
+			<td><b>Service:</b>&nbsp;<?= $service ?></td>
+			</tr>
+</table>
 
 	<br />
 
-	<div>ACCOUNT DETAILS</div>
+	<div><h2>Transaction History</h2></div>
 
-	<br />
 
-	<div>Account #: <?= $account_id ?></div>
-	<div>Type: <?= $type ?></div>
-	<div>Balance: <?= $balance ?><div>
-	<div>Option: <?= $option ?><div>
-	<div>Service: <?= $service ?><div>
-
-	<br />
-
-	<div>Transaction History</div>
-
-	<table>
+		<table class="table table-striped">
 		<tr>
-			<th>Date</th>
-			<th>Type</th>
-			<th>To</th>
-			<th>From</th>
-			<th>Amount</th>
-			<th>By</th>
+			<th scope="col">Date</th>
+			<th scope="col">Type</th>
+			<th scope="col">To</th>
+			<th scope="col">From</th>
+			<th scope="col">Amount</th>
+			<th scope="col">By</th>
 		</tr>
 
-		<?
+		<?php
 			for($index = 0; $index < count($transactions); $index++)
 			{
 				$transaction = $transactions[$index];
@@ -64,28 +69,30 @@
 					<td><?= $amount ?></td>
 					<td><?= $by ?></td>
 				</tr>
-		<?
+		<?php
 			}
 		?>
 	</table>
-
 	<br />
 
 	<div>
-		Annual Profits<br />
+		<h4>Annual Profits</h4>
 		<?= $annualProfits ?>
 	</div>
 
 	<br />
 
-	<div>
-		Annual Losses<br />
+	<div >
+		<h4>Annual Losses</h4>
 		<?= $annualLosses ?>
 	</div>
 
 	<br />
 
-
-	<div><a href="/account">Go Back</a></div>
+<a href="/account"><button type="submit" class="btn btn-outline-danger">Go Back</button></a>
+</br>
+</div>
+</div>
+</div>
 </body>
 </html>

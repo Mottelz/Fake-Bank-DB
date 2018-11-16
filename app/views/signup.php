@@ -1,4 +1,4 @@
-<?
+<?php
 	$branches = $data['branches'];
 ?>
 
@@ -7,7 +7,11 @@
 </head>
 
 <body>
-	<div>CLIENT SIGN UP</div>
+	<div class="templateux-cover" style="background-image: url(images/slider-1.jpg);resize:verticle;overflow:auto;">
+		<div class="container">
+			<div class="col-md-8">
+
+	<div>New Client Sign Up</div>
 
 	<br />
 
@@ -30,14 +34,14 @@
 			Branch #<br />
 			<select name="branch_id" required>
 				<option selected disabled value="">---Select Branch---</option>
-				<?
+				<?php
 					for($index = 0; $index < count($branches); $index++)
 					{
 						$branch = $branches[$index];
 						$branch_id = $branch->branch_id;
 				?>
 						<option><?= $branch_id ?></option>
-				<?
+				<?php
 					}
 				?>
 			</select>
@@ -47,35 +51,35 @@
 
 		<div>
 			Street Address<br />
-			<input type="text" name="street_address" required />
+			<input type="text" name="street_address" required class="form-control" style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			City<br />
-			<input type="text" name="city" required />
+			<input type="text" name="city" required class="form-control" style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			Postal Code<br />
-			<input type="text" name="postal_code" required />
+			<input type="text" name="postal_code" required class="form-control" style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			Phone<br />
-			<input type="text" name="phone" required />
+			<input type="text" name="phone" required class="form-control" style="width:auto;"/>
 		</div>
 
 		<br />
 
 		<div>
 			Email<br />
-			<input type="text" name="email" required />
+			<input type="text" name="email" required class="form-control" style="width:auto;"/>
 		</div>
 
 		<br />
@@ -84,7 +88,10 @@
 	</form>
 
 	<br />
-	<div><a href="/login">Go Back</a></div>
 
+	<div><a href="/login"><button type="button" class="btn btn-outline-danger">Go Back</button></a></div>
+</div>
+</div>
+</div>
 </body>
 </html>
