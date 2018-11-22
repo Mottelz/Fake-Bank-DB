@@ -17,7 +17,6 @@ class signup extends Controller
 		if(isset($_POST['signup']) && $this->validateSignupData())
 		{
 			//NEED CREATE CLIENT QUERY
-
 			header("Location:/login");
 		}
 	}
