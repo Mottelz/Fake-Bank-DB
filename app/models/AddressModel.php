@@ -1,9 +1,13 @@
 <?php
 
-class AddressModel
+class AddressModel extends Model
 {
 	public $table = 'Address';
 	public $addresses;
+
+	public function getAllAddresses() {
+        return $this->getData("SELECT * FROM Address");
+    }
 
 	private $data = 
 	'{

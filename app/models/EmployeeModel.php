@@ -1,6 +1,6 @@
 <?php
 
-class EmployeeModel
+class EmployeeModel extends Model
 {
 	public $table = 'Employee';
 	public $employees;

@@ -1,6 +1,6 @@
 <?php
 
-class TransactionModel 
+class TransactionModel extends Model
 {
 	public $table = 'Transaction';
 	public $transactions;

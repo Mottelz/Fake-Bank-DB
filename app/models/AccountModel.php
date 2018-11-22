@@ -2,10 +2,21 @@
 
 class AccountModel extends Model
 {
-	public $table = 'Account';
-	public $accounts;
+    public function getAccountsByUserId($id) {
+        return $this -> getData("SELECT * FROM Account WHERE client_id="+$id);
+    }
 
-	private $data;
+    public function getAccountById($id) {
+        return $this -> getData("SELECT * FROM Account WHERE account_id="+$id);
+    }
+
+    public function getAllAccounts() {
+        return $this->getData("SELECT * FROM Account");
+    }
+//	public $table = 'Account';
+//	public $accounts;
+//
+//	private $data;
 //	'{
 //		"Account" : [{
 //			"account_id" : 1,
@@ -31,10 +42,10 @@ class AccountModel extends Model
 //		}]
 //	}';
 
-	function __construct() {
-//		$this->accounts = json_decode($this->data)->Account;
-        return $this->getData("SELECT * FROM Account");
-	}
+//	function __construct() {
+////		$this->accounts = json_decode($this->data)->Account;
+//        return $this->getData("SELECT * FROM Account");
+//	}
 }
 
 ?>

@@ -1,9 +1,10 @@
 <?php
 
-class BranchModel
+class BranchModel extends Model
 {
 	public $table = 'Branch';
 	public $branches;
+
 
 	private $data = 
 	'{

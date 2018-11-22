@@ -1,6 +1,6 @@
 <?php
 
-class CountryModel
+class CountryModel extends Model
 {
 	public $table = 'Country';
 	public $countries;

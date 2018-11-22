@@ -1,6 +1,6 @@
 <?php
 
-class ScheduleModel
+class ScheduleModel extends Model
 {
 	public $table = 'Schedule';
 	public $schedules;

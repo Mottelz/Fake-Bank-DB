@@ -1,6 +1,6 @@
 <?php
 
-class FuturePaymentModel
+class FuturePaymentModel extends Model
 {
 	public $table = 'FuturePayment';
 	public $futurePayments;

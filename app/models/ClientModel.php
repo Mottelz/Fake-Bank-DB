@@ -1,6 +1,6 @@
 <?php
 
-class ClientModel
+class ClientModel extends Model
 {
 	public $table = 'Client';
 	public $clients;
