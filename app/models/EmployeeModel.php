@@ -5,6 +5,18 @@ class EmployeeModel extends Model
 	public $table = 'Employee';
 	public $employees;
 
+	public function getAllEmployees(){
+	    return $this->getData("SELECT * FROM Employee");
+    }
+
+    public function getEmployeeById($id) {
+	    return $this->getData("SELECT * FROM Employee WHERE employee_id=" . $id);
+    }
+
+    public function getEmployeeByBranch($id) {
+        return $this->getData("SELECT * FROM Employee WHERE branch_id=" . $id);
+    }
+
 	private $data = 
 	'{
 		"Employee" : [{

@@ -5,6 +5,19 @@ class ClientModel extends Model
 	public $table = 'Client';
 	public $clients;
 
+	public function getAllClients() {
+	    return $this->getData("SELECT * FROM Client");
+    }
+
+    public function getClientById($id) {
+        return $this->getData("SELECT * FROM Client WHERE client_id=" . $id);
+    }
+
+    public function getClientByBranchId($id) {
+        return $this->getData("SELECT * FROM Client WHERE branch_id=" . $id);
+    }
+
+
 	private $data = 
 	'{
 		"Client" : [{

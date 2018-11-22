@@ -5,6 +5,18 @@ class TransactionModel extends Model
 	public $table = 'Transaction';
 	public $transactions;
 
+	public function getAllTransactions() {
+	    return $this->getData("SELECT * FROM Transaction");
+    }
+
+    public function getTransactionById($id) {
+        return $this->getData("SELECT * FROM Transaction WHERE trans_id=" . $id);
+    }
+
+    public function getTransactionFrom($id) {
+        return $this->getData("SELECT * FROM Transaction WHERE 'from'=" . $id);
+    }
+
 	private $data = 
 	'{
 		"Transaction" : [{

@@ -5,6 +5,19 @@ class ScheduleModel extends Model
 	public $table = 'Schedule';
 	public $schedules;
 
+	public function getAllSchedules() {
+	    return $this->getData("SELECT * FROM Schedule");
+    }
+
+    public function getScheduleById($id) {
+        return $this->getData("SELECT * FROM Schedule WHERE sched_id=" . $id);
+    }
+
+    public function getScheduleByEmployeeId($id) {
+        return $this->getData("SELECT * FROM Schedule WHERE employee_id=" . $id);
+    }
+
+
 	private $data = 
 	'{
 		"Schedule" : [{

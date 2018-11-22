@@ -9,6 +9,18 @@ class AddressModel extends Model
         return $this->getData("SELECT * FROM Address");
     }
 
+    public function getAddressByCity($city) {
+        return $this->getData("SELECT * FROM Address WHERE city=" . $city);
+    }
+
+    public function getAddressByPostal($postal) {
+        return $this->getData("SELECT * FROM Address WHERE postal_code=" . $postal);
+    }
+
+    public function getAddressByStreet($street) {
+        return $this->getData("SELECT * FROM Address WHERE street_address=" . $street);
+    }
+
 	private $data = 
 	'{
 		"Address" : [{
