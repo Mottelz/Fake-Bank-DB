@@ -10,7 +10,7 @@ TEST
   include './app/core/Model.php';
   include './app/models/ClientModel.php';
   echo "THIS IS A TEST PAGE";
-  echo getClientById(1);
+  echo getAllClients();
 ?>
 </body>
 
