@@ -88,6 +88,7 @@
 
 <?php
   echo "THIS IS A TEST PAGE";
+  include "./app/core/Controller.php";
   $clientModel = $this->model('ClientModel');
   echo $clientModel->getClientById(1);
 ?>
