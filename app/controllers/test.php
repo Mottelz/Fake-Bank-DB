@@ -11,7 +11,7 @@ TEST
   include './app/models/ClientModel.php';
   echo "THIS IS A TEST PAGE";
   $clientModel = $this->model('ClientModel');
-  echo $clientModel->getClientById($client_id);
+  echo $clientModel->getClientById(1);
 ?>
 </body>
 
