@@ -36,12 +36,6 @@
     <div class="container">
       <div class="col-md-8">
 
-	  <?php
-
-	  echo getClientById(1);
-
-	  ?>
-
   <div class="container">
 
     <form class="form-signin" method="POST" action="/login">
