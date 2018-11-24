@@ -9,7 +9,7 @@ class Model {
 
      //connect to the server
      private function connectDB() {
-         $this->connection = new mysqli($this->db_host, $this->db_user, $this->db_pword, $this->db_host);
+         $this->connection = new mysqli($this->db_host, $this->db_user, $this->db_pword, $this->db_name);
          if ($this->connection->connect_errno) {
              printf("Connect failed: %s\n", $this->connection->connect_error);
              return false;
