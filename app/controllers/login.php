@@ -9,9 +9,9 @@ class login extends Controller
 
 		$this->view('login');
 
- 	 	echo "===TEST OUTPUT===";
-  		$clientModel = $this->model('ClientModel');
-  		var_dump($clientModel->getClientById(1));
+ 	 	// echo "===TEST OUTPUT===";
+  		// $clientModel = $this->model('ClientModel');
+  		// var_dump($clientModel->getClientById(1));
 	}
 
 	public function checkLoginData()
@@ -55,9 +55,9 @@ class login extends Controller
 	{
 		$clientModel = $this->model('ClientModel');
 		$client = $clientModel->getClientById($_POST['client_id']);
+		var_dump($client = $clientModel->getClientById($_POST['client_id']));
 		if($_POST['login'] == 'client')
 		{
-			var_dump($client = $clientModel->getClientById($_POST['client_id']));
 			if(($_POST['client_id'] == $client->Client_id)
 			and !($_POST['password'] == $client->password)){
 				$message = "Invalid credentials.";
