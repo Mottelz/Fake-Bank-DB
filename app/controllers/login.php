@@ -53,9 +53,16 @@ class login extends Controller
 	
 	public function validateLoginData()
 	{
+		$clientModel = $this->model('ClientModel');
+		$client = $clientModel->getClientById($_POST['client_id']);
 		if($_POST['login'] == 'client')
 		{
-			//INSERT VALIDATION (AS NEEDED)
+			if(($_POST['client_id'] == $client->Client_id))
+			&& !($_POST['password'] == $client->password)){
+				$message = "Invalid credentials.";
+				echo "<script type='text/javascript'>alert('$message');</script>";	
+				return false;
+			}
 		}
 		else //$_POST['login'] == 'employee'
 		{
