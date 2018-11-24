@@ -58,7 +58,7 @@ class login extends Controller
 
 		if($_POST['login'] == 'client')
 		{
-			var_dump($client['Client_id']);
+			var_dump($client["Client_id"]);
 
 			if(($_POST['client_id'] == $client->Client_id)
 			and !($_POST['password'] == $client->password)){
