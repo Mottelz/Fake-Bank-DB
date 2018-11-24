@@ -7,8 +7,7 @@ class transfer extends Controller
 		$this->checkIsLoggedIn();
 		$this->checkMakeTransferData();
 
-		$message = $_SESSION["login_id"];
-			echo "<script type='text/javascript'>alert('$message');</script>";
+		
 
 		if($_SESSION['login_type'] == 'Client')
 		{
@@ -22,6 +21,9 @@ class transfer extends Controller
 		}
 
 		$this->view('transfer/makeTransfer', ['accounts' => $accounts]);
+
+		$message = $_SESSION['login_type'];
+			echo "<script type='text/javascript'>alert('$message');</script>";
 	}
 
 	public function subHeader()
