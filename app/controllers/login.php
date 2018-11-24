@@ -37,7 +37,7 @@ class login extends Controller
 			
 			$_SESSION['acc_toggle'] = "Personal"; //Set to personal accounts as default
 
-			//header("Location:/account");
+			header("Location:/account");
 		}
 	}
 
