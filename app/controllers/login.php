@@ -49,7 +49,7 @@ class login extends Controller
 		if($_POST['login'] == 'client')
 		{
 			$clientModel = $this->model('ClientModel');
-			$client = $clientModel->getClientId($_POST['client_id']);
+			$client = $clientModel->getClientById($_POST['client_id']);
 
 			if(!$client[0])
 				return false;
