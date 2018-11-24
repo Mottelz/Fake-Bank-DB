@@ -16,7 +16,6 @@ class TransactionModel extends Model
 	 public function getTransactionByAccountId($id) {
         return $this->getData("SELECT * FROM Transaction_Table WHERE From_accid=" . $id);
     }
-
 	public function transferMoneyTo($accIdFrom, $accIdTo, $amount) {
 
 		//Test value

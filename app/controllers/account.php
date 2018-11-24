@@ -33,9 +33,13 @@ class account extends Controller
 		$transactionModel = $this->model('TransactionModel');
 		$transactions = $transactionModel->getTransactionByAccountId($account_id);
 		//var_dump($transactions);
-		$annualProfits = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL PROFITS)
-		$annualLosses = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
-
+		$annualProfits =0;
+		
+		 //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
+		for(int $index =0; $index < count(getTransactionByAccountId($account_id)); $index++)){
+			$annualLosses += $transactionModel->getAccountLoss($account_id);
+			
+		}
 		$this->view('account/accountDetails', 
 			['account' => $account, 
 			 'transactions' => $transactions,

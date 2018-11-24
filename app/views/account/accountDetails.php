@@ -31,7 +31,7 @@
 <table class="table table-striped">
 		<tr> <td><b>Account #:</b> &nbsp;<?= $account_id ?></td>
 			<td><b>Type:</b>&nbsp;<?= $type ?></td>
-			<td><b>Option:</b>&nbsp;<?= $balance ?></td>
+			<td><b>Option:</b>&nbsp;<?= $option ?></td>
 			<td><b>Service:</b>&nbsp;<?= $service ?></td>
 			</tr>
 </table>
