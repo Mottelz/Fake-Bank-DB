@@ -7,7 +7,7 @@ class account extends Controller
 		$this->checkIsLoggedIn();
 		$this->checkToggle();
 		$accountModel = $this->model('AccountModel');
-		$account = $accountModel->getAccountById($_POST['client_id']);
+		$account = $accountModel->getAccountById($_SESSION['login_id']);
 
 		if($_SESSION['login_type'] == 'Client')
 		{
