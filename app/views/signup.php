@@ -27,6 +27,10 @@
 			Last Name<br />
 			<input type="text" name="last_name" required />
 		</div>
+		<div>
+			Password<br />
+			<input type="password" name="password" required class="form-control" required style="width:auto;"/>
+		</div>
 
 		<br />
 
