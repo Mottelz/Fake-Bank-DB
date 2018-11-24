@@ -36,6 +36,8 @@
 					$type = $account->Account_Type;
 					//$balance = $account->Balance;
 
+					$accountModel = $this->model('AccountModel');
+					var_dump($accountModel->getAccountById($account_id));
 					
 					?>
 
