@@ -49,7 +49,7 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <button class="btn btn-primary" type="submit">Sign in</button>
+      <button class="btn btn-primary" name="login" type="submit">Sign in</button>
     </form>
 
   </div>
@@ -88,7 +88,6 @@
 
 <?php
   echo "THIS IS A TEST PAGE";
-  include "./app/core/Controller.php";
   $clientModel = $this->model('ClientModel');
   echo $clientModel->getClientById(1);
 ?>
