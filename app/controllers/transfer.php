@@ -22,7 +22,7 @@ class transfer extends Controller
 
 		$this->view('transfer/makeTransfer', ['accounts' => $accounts]);
 
-		$message = $_SESSION['login_type'];
+		$message = "Type: " + $_SESSION['login_type'] + " ID: " + $_SESSION['login_id'];
 			echo "<script type='text/javascript'>alert('$message');</script>";
 	}
 
@@ -58,10 +58,10 @@ class transfer extends Controller
 
 
 
-			$_SESSION["login_type"];
+			$_SESSION["login_type"];	//Employee or Client
 
 
-			$_SESSION["login_id"];
+			$_SESSION["login_id"];	//Client_Id or Employee_Id
 
 			
 
