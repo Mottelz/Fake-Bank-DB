@@ -15,7 +15,7 @@ class AccountModel extends Model
     }
 
 	public function updateAccountBalance($id, $amount){
-		return $this->getData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id)
+		return $this->getData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id);
 	}
 //	public $table = 'Account';
 //	public $accounts;
