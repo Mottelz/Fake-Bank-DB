@@ -49,7 +49,7 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <button class="btn btn-primary" name="login" type="submit">Sign in</button>
+      <button class="btn btn-primary" name="login" value="client" type="submit">Sign in</button>
     </form>
 
   </div>
@@ -76,7 +76,7 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" name="login" value="employee" type="submit">Sign in</button>
       </form>
 
     </div>
