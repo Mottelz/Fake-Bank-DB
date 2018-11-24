@@ -1,5 +1,5 @@
 <?php
-	$account = $data['account'];
+	$accounts = $data['account'];
 	$account_id = $account->Account_id;
 	$type = $account->Account_Type;
 	$balance = $account->Balance;
@@ -47,7 +47,6 @@
 			<th scope="col">To</th>
 			<th scope="col">From</th>
 			<th scope="col">Amount</th>
-			<th scope="col">By</th>
 		</tr>
 
 		<?php
