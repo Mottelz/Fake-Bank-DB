@@ -6,21 +6,21 @@ class account extends Controller
 	{
 		$this->checkIsLoggedIn();
 		$this->checkToggle();
+		$accountModel = $this->model('AccountModel');
+		$account = $accountModel->getAccountById($_POST['client_id']);
 
 		if($_SESSION['login_type'] == 'Client')
 		{
-			$accountModel = $this->model('AccountModel'); 
-			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR client_id and account_level)
+			
 		}
 		else //$_SESSION['login_type']) = 'Employee'
 		{
-			$accountModel = $this->model('AccountModel'); 
-			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR employee_id and account_level)
+	
 		}
 
 		$this->view('account/accountSummary', 
 			['acc_toggle' => $_SESSION['acc_toggle'],
-			 'accounts' => $accounts]);
+			 'accounts' => $account]);
 	}
 
 	public function new()
