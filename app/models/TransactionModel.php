@@ -18,6 +18,11 @@ class TransactionModel extends Model
     }
 
 	public function transferMoneyTo($accIdFrom, $accIdTo, $amount) {
+
+		//Test value
+		$message = $this->getData("SELECT Balance FROM Account WHERE Account_id=" . $accIdFrom);
+		echo "<script type='text/javascript'>alert('$message');</script>";
+
 		//Take out of account
 		$temp = $this->getData("SELECT Balance FROM Account WHERE Account_id=" . $accIdFrom) - $amount;
 		$this->getData("UPDATE Account SET Balance=" . $temp . " WHERE Account_id=" . $accIdFrom);
