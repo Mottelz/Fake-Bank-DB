@@ -3,16 +3,20 @@
 class AccountModel extends Model
 {
     public function getAccountsByUserId($id) {
-        return $this -> getData("SELECT * FROM Account WHERE client_id=" . $id);
+        return $this -> getData("SELECT * FROM Account WHERE Client_id=" . $id);
     }
 
     public function getAccountById($id) {
-        return $this -> getData("SELECT * FROM Account WHERE account_id=" . $id);
+        return $this -> getData("SELECT * FROM Account WHERE Account_id=" . $id);
     }
 
     public function getAllAccounts() {
         return $this->getData("SELECT * FROM Account");
     }
+
+	public function updateAccountBalance($id, $amount){
+		return $this->getData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id)
+	}
 //	public $table = 'Account';
 //	public $accounts;
 //
