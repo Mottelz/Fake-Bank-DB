@@ -57,8 +57,7 @@ class login extends Controller
 		$client = $clientModel->getClientById($_POST['client_id']);
 		if($_POST['login'] == 'client')
 		{
-			$message = $_POST['login'];
-				echo "<script type='text/javascript'>alert('$message');</script>";
+			var_dump($client = $clientModel->getClientById($_POST['client_id']));
 			if(($_POST['client_id'] == $client->Client_id)
 			and !($_POST['password'] == $client->password)){
 				$message = "Invalid credentials.";
