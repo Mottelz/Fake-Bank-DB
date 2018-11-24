@@ -37,7 +37,7 @@ class account extends Controller
 		
 		 //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
-			echo "hi";
+			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index];
 		}
 		$this->view('account/accountDetails', 
 			['account' => $account, 

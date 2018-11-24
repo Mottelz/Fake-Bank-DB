@@ -82,7 +82,7 @@
 
 	<div >
 		<h4>Annual Losses</h4>
-		<?= $annualLosses ?>
+		-<?= $annualLosses ?>
 	</div>
 
 	<br />
