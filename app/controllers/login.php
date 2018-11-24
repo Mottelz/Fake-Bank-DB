@@ -20,9 +20,8 @@ class login extends Controller
 		{
 			if($_POST['login'] == 'client')
 			{
-				echo "OK";
 				$clientModel = $this->model('ClientModel');
-				$client = $clientModel->getClientById($client->client_id); //Arbitrary client (NEED QUERY FOR client_id)
+				$client = $clientModel->clients[0]; //Arbitrary client (NEED QUERY FOR client_id)
 
 				$_SESSION['login_id'] = $client->client_id;
 				$_SESSION['login_type'] = 'Client';
