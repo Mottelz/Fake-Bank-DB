@@ -50,6 +50,17 @@ class transfer extends Controller
 		{
 			//NEED CREATE ACCOUNT QUERY
 
+
+
+
+			$_SESSION["login_type"];
+
+
+			$_SESSION["login_id"];
+
+			$message = $_SESSION["login_id"];
+			echo "<script type='text/javascript'>alert('$message');</script>";
+
 			header("Location:/transfer/history");
 		}
 	}
