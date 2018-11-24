@@ -37,13 +37,13 @@
             </thead>
             <tbody>
               <?php
-              var_dump($accounts);
+              //var_dump($accounts);
 				for($index = 0; $index < count($accounts); $index++)
 				{
 					$account = $accounts[$index];
-					$account_id = $account->account_id;
-					$type = $account->type;
-					$balance = $account->balance;
+					$account_id = $account->Account_id;
+					$type = $account->Type;
+					$balance = $account->Balance;
 			?>
                 <tr>
                   <th scope="row">
