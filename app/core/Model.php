@@ -28,7 +28,7 @@ class Model {
          $results = array();
          $this->connectDB();
          if($result = $this->connection->query($query)) {
-             while ($row = $result->fetch_assoc()) {
+             while ($row = $result->fetch_object()) {
                  $results[] = $row;
              }
              $result->close();
