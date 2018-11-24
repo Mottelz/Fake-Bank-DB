@@ -17,7 +17,7 @@ class account extends Controller
 		{
 	
 		}
-		var_dump($account);
+		//var_dump($account);
 		$this->view('account/accountSummary', 
 			['acc_toggle' => $_SESSION['acc_toggle'],
 			 'accounts' => $account]);

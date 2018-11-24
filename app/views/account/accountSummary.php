@@ -42,7 +42,7 @@
 				{
 					$account = $accounts[$index];
 					$account_id = $account->Account_id;
-					$type = $account->Type;
+					$type = $account->Account_Type;
 					$balance = $account->Balance;
 			?>
                 <tr>
