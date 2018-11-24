@@ -34,14 +34,14 @@
 					$account = $accounts[$index];
 					$account_id = $account->Account_id;
 					$type = $account->Account_Type;
-					$balance = $account->Balance;
+					//$balance = $account->Balance;
 
-					}
+					
 					?>
 
 					<option value="<?= $account_id ?>"><?= $type ?></option>
 
-
+					<? }?>
 			</select>
 		</div>
 
