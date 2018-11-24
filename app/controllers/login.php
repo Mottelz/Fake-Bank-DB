@@ -58,9 +58,7 @@ class login extends Controller
 
 		if($_POST['login'] == 'client')
 		{
-			if(!$client[0])
-				return false;
-			else if($_POST['password'] != $client[0]->password)
+			if($_POST['password'] != $client[0]->password)
 				return false;
 		}
 		else //$_POST['login'] == 'employee'
