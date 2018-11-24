@@ -55,10 +55,11 @@ class login extends Controller
 	{
 		$clientModel = $this->model('ClientModel');
 		$client = $clientModel->getClientById($_POST['client_id']);
-		var_dump($_POST['login']);
 
 		if($_POST['login'] == 'client')
 		{
+			var_dump($client->Client_id);
+			
 			if(($_POST['client_id'] == $client->Client_id)
 			and !($_POST['password'] == $client->password)){
 				$message = "Invalid credentials.";
