@@ -58,8 +58,7 @@ class login extends Controller
 
 		if($_POST['login'] == 'client')
 		{
-			$temp = $client->fetch_assoc();
-			var_dump($temp["Client_id"]);
+			var_dump($client["Client_id"]);
 
 			if(($_POST['client_id'] == $client->Client_id)
 			and !($_POST['password'] == $client->password)){
