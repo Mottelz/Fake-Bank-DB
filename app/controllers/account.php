@@ -27,10 +27,10 @@ class account extends Controller
 		$this->checkIsLoggedIn();
 
 		$accountModel = $this->model('AccountModel');
-		$account = $accountModel->getAccountById($_SESSION['login_id']);
+		$account = $accountModel->getAccountById($account_id);
 
 		$transactionModel = $this->model('TransactionModel');
-		$transactions = $transactionModel->getTransactionByAccountId($_SESSION['login_id']);
+		$transactions = $transactionModel->getTransactionByAccountId($account_id);
 
 		$annualProfits = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL PROFITS)
 		$annualLosses = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
