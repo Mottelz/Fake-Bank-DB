@@ -25,21 +25,11 @@ class login extends Controller
 
 				$_SESSION['login_id'] = $client->client_id;
 				$_SESSION['login_type'] = 'Client';
-
-				header("Location:/account");
-			}
-			else //$_POST['login'] == 'employee'
-			{
-				$employeeModel = $this->model('EmployeeModel');
-				$employee = $employeeModel->employees[0]; //Arbitrary employee (NEED QUERY FOR employee_id)
-
-				$_SESSION['login_id'] = $employee->employee_id;
-				$_SESSION['login_type'] = 'Employee';
 			}
 			
 			$_SESSION['acc_toggle'] = "Personal"; //Set to personal accounts as default
 
-			//header("Location:/account");
+			header("Location:/account");
 		}
 	}
 
@@ -59,14 +49,15 @@ class login extends Controller
 		if($_POST['login'] == 'client')
 		{
 			$clientModel = $this->model('ClientModel');
-			$client = $clientModel->getClientById($_POST['client_id']);
+			$client = $clientModel->getClientId($_POST['client_id']);
 
-			if(($_POST['client_id'] == $client[0]->Client_id)
-			and !($_POST['password'] == $client[0]->Password)){
-				$message = "Invalid credentials.";
-				echo "<script type='text/javascript'>alert('$message');</script>";	
+			if(!$client[0])
 				return false;
-			}
+			else if($_POST['password'] != $client[0]->Password)
+				return false;
+
+			$_SESSION['login_id'] = $client[0]->Password;
+			$_SESSION['login_type'] = 'Client';
 		}
 		else //$_POST['login'] == 'employee'
 		{
@@ -80,7 +71,6 @@ class login extends Controller
 
 			$_SESSION['login_id'] = $employee[0]->Employee_id;
 			$_SESSION['login_type'] = 'Employee';
-			var_dump($_SESSION['login_id']);
 		}
 
 		return true;
