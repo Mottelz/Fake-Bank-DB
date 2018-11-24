@@ -59,7 +59,7 @@ class login extends Controller
 		if($_POST['login'] == 'client')
 		{
 			if(($_POST['client_id'] == $client[0]->Client_id)
-			and !($_POST['password'] == $client[0]->password)){
+			and ($_POST['password'] == $client[0]->password)){
 				$message = "Invalid credentials.";
 				echo "<script type='text/javascript'>alert('$message');</script>";	
 				return false;
