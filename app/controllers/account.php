@@ -36,6 +36,7 @@ class account extends Controller
 		$annualProfits =0;
 		
 		 //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
+		 var_dump($transactionModel->getAccountLoss($account_id));
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
 			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index];
 		}
