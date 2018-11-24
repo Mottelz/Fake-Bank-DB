@@ -27,6 +27,9 @@ class transfer extends Controller
 
 		$message = $_SESSION['login_id'];
 		echo "<script type='text/javascript'>alert('$message');</script>";
+
+		$transactionModel = $this->model('TransactionModel');
+		$transactionModel->transferMoneyTo(1, 3, 1);
 	}
 
 	public function subHeader()

@@ -17,6 +17,18 @@ class TransactionModel extends Model
         return $this->getData("SELECT * FROM Transaction_Table WHERE From_accid=" . $id);
     }
 
+	public function transferMoneyTo($accIdFrom, $accIdTo, $amount) {
+		//Take out of account
+		$temp = $this->getData("SELECT Balance FROM Account WHERE Account_id=" . $accIdFrom) - $amount;
+		$this->getData("UPDATE Account SET Balance=" . $temp . " WHERE Account_id=" . $accIdFrom);
+
+		//Put in account
+		$temp = $this->getData("SELECT Balance FROM Account WHERE Account_id=" . $accIdFrom) + $amount;
+		$this->getData("UPDATE Account SET Balance=" . $temp . " WHERE Account_id=" . $accIdTo);
+
+		return "Transaction Complete!";
+	}
+
 	function __construct()
 	{
 		$this->transactions = json_decode($this->data)->Transaction;
