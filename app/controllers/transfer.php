@@ -7,6 +7,9 @@ class transfer extends Controller
 		$this->checkIsLoggedIn();
 		$this->checkMakeTransferData();
 
+		$message = $_SESSION["login_id"];
+			echo "<script type='text/javascript'>alert('$message');</script>";
+
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$accountModel = $this->model('AccountModel'); 
@@ -58,8 +61,7 @@ class transfer extends Controller
 
 			$_SESSION["login_id"];
 
-			$message = $_SESSION["login_id"];
-			echo "<script type='text/javascript'>alert('$message');</script>";
+			
 
 			header("Location:/transfer/history");
 		}
