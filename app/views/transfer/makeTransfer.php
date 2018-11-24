@@ -29,16 +29,19 @@
 			<select name="to" class="form-control" required style="width:auto;">
 				<option selected disabled value="">---Select Account---</option>
 				<?php
-					for($index = 0; $index < count($accounts); $index++)
-					{
-						$account = $accounts[$index];
-						$account_id = $account->account_id;
-						$type = $account->type;
-				?>
-						<option value="<?= $account_id ?>"><?= $type ?></option>
-				<?php
-					}
-				?>
+					for($index = 0; $index < count($accounts); $index++){
+
+					$account = $accounts[$index];
+					$account_id = $account->Account_id;
+					$type = $account->Account_Type;
+					//$balance = $account->Balance;
+
+					
+					?>
+
+					<option value="<?= $account_id ?>"><?= $type ?></option>
+
+					<? }?>
 			</select>
 		</div>
 
@@ -52,7 +55,7 @@
 					for($index = 0; $index < count($accounts); $index++)
 					{
 						$account = $accounts[$index];
-						$account_id = $account->account_id;
+						$account_id = $account->Account_id;
 						$type = $account->type;
 				?>
 						<option value="<?= $account_id ?>"><?= $type ?></option>

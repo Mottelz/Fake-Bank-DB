@@ -23,12 +23,15 @@ class transfer extends Controller
 		$this->view('transfer/makeTransfer', ['accounts' => $accounts]);
 
 
-
+		//Testing values
 		$message = "login_type: " . $_SESSION['login_type'] . " login_id: " . $_SESSION['login_id'];
 		echo "<script type='text/javascript'>alert('$message');</script>";
 
 		$transactionModel = $this->model('TransactionModel');
-		$transactionModel->transferMoneyTo(1, 3, 1);
+		$accountModel = $this->model('AccountModel');
+
+		$accountModel->updateAccountBalance(1, 49);
+
 	}
 
 	public function subHeader()

@@ -20,27 +20,7 @@ class TransactionModel extends Model
         return $this->getData(Select Amount from Transaction_Table where From_accid" . $id ". AND  (Trans_type = "Payment" or trans_type = "Transfer"));
     }
 	
-	public function transferMoneyTo($accIdFrom, $accIdTo, $amount) {
 
-		//Test value
-
-		$accountModel = $this->model('AccountModel');
-		$accFrom = $accountModel->getAccountById($accIdFrom);
-
-
-		$message = $accFrom[0]->Balance;
-		echo "<script type='text/javascript'>alert('$message');</script>";
-
-		//Take out of account
-		$temp = $this->getData("SELECT Balance FROM Account WHERE Account_id=" . $accIdFrom) - $amount;
-		$this->getData("UPDATE Account SET Balance=" . $temp . " WHERE Account_id=" . $accIdFrom);
-
-		//Put in account
-		$temp = $this->getData("SELECT Balance FROM Account WHERE Account_id=" . $accIdFrom) + $amount;
-		$this->getData("UPDATE Account SET Balance=" . $temp . " WHERE Account_id=" . $accIdTo);
-
-		return "Transaction Complete!";
-	}
 
 	function __construct()
 	{
