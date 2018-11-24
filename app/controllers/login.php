@@ -17,16 +17,7 @@ class login extends Controller
 	public function checkLoginData()
 	{
 		if(isset($_POST['login']) && $this->validateLoginData())
-		{
-			if($_POST['login'] == 'client')
-			{
-				$clientModel = $this->model('ClientModel');
-				$client = $clientModel->clients[0]; //Arbitrary client (NEED QUERY FOR client_id)
-
-				$_SESSION['login_id'] = $client->client_id;
-				$_SESSION['login_type'] = 'Client';
-			}
-			
+		{			
 			$_SESSION['acc_toggle'] = "Personal"; //Set to personal accounts as default
 
 			header("Location:/account");
