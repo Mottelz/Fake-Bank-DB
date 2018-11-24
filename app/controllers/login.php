@@ -56,7 +56,7 @@ class login extends Controller
 			else if($_POST['password'] != $client[0]->Password)
 				return false;
 
-			$_SESSION['login_id'] = $client[0]->Password;
+			$_SESSION['login_id'] = $client[0]->Client_id;
 			$_SESSION['login_type'] = 'Client';
 		}
 		else //$_POST['login'] == 'employee'
