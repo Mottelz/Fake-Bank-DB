@@ -23,7 +23,7 @@ class login extends Controller
 			// 	$clientModel = $this->model('ClientModel');
 			// /	$client = $clientModel->getClientById($client->client_id); //Arbitrary client (NEED QUERY FOR client_id)
 
-				$_SESSION['login_id'] = $client->client_id;
+				//$_SESSION['login_id'] = $client->client_id;
 				$_SESSION['login_type'] = 'Client';
 			}
 			else //$_POST['login'] == 'employee'
@@ -31,7 +31,7 @@ class login extends Controller
 				$employeeModel = $this->model('EmployeeModel');
 				$employee = $employeeModel->employees[0]; //Arbitrary employee (NEED QUERY FOR employee_id)
 
-				$_SESSION['login_id'] = $employee->employee_id;
+				//$_SESSION['login_id'] = $employee->employee_id;
 				$_SESSION['login_type'] = 'Employee';
 			}
 			
