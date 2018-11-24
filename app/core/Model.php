@@ -3,8 +3,8 @@
 class Model {
     public $connection;
     public $db_host = "udc353.encs.concordia.ca";
-    public $db_user = "t_odrigu";
-    public $db_pword = "";
+    public $db_user = "udc353_2";
+    public $db_pword = "danger";
     public $db_name = "udc353_2";
 
      //connect to the server
