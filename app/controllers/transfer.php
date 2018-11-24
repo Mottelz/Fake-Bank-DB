@@ -23,7 +23,7 @@ class transfer extends Controller
 		$this->view('transfer/makeTransfer', ['accounts' => $accounts]);
 
 
-
+		//Testing values
 		$message = "login_type: " . $_SESSION['login_type'] . " login_id: " . $_SESSION['login_id'];
 		echo "<script type='text/javascript'>alert('$message');</script>";
 
