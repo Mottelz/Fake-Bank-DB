@@ -25,6 +25,8 @@ class login extends Controller
 
 				$_SESSION['login_id'] = $client->client_id;
 				$_SESSION['login_type'] = 'Client';
+
+				header("Location:/account");
 			}
 			else //$_POST['login'] == 'employee'
 			{
@@ -37,7 +39,7 @@ class login extends Controller
 			
 			$_SESSION['acc_toggle'] = "Personal"; //Set to personal accounts as default
 
-			header("Location:/account");
+			//header("Location:/account");
 		}
 	}
 
