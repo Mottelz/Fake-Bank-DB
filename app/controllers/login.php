@@ -8,6 +8,10 @@ class login extends Controller
 		$this->checkLoginData();
 
 		$this->view('login');
+
+ 	 	echo "===TEST OUTPUT===";
+  		$clientModel = $this->model('ClientModel');
+  		var_dump($clientModel->getClientById(1));
 	}
 
 	public function checkLoginData()

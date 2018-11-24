@@ -86,13 +86,6 @@
 </div>
 </div>
 
-<?php
-  echo "THIS IS A TEST PAGE";
-  $clientModel = $this->model('ClientModel');
-  echo $clientModel->getClientById(1);
-?>
-
-
 </body>
 
 </html>
