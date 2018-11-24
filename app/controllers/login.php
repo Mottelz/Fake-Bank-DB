@@ -20,8 +20,8 @@ class login extends Controller
 		{
 			if($_POST['login'] == 'client')
 			{
-			// 	$clientModel = $this->model('ClientModel');
-			// /	$client = $clientModel->getClientById($client->client_id); //Arbitrary client (NEED QUERY FOR client_id)
+				$clientModel = $this->model('ClientModel');
+				$client = $clientModel->getClientById($client->client_id); //Arbitrary client (NEED QUERY FOR client_id)
 
 				$_SESSION['login_id'] = $client->client_id;
 				$_SESSION['login_type'] = 'Client';
@@ -58,10 +58,12 @@ class login extends Controller
 
 		if($_POST['login'] == 'client')
 		{
-			// if(!$client[0])
-			// 	return false;
-			// else if($_POST['password'] != $client[0]->password)
-			// 	return false;
+			if(($_POST['client_id'] == $client[0]->Client_id)
+			and !($_POST['password'] == $client[0]->password)){
+				$message = "Invalid credentials.";
+				echo "<script type='text/javascript'>alert('$message');</script>";	
+				return false;
+			}
 		}
 		else //$_POST['login'] == 'employee'
 		{
