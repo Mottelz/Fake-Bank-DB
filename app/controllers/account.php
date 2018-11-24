@@ -30,7 +30,7 @@ class account extends Controller
 		$account = $accountModel->getAccountById($_SESSION['login_id']);
 
 		$transactionModel = $this->model('TransactionModel');
-		$transactions = $transactionModel->getTransactionByAccountId($_SESSION['login_id'])
+		$transactions = $transactionModel->getTransactionByAccountId($_SESSION['login_id']);
 
 		$annualProfits = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL PROFITS)
 		$annualLosses = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
