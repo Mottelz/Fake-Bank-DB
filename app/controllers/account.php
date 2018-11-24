@@ -9,15 +9,6 @@ class account extends Controller
 		$accountModel = $this->model('AccountModel');
 		$account = $accountModel->getAccountById($_SESSION['login_id']);
 
-		if($_SESSION['login_type'] == 'Client')
-		{
-			
-		}
-		else //$_SESSION['login_type']) = 'Employee'
-		{
-	
-		}
-		//var_dump($account);
 		$this->view('account/accountSummary', 
 			['acc_toggle' => $_SESSION['acc_toggle'],
 			 'accounts' => $account]);
@@ -36,11 +27,11 @@ class account extends Controller
 		$this->checkIsLoggedIn();
 
 		$accountModel = $this->model('AccountModel');
-		$account = $accountModel->accounts[0]; //Arbitrary account (NEED QUERY FOR account_id)
-
+		$account = $accountModel->getAccountById($account_id);
+		var_dump($account);
 		$transactionModel = $this->model('TransactionModel');
-		$transactions = $transactionModel->transactions; //All transactions (NEED QUERY FOR account_id)
-
+		$transactions = $transactionModel->getTransactionByAccountId($account_id);
+		var_dump($transactions);
 		$annualProfits = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL PROFITS)
 		$annualLosses = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
 
