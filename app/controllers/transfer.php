@@ -23,7 +23,10 @@ class transfer extends Controller
 		$this->view('transfer/makeTransfer', ['accounts' => $accounts]);
 
 		$message = $_SESSION['login_type'];
-			echo "<script type='text/javascript'>alert('$message');</script>";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+
+		$message = $_SESSION['login_id'];
+		echo "<script type='text/javascript'>alert('$message');</script>";
 	}
 
 	public function subHeader()
@@ -58,10 +61,10 @@ class transfer extends Controller
 
 
 
-			$_SESSION["login_type"];
+			$_SESSION["login_type"];	//Employee or Client
 
 
-			$_SESSION["login_id"];
+			$_SESSION["login_id"];	//Client_Id or Employee_Id
 
 			
 
