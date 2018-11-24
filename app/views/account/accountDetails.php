@@ -1,10 +1,10 @@
 <?php
 	$accounts = $data['account'];
-	$account_id = $account->Account_id;
-	$type = $account->Account_Type;
-	$balance = $account->Balance;
-	$option = $account->Account_Option;
-	$service = $account->Account_Service;
+	$account_id = $accounts->Account_id;
+	$type = $accounts->Account_Type;
+	$balance = $accounts->Balance;
+	$option = $accounts->Account_Option;
+	$service = $accounts->Account_Service;
 
 	$transactions = $data['transactions'];
 
