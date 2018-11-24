@@ -20,7 +20,12 @@ class TransactionModel extends Model
 	public function transferMoneyTo($accIdFrom, $accIdTo, $amount) {
 
 		//Test value
-		$message = $this->getData("SELECT Balance FROM Account WHERE Account_id=" . $accIdFrom);
+
+		$accountModel = $this->model('AccountModel');
+		$accFrom = $accountModel->getAccountById($_POST[$accIdFrom]);
+
+
+		$message = $accFrom[0]->Balance;
 		echo "<script type='text/javascript'>alert('$message');</script>";
 
 		//Take out of account
