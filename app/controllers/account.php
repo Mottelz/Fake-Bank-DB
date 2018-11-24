@@ -5,7 +5,6 @@ class account extends Controller
 	public function index()
 	{
 		$this->checkIsLoggedIn();
-
 		$this->checkToggle();
 
 		if($_SESSION['login_type'] == 'Client')
@@ -26,6 +25,7 @@ class account extends Controller
 
 	public function new()
 	{
+		$this->checkIsLoggedIn();
 		$this->checkOpenAccountData();
 
 		$this->view('account/openAccount');
@@ -33,6 +33,8 @@ class account extends Controller
 
 	public function details($account_id)
 	{
+		$this->checkIsLoggedIn();
+
 		$accountModel = $this->model('AccountModel');
 		$account = $accountModel->accounts[0]; //Arbitrary account (NEED QUERY FOR account_id)
 

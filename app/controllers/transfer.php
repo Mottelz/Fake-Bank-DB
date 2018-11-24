@@ -5,7 +5,6 @@ class transfer extends Controller
 	public function index()
 	{
 		$this->checkIsLoggedIn();
-		
 		$this->checkMakeTransferData();
 
 		if($_SESSION['login_type'] == 'Client')
@@ -29,6 +28,8 @@ class transfer extends Controller
 
 	public function history()
 	{
+		$this->checkIsLoggedIn();
+		
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$transactionModel = $this->model('TransactionModel');
@@ -55,7 +56,8 @@ class transfer extends Controller
 
 	public function validateMakeTransferData()
 	{
-		//INSERT VALIDATION (AS NEEDED)
+		if($_POST['amount'] <= 0)
+			return false;
 		
 		return true;
 	}

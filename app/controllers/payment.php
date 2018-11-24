@@ -5,7 +5,6 @@ class payment extends Controller
 	public function index()
 	{
 		$this->checkIsLoggedIn();
-
 		$this->checkMakePaymentData();
 
 		if($_SESSION['login_type'] == 'Client')
@@ -29,6 +28,8 @@ class payment extends Controller
 
 	public function futurePayments()
 	{
+		$this->checkIsLoggedIn();
+
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$futurePaymentModel = $this->model('FuturePaymentModel');
@@ -45,6 +46,8 @@ class payment extends Controller
 
 	public function setupPayment()
 	{
+		$this->checkIsLoggedIn();
+
 		$this->checkSetupFuturePaymentsData();
 
 		if($_SESSION['login_type'] == 'Client')
@@ -63,6 +66,8 @@ class payment extends Controller
 
 	public function editPayment($payment_id)
 	{
+		$this->checkIsLoggedIn();
+
 		$this->checkEditFuturePaymentsData($payment_id);
 
 		$futurePaymentModel = $this->model('FuturePaymentModel');
@@ -87,6 +92,8 @@ class payment extends Controller
 
 	public function history()
 	{
+		$this->checkIsLoggedIn();
+		
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$transactionModel = $this->model('TransactionModel');
@@ -133,21 +140,44 @@ class payment extends Controller
 
 	public function validateMakePaymentData()
 	{
-		//INSERT VALIDATION (AS NEEDED)
+		if($_POST['amount'] <= 0)
+			return false;
 
 		return true;
 	}
 
 	public function validateSetupFuturePaymentsData()
 	{
-		//INSERT VALIDATION (AS NEEDED)
+		$now = date('Y/m/d');
+		$start_date = date('Y/m/d', strtotime($_POST['start_date']));
+		$end_date = date('Y/m/d', strtotime($_POST['end_date']));
+		$daysInBetween = (strtotime($end_date) - strtotime($start_date)) / (60 * 60 * 24);
+
+		if($_POST['amount'] <= 0)
+			return false;
+		else if($_POST['frequency'] <= 0)
+			return false;
+		else if($start_date < $now)
+			return false;
+		else if($end_date < $start_date)
+			return false;
+		else if($_POST['frequency'] > $daysInBetween)
+			return false;
 
 		return true;
 	}
 
 	public function validateEditFuturePaymentsData()
 	{
-		//INSERT VALIDATION (AS NEEDED)
+		$now = date('Y/m/d');
+		$end_date = date('Y/m/d', strtotime($_POST['end_date']));
+
+		if($_POST['amount'] <= 0)
+			return false;
+		else if($_POST['frequency'] <= 0)
+			return false;
+		else if($end_date < $now)
+			return false;
 
 		return true;
 	}
