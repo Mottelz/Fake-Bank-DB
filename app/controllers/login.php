@@ -21,7 +21,7 @@ class login extends Controller
 			if($_POST['login'] == 'client')
 			{
 				$clientModel = $this->model('ClientModel');
-			/	$client = $clientModel->getClientById($client->client_id); //Arbitrary client (NEED QUERY FOR client_id)
+				$client = $clientModel->getClientById($client->client_id); //Arbitrary client (NEED QUERY FOR client_id)
 
 				$_SESSION['login_id'] = $client->client_id;
 				$_SESSION['login_type'] = 'Client';
@@ -53,11 +53,12 @@ class login extends Controller
 	
 	public function validateLoginData()
 	{
-		$clientModel = $this->model('ClientModel');
-		$client = $clientModel->getClientById($_POST['client_id']);
 
 		if($_POST['login'] == 'client')
 		{
+			$clientModel = $this->model('ClientModel');
+			$client = $clientModel->getClientById($_POST['client_id']);
+
 			// if(!$client[0])
 			// 	return false;
 			// else if($_POST['password'] != $client[0]->password)
@@ -65,7 +66,8 @@ class login extends Controller
 		}
 		else //$_POST['login'] == 'employee'
 		{
-			//INSERT VALIDATION (AS NEEDED)
+			//$employeeModel = $this->model('ClientModel');
+			//$client = $clientModel->getClientById($_POST['client_id']);
 		}
 
 		return true;
