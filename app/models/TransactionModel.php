@@ -22,7 +22,7 @@ class TransactionModel extends Model
 		//Test value
 
 		$accountModel = $this->model('AccountModel');
-		$accFrom = $accountModel->getAccountById($_POST[$accIdFrom]);
+		$accFrom = $accountModel->getAccountById($accIdFrom);
 
 
 		$message = $accFrom[0]->Balance;
