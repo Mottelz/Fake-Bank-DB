@@ -29,10 +29,10 @@ class account extends Controller
 
 		$accountModel = $this->model('AccountModel');
 		$account = $accountModel->getAccountById($account_id);
-		var_dump($account);
+		//var_dump($account);
 		$transactionModel = $this->model('TransactionModel');
 		$transactions = $transactionModel->getTransactionByAccountId($account_id);
-		var_dump($transactions);
+		//var_dump($transactions);
 		$annualProfits = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL PROFITS)
 		$annualLosses = 0; //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
 
