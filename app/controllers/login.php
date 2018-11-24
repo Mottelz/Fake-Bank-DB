@@ -55,7 +55,8 @@ class login extends Controller
 	{
 		$clientModel = $this->model('ClientModel');
 		$client = $clientModel->getClientById($_POST['client_id']);
-		var_dump($client = $clientModel->getClientById($_POST['client_id']));
+		var_dump($_POST['login']);
+
 		if($_POST['login'] == 'client')
 		{
 			if(($_POST['client_id'] == $client->Client_id)
