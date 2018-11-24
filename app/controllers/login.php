@@ -73,6 +73,8 @@ class login extends Controller
 
 			if(!$employee[0])
 				return false;
+			else if($_POST['password'] != $employee[0]->Password)
+				return false;
 		}
 
 		return true;
