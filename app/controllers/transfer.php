@@ -7,6 +7,8 @@ class transfer extends Controller
 		$this->checkIsLoggedIn();
 		$this->checkMakeTransferData();
 
+		
+
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$accountModel = $this->model('AccountModel'); 
@@ -19,6 +21,9 @@ class transfer extends Controller
 		}
 
 		$this->view('transfer/makeTransfer', ['accounts' => $accounts]);
+
+		$message = $_SESSION['login_type'];
+			echo "<script type='text/javascript'>alert('$message');</script>";
 	}
 
 	public function subHeader()
@@ -49,6 +54,16 @@ class transfer extends Controller
 		if(isset($_POST['maketransfer']) && $this->validateMakeTransferData())
 		{
 			//NEED CREATE ACCOUNT QUERY
+
+
+
+
+			$_SESSION["login_type"];
+
+
+			$_SESSION["login_id"];
+
+			
 
 			header("Location:/transfer/history");
 		}
