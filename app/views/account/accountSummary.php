@@ -61,11 +61,6 @@
 			?>
 		</table>
 
-
-	<form method="POST" action="/account">
-		<button type="submit" name="toggle" class="btn btn-outline-dark" value="<?= $toggleTo ?>">Switch to <?= $toggleTo ?> Accounts</button>
-
-	</form>
 	<!-- copy divs -->
 
 		</div>

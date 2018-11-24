@@ -1,10 +1,10 @@
 <?php
 	$account = $data['account'];
-	$account_id = $account->account_id;
-	$type = $account->type;
-	$balance = $account->balance;
-	$option = $account->option;
-	$service = $account->service;
+	$account_id = $account->Account_id;
+	$type = $account->Account_Type;
+	$balance = $account->Balance;
+	$option = $account->Account_Option;
+	$service = $account->Account_Service;
 
 	$transactions = $data['transactions'];
 
@@ -54,12 +54,11 @@
 			for($index = 0; $index < count($transactions); $index++)
 			{
 				$transaction = $transactions[$index];
-				$trans_type = $transaction->trans_type;
-				$to = $transaction->to;
-				$from = $transaction->from;
-				$amount = $transaction->amount;
-				$by = $transaction->by;
-				$date = $transaction->date;
+				$trans_type = $transaction->Trans_type;
+				$to = $transaction->To_accid;
+				$from = $transaction->From_accid;
+				$amount = $transaction->Amount;
+				$date = $transaction->Trans_date;
 		?>
 				<tr>
 					<td><?= $date ?></td>
@@ -67,7 +66,6 @@
 					<td><?= $to ?></td>
 					<td><?= $from ?></td>
 					<td><?= $amount ?></td>
-					<td><?= $by ?></td>
 				</tr>
 		<?php
 			}
