@@ -68,7 +68,7 @@ class login extends Controller
 		}
 		else //$_POST['login'] == 'employee'
 		{
-			$employeeModel; = $this->model('EmployeeModel');
+			$employeeModel = $this->model('EmployeeModel');
 			$employee = $employeeModel->getEmployeeById($_POST['employee_id']);
 
 			if(!$employee[0])
