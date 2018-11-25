@@ -8,7 +8,7 @@ class signup extends Controller
 
 		$branchModel = $this->model('BranchModel');
 		$branches = $branchModel->getAllBranches();
-var_dump(date('d-m-Y'));
+
 		$this->view('signup', ['branches' => $branches]);
 	}
 
@@ -28,7 +28,7 @@ var_dump(date('d-m-Y'));
 			$postalCode = $_POST['postal_code'];
 			$phone = $_POST['phone'];
 			$email = $_POST['email'];
-
+var_dump($birthDate);
 			$clientModel = $this->model('ClientModel');
 			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, date('d-m-Y'), $streetAddress, $password, $department, $email, $phone);
 
