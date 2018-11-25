@@ -16,7 +16,7 @@ class signup extends Controller
 	{
 		if(isset($_POST['signup']) && $this->validateSignupData())
 		{
-			$clientID = '10101010';
+			$clientID = 10101010;
 			$firstName = $_POST['first_name'];
 			$lastName = $_POST['last_name'];
 			$birthDate = $_POST['birth_date'];
