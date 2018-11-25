@@ -38,7 +38,7 @@ class account extends Controller
 
 		 //var_dump($transactionModel->getAccountLoss($account_id));
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
-			$annualLosses += json_decode($transactionModel->getAccountLoss($account_id)[$index], true);
+			$annualLosses += (array) $transactionModel->getAccountLoss($account_id)[$index];
 		}
 		$this->view('account/accountDetails',
 			['account' => $account,
