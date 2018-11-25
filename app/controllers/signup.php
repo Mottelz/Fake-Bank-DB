@@ -3,7 +3,7 @@
 class signup extends Controller 
 {
 	public function index() 
-	{	
+	{	var_dump(($this->model('ClientModel'))->getNextClientId());
 		$this->checkSignupData();
 
 		$branchModel = $this->model('BranchModel');
