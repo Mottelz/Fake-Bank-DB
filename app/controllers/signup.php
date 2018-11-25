@@ -30,7 +30,7 @@ class signup extends Controller
 			$email = $_POST['email'];
 
 			$clientModel = $this->model('ClientModel');
-			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $password, $department, $email, $phone);
+			var_dump($clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $password, $department, $email, $phone));
 
 			//header("Location:/login");
 		}
