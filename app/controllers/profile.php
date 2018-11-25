@@ -21,7 +21,7 @@ class profile extends Controller
 		$address = $addressModel->getAddressByStreet($user->street_address);
 
 		$countryModel = $this->model('CountryModel');
-		$country = $countryModel->getCityByCity($address->city); //Arbitrary country (NEED QUERY FOR city)
+		$country = $countryModel->getCityByCity($address->city);
 
 		$this->view('profile/contactInformation', 
 			['login_type' => $_SESSION['login_type'],
@@ -55,10 +55,14 @@ class profile extends Controller
 		$addressModel = $this->model('AddressModel');
         $address = $addressModel->getAddressByStreet($user->street_address);
 
+        $countryModel = $this->model('CountryModel');
+        $country = $countryModel->getCityByCity($address->city);
+
 		$this->view('profile/editContactInformation',
-			['login_type' => $_SESSION['login_type'],
-			 'user' => $user,
-			 'address' => $address]);
+            ['login_type' => $_SESSION['login_type'],
+                'user' => $user,
+                'address' => $address,
+                'country' => $country]);
 	}
 
 	public function checkEditContactInformationData()
@@ -68,10 +72,13 @@ class profile extends Controller
 			if($_SESSION['login_type'] == 'Client')
 			{
 				//NEED EDIT CLIENT QUERY
+                $clientModel = $this->model('ClientModel');
+                $clientModel->updateClientById($_POST['id'], $_POST['branch_id'], $_POST['first_name'], $_POST['last_name'], $_POST['street_address'], $_POST['password'], $_POST['department'], $_POST['email'], $_POST['phone']);
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{
-				//NEED EDIT EMPLOYEE QUERY
+                $employeeModel = $this->model('EmployeeModel');
+                $employeeModel->updateEmployeeById($_POST['id'], $_POST['branch_id'], $_POST['title'], $_POST['first_name'], $_POST['last_name'], $_POST['salary'], $_POST['street_address'], $_POST['password'], $_POST['department'], $_POST['email'], $_POST['phone'], $_POST['start_date'], $_POST['active']);
 			}
 
 			header("Location:/profile");
