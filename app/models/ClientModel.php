@@ -29,7 +29,7 @@ class ClientModel extends Model
             ", '" . $password . "'" .
             ", '" . $department . "'" .
             ", '" . $email . "'" .
-            ", '" . $phone . ")");
+            ", '" . $phone . "')");
     }
 
     public function updateClientById($id, $branch_id, $first_name, $last_name, $street_address, $password, $department, $email, $phone) {
