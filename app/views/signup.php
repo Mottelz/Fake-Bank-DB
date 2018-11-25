@@ -27,6 +27,16 @@
 			Last Name<br />
 			<input type="text" name="last_name" required />
 		</div>
+
+		<br />
+
+		<div>
+			Birth Date<br />
+			<input type="date" name="birth_date" required />
+		</div>
+
+		<br />
+
 		<div>
 			Password<br />
 			<input type="password" name="password" required class="form-control" required style="width:auto;"/>

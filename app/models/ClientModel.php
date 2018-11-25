@@ -17,6 +17,21 @@ class ClientModel extends Model
         return $this->getData("SELECT * FROM Client WHERE Branch_id=" . $id);
     }
 
+    public function insertClient($id, $branch_id, $first_name, $last_name, $birth_date, $join_date, $street_address, $password, $department, $email, $phone) {
+    	return $this->getData("INSERT INTO Client VALUES (" .
+    		"Client_id = '" . $id .
+    		"', Branch_id = '" . $branch_id .
+    		"', First_name = '" . $first_name .
+            "', Last_name = '" . $last_name .
+            "', Birth_date = '" . $birth_date .
+            "', Join_date = '" . $join_date .
+            "', Street_address = '" . $street_address .
+            "', Password = '" . $password .
+            "', Department = '" . $department .
+            "', Email = '" . $email .
+            "', Phone = '" . $phone) . ")";
+    }
+
     public function updateClientById($id, $branch_id, $first_name, $last_name, $street_address, $password, $department, $email, $phone) {
         return $this->getData("UPDATE Client SET Branch_id='".$branch_id.
             "', First_name='".$first_name.
