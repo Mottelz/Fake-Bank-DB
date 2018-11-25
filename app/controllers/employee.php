@@ -74,7 +74,7 @@ class employee extends Controller
 		$scheduleModel = $this->model('ScheduleModel');
 		$schedule = $scheduleModel->getScheduleById($sched_id)[0];
 		
-		$this->checkEditDayData($schedule->employee_id, $sched_id);
+		$this->checkEditDayData($schedule->Employee_id, $sched_id);
 
 		$this->view('employee/editDay', ['schedule' => $schedule]);
 	}
