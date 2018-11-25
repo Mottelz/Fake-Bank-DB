@@ -10,15 +10,15 @@ class CountryModel extends Model
     }
 
     public function getCityByProvince($province) {
-        return $this->getData("SELECT * FROM Country WHERE province=" . $province);
+        return $this->getData("SELECT * FROM Country WHERE province='".$province."'");
     }
 
     public function getCityByCountry($country) {
-        return $this->getData("SELECT * FROM Country WHERE country=" . $country);
+        return $this->getData("SELECT * FROM Country WHERE country='".$country."'");
     }
 
     public function getCityByCity($city) {
-        return $this->getData("SELECT * FROM Country WHERE city=" . $city);
+        return $this->getData("SELECT * FROM Country WHERE city='".$city."'");
     }
 
 	private $data = 
