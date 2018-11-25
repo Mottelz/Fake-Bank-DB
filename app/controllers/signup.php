@@ -32,13 +32,13 @@ class signup extends Controller
 			$phone = $_POST['phone'];
 			$email = $_POST['email'];
 
-			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $password, $department, $email, $phone);
-
 			$addressModel = $this->model('AddressModel');
 			$addresses = $addressModel->getAddressByStreet($streetAddress);
 
 			if(!$addresses)
 				$addressModel->insertAddress($streetAddress, $postalCode, $city);
+
+			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $password, $department, $email, $phone);
 
 			header("Location:/login");
 		}
