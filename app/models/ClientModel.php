@@ -18,7 +18,7 @@ class ClientModel extends Model
     }
 
     public function getNextClientId() {
-    	return $this->getData("SELECT Client_id FROM Client ORDER BY Client_id DESC")[0];
+    	return $this->getData("SELECT Client_id FROM Client ORDER BY Client_id DESC")[0]['Client_id'] + 1;
     }
 
     public function insertClient($id, $branch_id, $first_name, $last_name, $birth_date, $join_date, $street_address, $password, $department, $email, $phone) {
