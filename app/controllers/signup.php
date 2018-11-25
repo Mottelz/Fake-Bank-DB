@@ -28,6 +28,8 @@ class signup extends Controller
 			$department = null;
 			$streetAddress = $_POST['street_address'];
 			$city = $_POST['city'];
+			$province = $_POST['province'];
+			$country = $_POST['country'];
 			$postalCode = $_POST['postal_code'];
 			$phone = $_POST['phone'];
 			$email = $_POST['email'];
