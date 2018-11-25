@@ -78,6 +78,13 @@
 		<br />
 
 		<div>
+			Province<br />
+			<input type="text" name="province" required class="form-control" style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			Country<br />
 			<input type="text" name="country" required class="form-control" style="width:auto;"/>
 		</div>
@@ -87,13 +94,6 @@
 		<div>
 			Postal Code<br />
 			<input type="text" name="postal_code" required class="form-control" style="width:auto;"/>
-		</div>
-
-		<br />
-
-		<div>
-			Province<br />
-			<input type="text" name="province" required class="form-control" style="width:auto;"/>
 		</div>
 
 		<br />
