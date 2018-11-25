@@ -35,11 +35,10 @@ class signup extends Controller
 			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $password, $department, $email, $phone);
 
 			$addressModel = $this->model('AddressModel');
-			$address = $addressModel->getAddressByStreet($streetAddress);
+			$addresses = $addressModel->getAddressByStreet($streetAddress);
 
-			var_dump($address);
-			if(!$address)
-				var_dump("!address");
+			if(!$addresses)
+				$addressModel->insertAddress($streetAddress, $postalCode, $city);
 
 			header("Location:/login");
 		}
