@@ -32,12 +32,21 @@ class signup extends Controller
 			$phone = $_POST['phone'];
 			$email = $_POST['email'];
 
+			$countryModel = $this->model('CountryModel');
+			$contries = $countryModel->getCountryByCity($city);
+
+			// Insert new country entry if there is no country for the given city
+			if(!$countries)
+				$countryModel->insertCountry($city, $province, $country);
+
 			$addressModel = $this->model('AddressModel');
 			$addresses = $addressModel->getAddressByStreet($streetAddress);
 
+			// Insert new address entry if there is no address for the given street address
 			if(!$addresses)
 				$addressModel->insertAddress($streetAddress, $postalCode, $city);
 
+			// Insert new client
 			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $password, $department, $email, $phone);
 
 			header("Location:/login");

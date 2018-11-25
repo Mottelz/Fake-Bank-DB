@@ -21,6 +21,13 @@ class CountryModel extends Model
         return $this->getData("SELECT * FROM Country WHERE city='".$city."'");
     }
 
+    public function insertCountry($city, $province, $country) {
+        $this->insertData("INSERT INTO Country (City, Province, Country) VALUES (" . 
+            "'" . $city . "'" .
+            ", '" . $province . "'" .
+            ", '" . $country . "')");
+    }
+
 //	private $data =
 //	'{
 //		"Country" : [{
