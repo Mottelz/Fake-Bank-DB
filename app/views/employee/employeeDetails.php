@@ -77,13 +77,14 @@
 			for($index = 0; $index < count($schedules); $index++)
 			{
 				$schedule = $schedules[$index];
+				$sched_id = $schedule->Sched_id;
 				$sched_type = $schedule->Sched_type;
 				$date = $schedule->Sched_date;
 		?>
 				<tr>
 					<td><?= $sched_type ?></td>
 					<td><?= $date ?></td>
-					<td><a href="/employee/editDay/<?= $employee_id ?>">Edit</a></td>
+					<td><a href="/employee/editDay/<?= $sched_id ?>">Edit</a></td>
 				</tr>
 		<?php
 			}
