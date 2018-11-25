@@ -18,7 +18,7 @@ class AddressModel extends Model
     }
 
     public function getAddressByStreet($street) {
-        return $this->getData("SELECT * FROM Address_Table WHERE Street_address='" . $street ."'");
+        return $this->getData("SELECT * FROM Address_Table WHERE Street_address='".$street."'");
     }
 
 //	private $data =

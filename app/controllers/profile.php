@@ -15,18 +15,18 @@ class profile extends Controller
 		else //$_SESSION['Employee'] == 'Employee'
 		{
 			$employeeModel = $this->model('EmployeeModel');
-			$user = $employeeModel->getEmployeeById($_SESSION['login_id']);
+			$user = $employeeModel->getEmployeeById($_SESSION['login_id'])[0];
 		}
 
 		$addressModel = $this->model('AddressModel');
-		$address = $addressModel->getAddressByStreet($user->Street_address);
+		$address = $addressModel->getAddressByStreet($user->Street_address)[0];
 
 		$countryModel = $this->model('CountryModel');
-		$country = $countryModel->getCityByCity($address->City);
+		$country = $countryModel->getCityByCity($address->City)[0];
 
 		$this->view('profile/contactInformation', 
 			['login_type' => $_SESSION['login_type'],
-			 'user' => $user[0],
+			 'user' => $user,
 		     'address' => $address,
 		 	 'country' => $country]);
 	}
