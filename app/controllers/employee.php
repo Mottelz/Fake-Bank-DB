@@ -104,7 +104,7 @@ class employee extends Controller
 	{
 		if(isset($_POST['addtoschedule']) && $this->validateAddToScheduleData())
 		{
-			$scheduleModel - $this->model('ScheduleModel');
+			$scheduleModel = $this->model('ScheduleModel');
 
 			$schedID = 101010;
 			$schedType = $_POST['sched_type'];
