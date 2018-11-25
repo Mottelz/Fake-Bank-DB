@@ -27,8 +27,8 @@ class profile extends Controller
 		$this->view('profile/contactInformation', 
 			['login_type' => $_SESSION['login_type'],
 			 'user' => $user[0],
-		     'address' => $address[0],
-		 	 'country' => $country[0]]);
+		     'address' => $address,
+		 	 'country' => $country]);
 	}
 
 	public function changePassword()
