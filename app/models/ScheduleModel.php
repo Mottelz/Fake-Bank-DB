@@ -18,7 +18,7 @@ class ScheduleModel extends Model
     }
 
     public function insertSchedule($id, $employee_id, $sched_type, $sched_date) {
-    	$this->insertData("INSERT INTO Schedule (Sched_id, Employee_id, Sched_type, Sched_date VALUES (" .
+    	$this->insertData("INSERT INTO Schedule (Sched_id, Employee_id, Sched_type, Sched_date) VALUES (" .
             $id .
             ", " . $employee_id .
             ", '" . $sched_type . "'" .
