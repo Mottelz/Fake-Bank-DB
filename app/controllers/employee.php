@@ -24,7 +24,7 @@ class employee extends Controller
 		$country = $countryModel->getCityByCity($address->City)[0];
 
 		$scheduleModel = $this->model('ScheduleModel');
-		$schedules = $scheduleModel->schedules; //All schedules (NEED QUERY FOR employee_id)
+		$schedules = $scheduleModel->getScheduleByEmployeeId($employee->Employee_id);
 
 		$this->view('employee/employeeDetails', 
 			['employee' => $employee,

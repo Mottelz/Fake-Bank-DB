@@ -77,8 +77,8 @@
 			for($index = 0; $index < count($schedules); $index++)
 			{
 				$schedule = $schedules[$index];
-				$sched_type = $schedule->sched_type;
-				$date = $schedule->date;
+				$sched_type = $schedule->Sched_type;
+				$date = $schedule->Sched_date;
 		?>
 				<tr>
 					<td><?= $sched_type ?></td>
