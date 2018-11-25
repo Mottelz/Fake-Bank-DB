@@ -22,7 +22,7 @@ class TransactionModel extends Model
 	public function getAccountProfit($id) {
 	       return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (trans_type = 'Sale')");
 	  }
-getAccountProfit
+
 
 	function __construct()
 	{
