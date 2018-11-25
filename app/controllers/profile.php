@@ -19,10 +19,10 @@ class profile extends Controller
 		}
 
 		$addressModel = $this->model('AddressModel');
-		$address = $addressModel->getAddressByStreet($user->street_address);
+		$address = $addressModel->getAddressByStreet($user->Street_address);
 
 		$countryModel = $this->model('CountryModel');
-		$country = $countryModel->getCityByCity($address->city);
+		$country = $countryModel->getCityByCity($address->City);
 
 		$this->view('profile/contactInformation', 
 			['login_type' => $_SESSION['login_type'],

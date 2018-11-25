@@ -6,19 +6,19 @@ class AddressModel extends Model
 	public $addresses;
 
 	public function getAllAddresses() {
-        return $this->getData("SELECT * FROM Address");
+        return $this->getData("SELECT * FROM Address_Table");
     }
 
     public function getAddressByCity($city) {
-        return $this->getData("SELECT * FROM Address WHERE City='" . $city."'");
+        return $this->getData("SELECT * FROM Address_Table WHERE City='" . $city."'");
     }
 
     public function getAddressByPostal($postal) {
-        return $this->getData("SELECT * FROM Address WHERE Postal_code='" . $postal."'");
+        return $this->getData("SELECT * FROM Address_Table WHERE Postal_code='" . $postal."'");
     }
 
     public function getAddressByStreet($street) {
-        return $this->getData("SELECT * FROM Address WHERE Street_address='" . $street ."'");
+        return $this->getData("SELECT * FROM Address_Table WHERE Street_address='" . $street ."'");
     }
 
 	private $data = 
