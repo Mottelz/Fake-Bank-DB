@@ -21,26 +21,26 @@ class AddressModel extends Model
         return $this->getData("SELECT * FROM Address_Table WHERE Street_address='" . $street ."'");
     }
 
-	private $data = 
-	'{
-		"Address" : [{
-			"street_address" : "Address1",
-			"postal_code" : "A1A 1A1",
-			"city" : "City1"
-		}, {
-			"street_address" : "Address2",
-			"postal_code" : "B2B 2B2",
-			"city" : "City2"
-		}, {
-			"street_address" : "Address3",
-			"postal_code" : "C3C 3C3",
-			"city" : "City3"
-		}]
-	}';
+//	private $data =
+//	'{
+//		"Address" : [{
+//			"street_address" : "Address1",
+//			"postal_code" : "A1A 1A1",
+//			"city" : "City1"
+//		}, {
+//			"street_address" : "Address2",
+//			"postal_code" : "B2B 2B2",
+//			"city" : "City2"
+//		}, {
+//			"street_address" : "Address3",
+//			"postal_code" : "C3C 3C3",
+//			"city" : "City3"
+//		}]
+//	}';
 
 	function __construct()
 	{
-		$this->addresses = json_decode($this->data)->Address;
+//		$this->addresses = json_decode($this->data)->Address;
 	}
 }
 
