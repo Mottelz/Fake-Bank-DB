@@ -26,9 +26,9 @@ class profile extends Controller
 
 		$this->view('profile/contactInformation', 
 			['login_type' => $_SESSION['login_type'],
-			 'user' => $user,
-		     'address' => $address,
-		 	 'country' => $country]);
+			 'user' => $user[0],
+		     'address' => $address[0],
+		 	 'country' => $country[0]]);
 	}
 
 	public function changePassword()
@@ -61,9 +61,9 @@ class profile extends Controller
 
 		$this->view('profile/editContactInformation',
             ['login_type' => $_SESSION['login_type'],
-                'user' => $user,
-                'address' => $address,
-                'country' => $country]);
+                'user' => $user[0],
+                'address' => $address[0],
+                'country' => $country[0]]);
 	}
 
 	public function checkEditContactInformationData()
