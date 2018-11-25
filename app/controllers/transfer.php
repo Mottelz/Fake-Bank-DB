@@ -7,16 +7,16 @@ class transfer extends Controller
 		$this->checkIsLoggedIn();
 		$this->checkMakeTransferData();
 
-		
+
 
 		if($_SESSION['login_type'] == 'Client')
 		{
-			$accountModel = $this->model('AccountModel'); 
+			$accountModel = $this->model('AccountModel');
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR client_id and account_level)
 		}
 		else //$_SESSION['login_type']) = 'Employee'
 		{
-			$accountModel = $this->model('AccountModel'); 
+			$accountModel = $this->model('AccountModel');
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR employee_id and account_level)
 		}
 
@@ -42,7 +42,7 @@ class transfer extends Controller
 	public function history()
 	{
 		$this->checkIsLoggedIn();
-		
+
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$transactionModel = $this->model('TransactionModel');
@@ -71,7 +71,7 @@ class transfer extends Controller
 
 			$_SESSION["login_id"];	//Client_Id or Employee_Id
 
-			
+
 
 			header("Location:/transfer/history");
 		}
@@ -81,7 +81,7 @@ class transfer extends Controller
 	{
 		if($_POST['amount'] <= 0)
 			return false;
-		
+
 		return true;
 	}
 }
