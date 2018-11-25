@@ -21,27 +21,27 @@ class CountryModel extends Model
         return $this->getData("SELECT * FROM Country WHERE city='".$city."'");
     }
 
-	private $data = 
-	'{
-		"Country" : [{
-			"city" : "City1",
-			"country" : "Country1",
-			"province" : "Province1"
-		}, {
-			"city" : "City2",
-			"country" : "Country2",
-			"province" : "Province2"
-		}, {
-			"city" : "City3",
-			"country" : "Country3",
-			"province" : "Province3"
-		}]
-	}';
-
-	function __construct()
-	{
-		$this->countries = json_decode($this->data)->Country;
-	}
+//	private $data =
+//	'{
+//		"Country" : [{
+//			"city" : "City1",
+//			"country" : "Country1",
+//			"province" : "Province1"
+//		}, {
+//			"city" : "City2",
+//			"country" : "Country2",
+//			"province" : "Province2"
+//		}, {
+//			"city" : "City3",
+//			"country" : "Country3",
+//			"province" : "Province3"
+//		}]
+//	}';
+//
+//	function __construct()
+//	{
+//		$this->countries = json_decode($this->data)->Country;
+//	}
 }
 
 ?>

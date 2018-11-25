@@ -45,25 +45,25 @@ class profile extends Controller
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$clientModel = $this->model('ClientModel');
-            $user = $clientModel->getClientById($_SESSION['login_id']);
+            $user = $clientModel->getClientById($_SESSION['login_id'])[0];
 		}
 		else //$_SESSION['Employee'] == 'Employee'
 		{
 			$employeeModel = $this->model('EmployeeModel');
-            $user = $employeeModel->getEmployeeById($_SESSION['login_id']);
+            $user = $employeeModel->getEmployeeById($_SESSION['login_id'])[0];
 		}
 
 		$addressModel = $this->model('AddressModel');
-        $address = $addressModel->getAddressByStreet($user->street_address);
+        $address = $addressModel->getAddressByStreet($user->street_address)[0];
 
         $countryModel = $this->model('CountryModel');
-        $country = $countryModel->getCityByCity($address->city);
+        $country = $countryModel->getCityByCity($address->city)[0];
 
 		$this->view('profile/editContactInformation',
             ['login_type' => $_SESSION['login_type'],
-                'user' => $user[0],
-                'address' => $address[0],
-                'country' => $country[0]]);
+                'user' => $user,
+                'address' => $address,
+                'country' => $country]);
 	}
 
 	public function checkEditContactInformationData()
