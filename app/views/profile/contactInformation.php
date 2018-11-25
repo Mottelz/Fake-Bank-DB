@@ -5,7 +5,7 @@
 	$branch_id = $user->Branch_id;
 	$first_name = $user->First_name;
 	$last_name = $user->Last_name;
-	$street_address = $user->Sstreet_address;
+	$street_address = $user->Street_address;
 	$email = $user->Email;
 	$phone = $user->Phone;
 
