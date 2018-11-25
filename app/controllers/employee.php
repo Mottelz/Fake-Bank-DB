@@ -74,7 +74,7 @@ class employee extends Controller
 		$scheduleModel = $this->model('ScheduleModel');
 		$schedule = $scheduleModel->getScheduleById($sched_id)[0];
 		
-		$this->checkEditDayData($schedule->Employee_id, $sched_id);
+		$this->checkEditDayData($sched_id);
 
 		$this->view('employee/editDay', ['schedule' => $schedule]);
 	}
@@ -115,7 +115,7 @@ class employee extends Controller
 		}
 	}
 
-	public function checkEditDayData($employee_id, $sched_id)
+	public function checkEditDayData($sched_id)
 	{
 		if(isset($_POST['editday']) && $this->validateEditDayData())
 		{
@@ -126,7 +126,6 @@ class employee extends Controller
 
 			$scheduleModel->updateSchedule($schedID, $schedType, $date);
 
-			var_dump("Location:/employee/details/$employee_id");
 			//header("Location:/employee/details/$employee_id");
 		}
 	}
