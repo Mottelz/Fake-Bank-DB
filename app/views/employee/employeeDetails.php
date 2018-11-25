@@ -14,8 +14,8 @@
 	$active = $employee->Active;
 
 	$address = $data['address'];
-	$postal_code = $address->postal_code;
-	$city = $address->city;
+	$postal_code = $address->Postal_code;
+	$city = $address->City;
 
 	$countryT = $data['country'];
 	$country = $countryT->country;
