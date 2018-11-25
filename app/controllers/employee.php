@@ -126,7 +126,7 @@ class employee extends Controller
 
 			$scheduleModel->updateSchedule($schedID, $schedType, $date);
 
-			//header("Location:/employee/details/$employee_id");
+			header("Location:/employee/details/$employee_id");
 		}
 	}
 
