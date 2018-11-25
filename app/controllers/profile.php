@@ -10,7 +10,7 @@ class profile extends Controller
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$clientModel = $this->model('ClientModel');
-            $user = $clientModel->getClientById($_SESSION['login_id']);
+            $user = $clientModel->getClientById($_SESSION['login_id'])[0];
 		}
 		else //$_SESSION['Employee'] == 'Employee'
 		{
