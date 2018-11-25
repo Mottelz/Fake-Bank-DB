@@ -73,12 +73,12 @@ class profile extends Controller
 			{
 				//NEED EDIT CLIENT QUERY
                 $clientModel = $this->model('ClientModel');
-                $clientModel->updateClientById($_POST['id'], $_POST['branch_id'], $_POST['first_name'], $_POST['last_name'], $_POST['street_address'], $_POST['password'], $_POST['department'], $_POST['email'], $_POST['phone']);
+                $clientModel->updateClientById($_SESSION['login_id'], $_POST['branch_id'], $_POST['first_name'], $_POST['last_name'], $_POST['street_address'], $_POST['password'], $_POST['department'], $_POST['email'], $_POST['phone']);
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{
                 $employeeModel = $this->model('EmployeeModel');
-                $employeeModel->updateEmployeeById($_POST['id'], $_POST['branch_id'], $_POST['title'], $_POST['first_name'], $_POST['last_name'], $_POST['salary'], $_POST['street_address'], $_POST['password'], $_POST['department'], $_POST['email'], $_POST['phone'], $_POST['start_date'], $_POST['active']);
+                $employeeModel->updateEmployeeById($_SESSION['login_id'], $_POST['branch_id'], $_POST['title'], $_POST['first_name'], $_POST['last_name'], $_POST['salary'], $_POST['street_address'], $_POST['password'], $_POST['department'], $_POST['email'], $_POST['phone'], $_POST['start_date'], $_POST['active']);
 			}
 
 			header("Location:/profile");
@@ -89,7 +89,17 @@ class profile extends Controller
 	{
 		if(isset($_POST['changepassword']) && $this->validateChangePasswordData())
 		{
-			//NEED EDIT CLIENT/EMPLOYEE QUERY
+            if($_SESSION['login_type'] == 'Client')
+            {
+                $clientModel = $this->model('ClientModel');
+                $_SESSION['login_id'];
+                $clientModel->updateClientPassword($_SESSION['login_id'], $_POST['newpassword']);
+            }
+            else //$_SESSION['login_type'] == 'Employee'
+            {
+                $employeeModel = $this->model('EmployeeModel');
+                $employeeModel->updateEmployeePassword($_SESSION['login_id'], $_POST['newpassword']);
+            }
 
 			header("Location:/profile");
 		}
@@ -105,8 +115,6 @@ class profile extends Controller
 	public function validateChangePasswordData()
 	{
 		//INSERT VALIDATION (AS NEEDED)
-
-		// NEED QUERY FOR password OF EMPLOYEE/CLIENT
 
 		if($_POST['newpassword'] != $_POST['confirmpassword'])
 			return false;

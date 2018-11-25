@@ -33,7 +33,7 @@ class EmployeeModel extends Model
             "' WHERE Employee_id='".$id."'");
     }
 
-    public function updateClientPassword($id, $password) {
+    public function updateEmployeePassword($id, $password) {
         return $this->getData("UPDATE Client SET Employee_password='".$password."' WHERE Client_id='".$id."'");
     }
 
