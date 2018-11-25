@@ -38,10 +38,10 @@ class AddressModel extends Model
 //		}]
 //	}';
 
-	function __construct()
-	{
+//	function __construct()
+//	{
 //		$this->addresses = json_decode($this->data)->Address;
-	}
+//	}
 }
 
 ?>
