@@ -30,9 +30,9 @@ class ScheduleModel extends Model
 
     public function updateSchedule($id, $sched_type, $sched_date) {
     	$this->insertData("UPDATE Schedule SET " .
-            "Sched_type = '$sched_type'" .
-            ", Sched_date = '$sched_date'" .
-            " WHERE Sched_id = $id");
+            "Sched_type = '" . $sched_type . "'" .
+            ", Sched_date = '" . $sched_date . "'" .
+            " WHERE Sched_id = " . $id);
     }
 
 	// private $data = 
