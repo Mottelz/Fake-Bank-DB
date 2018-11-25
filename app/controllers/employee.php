@@ -8,14 +8,14 @@ class employee extends Controller
 
 		$employeeModel = $this->model('EmployeeModel');
 		$employees = $employeeModel->getAllEmployees();
-		
+
 		$this->view('employee/employeeSummary', ['employees' => $employees]);
 	}
 
 	public function details($employee_id)
 	{
 		$employeeModel = $this->model('EmployeeModel');
-		$employee = $employeeModel->employees[0]; //Arbitrary employee (NEED QUERY FOR employee_id)
+		$employee = $employeeModel->getEmployeeById($employee_id)[0];
 
 		$addressModel = $this->model('AddressModel');
 		$address = $addressModel->addresses[0]; //Arbitrary address (NEED QUERY FOR street_address)

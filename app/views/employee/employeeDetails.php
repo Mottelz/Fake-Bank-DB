@@ -1,17 +1,17 @@
 <?php
 	$employee = $data['employee'];
-	$employee_id = $employee->employee_id;
-	$branch_id = $employee->branch_id;
-	$department = $employee->department;
-	$first_name = $employee->first_name;
-	$last_name = $employee->last_name;
-	$title = $employee->title;
-	$street_address = $employee->street_address;
-	$phone = $employee->phone;
-	$email = $employee->email;
-	$salary = $employee->salary;
-	$start_date = $employee->start_date;
-	$active = $employee->active;
+	$employee_id = $employee->Employee_id;
+	$branch_id = $employee->Branch_id;
+	$department = $employee->Department;
+	$first_name = $employee->First_name;
+	$last_name = $employee->Last_name;
+	$title = $employee->Title;
+	$street_address = $employee->Street_address;
+	$phone = $employee->Phone;
+	$email = $employee->Email;
+	$salary = $employee->Salary;
+	$start_date = $employee->Employee_start_date;
+	$active = $employee->Active;
 
 	$address = $data['address'];
 	$postal_code = $address->postal_code;
