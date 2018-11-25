@@ -18,11 +18,13 @@ class ClientModel extends Model
     }
 
     public function insertClient($id, $branch_id, $first_name, $last_name, $birth_date, $join_date, $street_address, $password, $department, $email, $phone) {
-    	$this->getData("INSERT INTO Client (Client_id, Branch_id, First_name, Last_name) VALUES ("
+    	$this->getData("INSERT INTO Client (Client_id, Branch_id, First_name, Last_name, Birth_date, Join_date) VALUES ("
     		. $id .
     		", " . $branch_id .
     		", '" . $first_name . "'" .
-            ", '" . $last_name . "')");
+    		", '" . $last_name . "'" .
+    		", '" . $birth_date . "'" .
+            ", '" . $join_date . "')");
     }
 
     public function updateClientById($id, $branch_id, $first_name, $last_name, $street_address, $password, $department, $email, $phone) {
