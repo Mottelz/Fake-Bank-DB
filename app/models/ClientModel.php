@@ -27,12 +27,12 @@ class ClientModel extends Model
     		", '" . $join_date . "'" .
     		", '" . $password . "'" .
     		", '" . $street_address . "'" .
-    		", '" . $Phone . "'" .
-            ", '" . $Email . "')");
+    		", '" . $phone . "'" .
+            ", '" . $email . "')");
     }
 
     public function updateClientById($id, $branch_id, $first_name, $last_name, $street_address, $password, $department, $email, $phone) {
-        return $this->getData("UPDATE Client SET Branch_id='".$branch_id.
+        return $this->updateData("UPDATE Client SET Branch_id='".$branch_id.
             "', First_name='".$first_name.
             "', Last_name='".$last_name .
             "', Street_address='".$street_address.
@@ -44,7 +44,7 @@ class ClientModel extends Model
     }
 
     public function updateClientPassword($id, $password) {
-        return $this->getData("UPDATE Client SET password='".$password."' WHERE client_id='".$id."'");
+        return $this->updateData("UPDATE Client SET password='".$password."' WHERE client_id='".$id."'");
     }
 
 
