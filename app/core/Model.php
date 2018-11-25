@@ -37,6 +37,18 @@ class Model {
          };
      }
 
+     //insert the data
+     public function insertData($query) {
+         $this->connectDB();
+         if($this->connection->query($query)===true) {
+             $this->disconnectDB();
+             return true;
+         } else {
+             $this->disconnectDB();
+             return false;
+         }
+     }
+
      //update the data
      public function updateData($query) {
          $this->connectDB();
