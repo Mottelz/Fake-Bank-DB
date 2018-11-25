@@ -5,7 +5,7 @@ class signup extends Controller
 	public function index() 
 	{	
 		$temp = ($this->model('ClientModel'))->getNextClientId();
-		var_dump($temp + 1);
+		var_dump(intval($temp) + 1);
 		$this->checkSignupData();
 
 		$branchModel = $this->model('BranchModel');
