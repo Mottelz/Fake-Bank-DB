@@ -1,6 +1,6 @@
 <html>
 <head>
-	<?= $this->header()
+	<?= $this->header();
 		$accounts = $data['accounts'];
 	?>
 
