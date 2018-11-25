@@ -17,12 +17,23 @@ class ScheduleModel extends Model
         return $this->getData("SELECT * FROM Schedule WHERE employee_id=" . $id);
     }
 
+    public function getNextSchedId() {
+    	return $this->getData("SELECT Sched_id FROM Schedule ORDER BY Sched_id DESC")[0]->Sched_id + 1;
+    }
+
     public function insertSchedule($id, $employee_id, $sched_type, $sched_date) {
     	$this->insertData("INSERT INTO Schedule (Sched_id, Employee_id, Sched_type, Sched_date) VALUES (" .
             $id .
             ", " . $employee_id .
             ", '" . $sched_type . "'" .
             ", '" . $sched_date . "')");
+    }
+
+    public function updateSchedule($id, $sched_type, $sched_date) {
+    	$this->insertData("UPDATE Schedule SET " .
+            ", Sched_type = '$sched_type'" .
+            ", Sched_date = '$sched_date'" .
+            " WHERE Sched_id = $id");
     }
 
 	// private $data = 

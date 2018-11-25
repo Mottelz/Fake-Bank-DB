@@ -106,7 +106,7 @@ class employee extends Controller
 		{
 			$scheduleModel = $this->model('ScheduleModel');
 
-			$schedID = 101010;
+			$schedID = $scheduleModel->getNextSchedId();
 			$schedType = $_POST['sched_type'];
 			$date = $_POST['date'];
 
