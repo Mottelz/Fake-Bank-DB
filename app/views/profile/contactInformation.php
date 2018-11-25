@@ -24,13 +24,6 @@
 </head>
 
 <body>
-<p><?php var_dump($data)?></p>
-<br>
-<p><?php var_dump($address)?></p>
-<br>
-<p><?php var_dump($countryT)?></p>
-<br>
-<p><?php var_dump($user)?></p>
 	<div class="templateux-cover" style="background-image: url(images/slider-1.jpg);resize:verticle;overflow:auto;">
 		<div class="container">
 			<div class="col-md-8">
