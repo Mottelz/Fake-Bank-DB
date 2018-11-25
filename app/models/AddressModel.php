@@ -22,11 +22,13 @@ class AddressModel extends Model
     }
 
     public function insertAddress($street, $postal, $city) {
-        $this->insertData("INSERT INTO Address_Table (Street_address, Postal_code, City) VALUES (" . 
+        $this->insertData("INSERT INTO Address_Table (Street_address, Postal_code, City) VALUES (" .
             "'" . $street . "'" .
             ", '" . $postal . "'" .
             ", '" . $city . "')");
     }
+
+
 
 //	private $data =
 //	'{
