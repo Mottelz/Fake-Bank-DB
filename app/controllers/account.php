@@ -37,13 +37,9 @@ class account extends Controller
 
 		$annualLosses=0;
 
-		$x = $transactionModel->getAccountLoss($account_id);
 
-		while($y = $x->fetch_assoc()) {
-		echo $y['Amount'];
-		}
 
-		 var_dump(($transactionModel->getAccountLoss($account_id)));
+		 var_dump($transactionModel->getAccountLoss($account_id)[0]->Amount);
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
 			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index];
 		}
