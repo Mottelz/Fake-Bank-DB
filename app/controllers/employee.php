@@ -71,7 +71,6 @@ class employee extends Controller
 
 	public function editDay($sched_id)
 	{
-
 		$scheduleModel = $this->model('ScheduleModel');
 		$schedule = $scheduleModel->getScheduleById($sched_id)[0];
 		

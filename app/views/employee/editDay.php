@@ -1,9 +1,9 @@
 <?php
 	$schedule = $data['schedule'];
-	$employee_id = $schedule->employee_id;
-	$sched_id = $schedule->sched_id;
-	$sched_type = $schedule->sched_type;
-	$date = $schedule->date;
+	$employee_id = $schedule->Employee_id;
+	$sched_id = $schedule->Sched_id;
+	$sched_type = $schedule->Sched_type;
+	$date = $schedule->Sched_date;
 ?>
 
 <html>
