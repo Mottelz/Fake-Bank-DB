@@ -7,8 +7,8 @@ class employee extends Controller
 		$this->checkIsLoggedIn();
 
 		$employeeModel = $this->model('EmployeeModel');
-		$employees = $employeeModel->employees;
-
+		$employees = $employeeModel->getAllEmployees();
+var_dump($employees);
 		$this->view('employee/employeeSummary', ['employees' => $employees]);
 	}
 
