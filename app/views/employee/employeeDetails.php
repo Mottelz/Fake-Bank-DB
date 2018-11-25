@@ -18,8 +18,8 @@
 	$city = $address->City;
 
 	$countryT = $data['country'];
-	$country = $countryT->country;
-	$province = $countryT->province;
+	$country = $countryT->Country;
+	$province = $countryT->Province;
 
 	$schedules = $data['schedules'];
 ?>
