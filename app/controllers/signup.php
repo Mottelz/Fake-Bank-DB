@@ -5,8 +5,7 @@ class signup extends Controller
 	public function index() 
 	{	
 		$this->checkSignupData();
-var_dump(date('Y-m-d'));
-var_dump($_POST['birth_date']);
+
 		$branchModel = $this->model('BranchModel');
 		$branches = $branchModel->getAllBranches();
 
