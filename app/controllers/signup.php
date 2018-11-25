@@ -1,5 +1,5 @@
 <?
-
+//TODO: Add to Address_Table if Street_address does not exist
 class signup extends Controller 
 {
 	public function index() 
@@ -33,6 +33,13 @@ class signup extends Controller
 			$email = $_POST['email'];
 
 			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $password, $department, $email, $phone);
+
+			$addressModel = $this->model('AddressModel');
+			$address = $addressModel->getAddressByStreet($streetAddress);
+
+			var_dump($address);
+			if(!$address)
+				var_dump("!address");
 
 			header("Location:/login");
 		}

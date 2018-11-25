@@ -21,6 +21,13 @@ class AddressModel extends Model
         return $this->getData("SELECT * FROM Address_Table WHERE Street_address='".$street."'");
     }
 
+    public function insertAddress($street, $postal, $city) {
+        $this->insertData("INSERT INTO Address_Table (Street_address, Postal_code, City) VALUES (" . 
+            "'" . $street . "'" .
+            ", '" . $postal . "'" .
+            ", '" . $city . "')");
+    }
+
 //	private $data =
 //	'{
 //		"Address" : [{
