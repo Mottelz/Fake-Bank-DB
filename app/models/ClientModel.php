@@ -10,11 +10,27 @@ class ClientModel extends Model
     }
 
     public function getClientById($id) {
-        return $this->getData("SELECT * FROM Client WHERE client_id=" . $id);
+        return $this->getData("SELECT * FROM Client WHERE Client_id=" . $id);
     }
 
     public function getClientByBranchId($id) {
-        return $this->getData("SELECT * FROM Client WHERE branch_id=" . $id);
+        return $this->getData("SELECT * FROM Client WHERE Branch_id=" . $id);
+    }
+
+    public function updateClientById($id, $branch_id, $first_name, $last_name, $street_address, $password, $department, $email, $phone) {
+        return $this->getData("UPDATE Client SET Branch_id='".$branch_id.
+            "', First_name='".$first_name.
+            "', Last_name='".$last_name .
+            "', Street_address='".$street_address.
+            "', Password='".$password.
+            "', Department='".$department.
+            "', Email='".$email.
+            "', Phone='".$phone.
+            "' WHERE Client_id='".$id."'");
+    }
+
+    public function updateClientPassword($id, $password) {
+        return $this->getData("UPDATE Client SET password='".$password."' WHERE client_id='".$id."'");
     }
 
 
