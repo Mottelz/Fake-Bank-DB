@@ -73,7 +73,7 @@ class employee extends Controller
 	{
 
 		$scheduleModel = $this->model('ScheduleModel');
-		$schedule = $scheduleModel->schedules[0]; //Arbitrary schedule (NEED QUERY FOR sched_id)
+		$schedule = $scheduleModel->getScheduleById($sched_id)[0];
 		
 		$this->checkEditDayData($schedule->employee_id, $sched_id);
 
@@ -120,7 +120,13 @@ class employee extends Controller
 	{
 		if(isset($_POST['editday']) && $this->validateEditDayData())
 		{
-			//NEED EDIT SCHEDULE QUERY
+			$scheduleModel = $this->model('ScheduleModel');
+
+			$schedID = $scheduleModel->getNextSchedId();
+			$schedType = $_POST['sched_type'];
+			$date = $_POST['date'];
+
+			$scheduleModel->updateSchedule($schedID, $schedType, $date);
 
 			header("Location:/employee/details/$employee_id");
 		}
