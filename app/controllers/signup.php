@@ -33,7 +33,7 @@ class signup extends Controller
 			$clientModel = $this->model('ClientModel');
 			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $birthDate, $streetAddress, $password, $department, $email, $phone);
 
-			//header("Location:/login");
+			header("Location:/login");
 		}
 	}
 
