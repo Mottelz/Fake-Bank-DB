@@ -8,7 +8,7 @@ class signup extends Controller
 
 		$branchModel = $this->model('BranchModel');
 		$branches = $branchModel->getAllBranches();
-
+var_dump(date('d-m-Y'));
 		$this->view('signup', ['branches' => $branches]);
 	}
 
