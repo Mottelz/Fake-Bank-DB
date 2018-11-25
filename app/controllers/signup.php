@@ -20,6 +20,7 @@ class signup extends Controller
 			$firstName = $_POST['first_name'];
 			$lastName = $_POST['last_name'];
 			$birthDate = $_POST['birth_date'];
+			$joinDate = date('Y-m-d');
 			$password = $_POST['password'];
 			$branchID = $_POST['branch_id'];
 			$department = null;
@@ -30,7 +31,7 @@ class signup extends Controller
 			$email = $_POST['email'];
 
 			$clientModel = $this->model('ClientModel');
-			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, date('Y-m-d'), $streetAddress, $password, $department, $email, $phone);
+			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $birthDate, $streetAddress, $password, $department, $email, $phone);
 
 			//header("Location:/login");
 		}
