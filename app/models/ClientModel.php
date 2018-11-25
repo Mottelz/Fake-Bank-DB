@@ -18,18 +18,18 @@ class ClientModel extends Model
     }
 
     public function insertClient($id, $branch_id, $first_name, $last_name, $birth_date, $join_date, $street_address, $password, $department, $email, $phone) {
-    	return $this->getData("INSERT INTO Client VALUES (" .
-    		"Client_id = '" . $id .
-    		"', Branch_id = '" . $branch_id .
-    		"', First_name = '" . $first_name .
-            "', Last_name = '" . $last_name .
-            "', Birth_date = '" . $birth_date .
-            "', Join_date = '" . $join_date .
-            "', Street_address = '" . $street_address .
-            "', Password = '" . $password .
-            "', Department = '" . $department .
-            "', Email = '" . $email .
-            "', Phone = '" . $phone) . ")";
+    	return $this->getData("INSERT INTO Client (Client_id, Branch_id, First_name, Last_name, Birth_date, Join_date, Street_address, Password, Department, Email, Phone) VALUES (" .
+    		$id .
+    		"," . $branch_id .
+    		"," . $first_name .
+            "," . $last_name .
+            "," . $birth_date .
+            "," . $join_date .
+            "," . $street_address .
+            "," . $password .
+            "," . $department .
+            "," . $email .
+            "," . $phone . ")");
     }
 
     public function updateClientById($id, $branch_id, $first_name, $last_name, $street_address, $password, $department, $email, $phone) {
