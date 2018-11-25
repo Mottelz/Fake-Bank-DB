@@ -35,7 +35,7 @@ class account extends Controller
 		//var_dump($transactions);
 		$annualProfits =0;
 
-		$annualLosses=0
+		$annualLosses=0;
 		 var_dump(($transactionModel->getAccountLoss($account_id)[0]));
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
 			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index];
