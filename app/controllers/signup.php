@@ -4,8 +4,6 @@ class signup extends Controller
 {
 	public function index() 
 	{	
-		$temp = ($this->model('ClientModel'))->getNextClientId();
-		var_dump(intval($temp) + 1);
 		$this->checkSignupData();
 
 		$branchModel = $this->model('BranchModel');
@@ -18,7 +16,9 @@ class signup extends Controller
 	{
 		if(isset($_POST['signup']) && $this->validateSignupData())
 		{
-			$clientID = 10101010;
+			$clientModel = $this->model('ClientModel');
+
+			$clientID = $clientModel->getNextClientId();
 			$firstName = $_POST['first_name'];
 			$lastName = $_POST['last_name'];
 			$birthDate = $_POST['birth_date'];
@@ -32,7 +32,6 @@ class signup extends Controller
 			$phone = $_POST['phone'];
 			$email = $_POST['email'];
 
-			$clientModel = $this->model('ClientModel');
 			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $password, $department, $email, $phone);
 
 			header("Location:/login");
