@@ -5,6 +5,7 @@ class profile extends Controller
 	public function index()
 	{
 		$this->checkIsLoggedIn();
+		$user=null;
 		
 		if($_SESSION['login_type'] == 'Client')
 		{
