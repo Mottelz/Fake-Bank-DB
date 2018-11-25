@@ -1,5 +1,5 @@
 <?
-//TODO: Add to Address_Table if Street_address does not exist
+
 class signup extends Controller 
 {
 	public function index() 
