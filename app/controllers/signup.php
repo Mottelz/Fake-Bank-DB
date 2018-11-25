@@ -43,7 +43,7 @@ class signup extends Controller
 		//INSERT VALIDATION (AS NEEDED)
 		$streetaddressregex = '(^\d+\s[a-zA-Z0-9\-\'\s]+$)';
 		$postalcoderegex = '(^[a-zA-Z]{1}\d{1}[a-zA-Z]{1}\s*\d{1}[a-zA-Z]{1}\d{1}$)';
-		$phoneregex = '(^\(*\d{3}\)*\s*-*\s*\d{3}\s*-*\s*\d{4}$)';
+		$phoneregex = '(^d{10}$)';
 		$emailregex = '(^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$)';
 
 		if(!preg_match($streetaddressregex, $_POST['street_address']))
