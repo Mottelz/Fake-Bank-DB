@@ -17,10 +17,10 @@ class TransactionModel extends Model
         return $this->getData("SELECT * FROM Transaction_Table WHERE From_accid=" . $id);
     }
 	public function getAccountLoss($id) {
-        return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (Trans_type = 'Payment' OR trans_type = 'Transfer')");
+        return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (Trans_type = 'Payment' OR Trans_type = 'Transfer')");
     }
 	public function getAccountProfit($id) {
-	       return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (trans_type = 'Sale')");
+	       return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
 	  }
 
 

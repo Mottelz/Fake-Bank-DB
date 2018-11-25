@@ -22,8 +22,8 @@ class client extends Controller
 
 		$countryModel = $this->model('CountryModel');
 		$country = $countryModel->countries[0]; //Arbitrary country (NEED QUERY FOR city)
-		
-		$this->view('client/clientDetails', 
+
+		$this->view('client/clientDetails',
 			['client' => $client,
 		     'address' => $address,
 		 	 'country' => $country]);
@@ -50,7 +50,8 @@ class client extends Controller
 		$address = $addressModel->addresses[0]; //Arbitrary address (NEED QUERY FOR street_address)
 
 		$branchModel = $this->model('BranchModel');
-		$branches = $branchModel->branches;
+		$branches = $branchModel->branches;6
+
 
 		$this->view('client/clientEdit',
 			['client' => $client,
