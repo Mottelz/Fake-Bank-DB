@@ -22,8 +22,7 @@ class ClientModel extends Model
     		. $id .
     		", " . $branch_id .
     		", '" . $first_name . "'" .
-    		", '" . $last_name . "'" .
-    		", '" . $birth_date . "')");
+    		", '" . $last_name . "')");
     }
 
     public function updateClientById($id, $branch_id, $first_name, $last_name, $street_address, $password, $department, $email, $phone) {
