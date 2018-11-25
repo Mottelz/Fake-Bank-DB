@@ -104,7 +104,13 @@ class employee extends Controller
 	{
 		if(isset($_POST['addtoschedule']) && $this->validateAddToScheduleData())
 		{
-			//NEED ADD TO SCHEDULE QUERY
+			$scheduleModel - $this->model('ScheduleModel');
+
+			$schedID = 101010;
+			$schedType = $_POST['sched_type'];
+			$date = $_POST['date'];
+
+			$scheduleModel->insertSchedule($schedID, $employee_id, $schedType, $date);
 			
 			header("Location:/employee/details/$employee_id");
 		}
