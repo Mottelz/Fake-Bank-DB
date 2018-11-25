@@ -35,13 +35,13 @@
 
 	<br />
 	<table class="table table-striped">
-	<tr><th>Name: <?php $first_name ?> <?php $last_name ?></th></tr>
-	<tr><th>Street Address: <?php $street_address ?></tr>
-	<tr><th>City: <?php $city ?></tr>
-	<tr><th>Province: <?php $province ?></tr>
-	<tr><th>Postal Code: <?php $postal_code ?></tr>
-	<tr><th>Phone: <?php $phone ?></tr>
-	<tr><th>Email: <?php $email ?></tr>
+	<tr><th>Name: <?= $first_name ?> <?= $last_name ?></th></tr>
+	<tr><th>Street Address: <?= $street_address ?></tr>
+	<tr><th>City: <?= $city ?></tr>
+	<tr><th>Province: <?= $province ?></tr>
+	<tr><th>Postal Code: <?= $postal_code ?></tr>
+	<tr><th>Phone: <?= $phone ?></tr>
+	<tr><th>Email: <?= $email ?></tr>
 	</table>
 	<br />
 
