@@ -9,7 +9,6 @@ class signup extends Controller
 		$branchModel = $this->model('BranchModel');
 		$branches = $branchModel->getAllBranches();
 
-		var_dump($branches);
 		$this->view('signup', ['branches' => $branches]);
 	}
 
