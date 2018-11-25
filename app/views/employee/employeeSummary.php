@@ -40,15 +40,15 @@
 		for($index = 0; $index < count($employees); $index++)
 		{
 			$employee = $employees[$index];
-			$employee_id = $employee->employee_id;
-			$branch_id = $employee->branch_id;
-			$department = $employee->department;
-			$first_name = $employee->first_name;
-			$last_name = $employee->last_name;
-			$title = $employee->title;
-			$salary = $employee->salary;
-			$start_date = $employee->start_date;
-			$active = $employee->active;
+			$employee_id = $employee->Employee_id;
+			$branch_id = $employee->Branch_id;
+			$department = $employee->Department;
+			$first_name = $employee->First_name;
+			$last_name = $employee->Last_name;
+			$title = $employee->Title;
+			$salary = $employee->Salary;
+			$start_date = $employee->Start_date;
+			$active = $employee->Active;
 	?>
 			<tr>
 				<td><?= $employee_id ?></td>

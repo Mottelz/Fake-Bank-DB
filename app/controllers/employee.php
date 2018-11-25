@@ -8,7 +8,7 @@ class employee extends Controller
 
 		$employeeModel = $this->model('EmployeeModel');
 		$employees = $employeeModel->getAllEmployees();
-var_dump($employees);
+		
 		$this->view('employee/employeeSummary', ['employees' => $employees]);
 	}
 
