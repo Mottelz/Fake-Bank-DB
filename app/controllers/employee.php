@@ -121,13 +121,13 @@ class employee extends Controller
 		{
 			$scheduleModel = $this->model('ScheduleModel');
 
-			$schedID = $scheduleModel->getNextSchedId();
 			$schedType = $_POST['sched_type'];
 			$date = $_POST['date'];
 
 			$scheduleModel->updateSchedule($schedID, $schedType, $date);
 
-			header("Location:/employee/details/$employee_id");
+			var_dump("Location:/employee/details/$employee_id");
+			//header("Location:/employee/details/$employee_id");
 		}
 	}
 
