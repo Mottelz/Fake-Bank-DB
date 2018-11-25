@@ -10,15 +10,15 @@ class AddressModel extends Model
     }
 
     public function getAddressByCity($city) {
-        return $this->getData("SELECT * FROM Address WHERE city='" . $city."'");
+        return $this->getData("SELECT * FROM Address WHERE City='" . $city."'");
     }
 
     public function getAddressByPostal($postal) {
-        return $this->getData("SELECT * FROM Address WHERE postal_code='" . $postal."'");
+        return $this->getData("SELECT * FROM Address WHERE Postal_code='" . $postal."'");
     }
 
     public function getAddressByStreet($street) {
-        return $this->getData("SELECT * FROM Address WHERE street_address='" . $street ."'");
+        return $this->getData("SELECT * FROM Address WHERE Street_address='" . $street ."'");
     }
 
 	private $data = 
