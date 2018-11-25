@@ -18,7 +18,7 @@ class employee extends Controller
 		$employee = $employeeModel->getEmployeeById($employee_id)[0];
 
 		$addressModel = $this->model('AddressModel');
-		$address = $addressModel->getAddressByStreet($employee->Employee_street_address)[0];
+		$address = $addressModel->getAddressByStreet($employee->Street_address)[0];
 
 		$countryModel = $this->model('CountryModel');
 		$country = $countryModel->countries[0]; //Arbitrary country (NEED QUERY FOR city)
