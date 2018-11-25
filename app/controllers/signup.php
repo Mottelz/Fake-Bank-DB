@@ -33,7 +33,7 @@ class signup extends Controller
 			$email = $_POST['email'];
 
 			$countryModel = $this->model('CountryModel');
-			$contries = $countryModel->getCountryByCity($city);
+			$contries = $countryModel->getCityByCity($city);
 
 			// Insert new country entry if there is no country for the given city
 			if(!$countries)
