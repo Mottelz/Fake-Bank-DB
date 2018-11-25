@@ -28,9 +28,9 @@ class signup extends Controller
 			$postalCode = $_POST['postal_code'];
 			$phone = $_POST['phone'];
 			$email = $_POST['email'];
-var_dump($birthDate);
+
 			$clientModel = $this->model('ClientModel');
-			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, date('d-m-Y'), $streetAddress, $password, $department, $email, $phone);
+			$clientModel->insertClient($clientID, $branchID, $firstName, $lastName, $birthDate, date('Y-m-d'), $streetAddress, $password, $department, $email, $phone);
 
 			//header("Location:/login");
 		}
