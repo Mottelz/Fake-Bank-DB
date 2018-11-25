@@ -36,9 +36,9 @@ class account extends Controller
 		$annualProfits =0;
 
 
-		 var_dump($transactionModel->getAccountLoss($account_id));
+		 var_dump(floatval($transactionModel->getAccountLoss($account_id)['Amount']));
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
-			$annualLosses += floatval($transactionModel->getAccountLoss($account_id)[$index]['Amount']);
+		//	$annualLosses += floatval($transactionModel->getAccountLoss($account_id)[$index]['Amount']);
 		}
 		$this->view('account/accountDetails',
 			['account' => $account,
