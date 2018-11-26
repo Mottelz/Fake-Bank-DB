@@ -24,19 +24,19 @@ class EmployeeModel extends Model
     public function insertEmployee($id, $first_name, $last_name, $password, $branch_id, $department, $title, $start_date, $birth_date, $street_address, $phone, $email, $salary, $active) {
     	$this->insertData("INSERT INTO Employee (Employee_id, First_name, Last_name, Password, Branch_id, Department, Title, Employee_start_date, Birth_date, Street_address, Phone, Email, Salary, Active) VALUES (" .
     		"$id" . 
-    		", '$first_name'" .
-    		", '$last_name'" .
-    		", '$password'" .
-    		", $branch_id" .
-    		", '$department'" .
-    		", '$title'" .
-    		", '$start_date'" .
-    		", '$birth_date'" .
-    		", '$street_address'" .
-    		", $phone" .
-    		", '$email'" ,
-    		", $salary" ,
-    		", $active)");
+    		", '" . $first_name . "'" .
+    		", '" . $last_name . "'" .
+    		", '" . $password . "'" .
+    		", " . $branch_id .
+    		", '" . $department . "'" .
+    		", '" . $title . "'" .
+    		", '" . $start_date . "'" .
+    		", '" . $birth_date . "'" .
+    		", '" . $street_address . "'" .
+    		", " . $phone .
+    		", '" . $email . "'" .
+    		", " . $salary .
+    		", " . $active . ")");
     }
 
     public function updateEmployeeById($id, $first_name, $last_name, $street_address, $email, $phone) {
