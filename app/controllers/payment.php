@@ -115,6 +115,14 @@ class payment extends Controller
 		{
 			$transactionModel = $this->model('TransactionModel');
 
+			$trans_id = $transactionModel->getNextTransId();
+			$to = $_POST['to'];
+			$from = $_POST['from'];
+			$amount = $_POST['amount'];
+			$date = $_POST['date'];
+
+			$transactionModel->insertPayment($trans_id, $to, $from, $amount, $date);
+
 			header("Location:/payment/history");
 		}
 	}
