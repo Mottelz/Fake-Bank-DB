@@ -24,7 +24,6 @@
 			<th>To</th>
 			<th>From</th>
 			<th>Amount</th>
-			<th>By</th>
 		</tr>
 </thead>
 <tbody>
@@ -36,7 +35,6 @@
 				$to = $transaction->To_accid ;
 				$from = $transaction->From_accid ;
 				$amount = $transaction->Amount ;
-				$by = $transaction->Client_id;
 				$date = $transaction->Trans_date ;
 		?>
 				<tr>
@@ -44,7 +42,6 @@
 					<td><?= $to ?></td>
 					<td><?= $from ?></td>
 					<td><?= $amount ?></td>
-					<td>Client <?= $by ?></td>
 				</tr>
 		<?php
 			}
