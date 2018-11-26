@@ -38,7 +38,7 @@ class employee extends Controller
 		$this->checkAddEmployeeData();
 
 		$branchModel = $this->model('BranchModel');
-		$branches = $branchModel->branches;
+		$branches = $branchModel->getAllBranches();
 
 		$this->view('employee/employeeAdd', ['branches' => $branches]);
 	}
