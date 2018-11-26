@@ -123,7 +123,17 @@ class payment extends Controller
 	{
 		if(isset($_POST['setupfuturepayments']) && $this->validateSetupFuturePaymentsData())
 		{
-			//NEED CREATE FUTURE PAYMENT QUERY
+			$futurePaymentModel = $this->model('FuturePaymentModel');
+
+			$paymentID = $futurePaymentModel->nextPaymentId();
+			$to = $_POST['to'];
+			$from = $_POST['from'];
+			$amount = $_POST['amount'];
+			$startDate = $_POST['start_date'];
+			$frequency = $_POST['frequency'];
+			$endDate = $_POST['end_date'];
+
+			$futurePaymentModel->insertFuturePayment($paymentID, $to, $from, $amount, $startDate, $frequency, $endDate);
 
 			header("Location:/payment/futurePayments");
 		}

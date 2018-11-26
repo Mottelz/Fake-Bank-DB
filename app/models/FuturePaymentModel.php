@@ -6,11 +6,11 @@ class FuturePaymentModel extends Model
 	public $futurePayments;
 
 	public function getAllFuturePayments() {
-	    return $this->getData("SELECT * FROM FuturePayment");
+	    return $this->getData("SELECT * FROM FuturePayments");
     }
 
     public function getFuturePaymentsById($id) {
-        return $this->getData("SELECT * FROM FuturePayment WHERE payment_id=" . $id);
+        return $this->getData("SELECT * FROM FuturePayments WHERE payment_id=" . $id);
     }
 
 	public function getFuturePaymentsByClientId($id) {
@@ -18,15 +18,27 @@ class FuturePaymentModel extends Model
 	}
 
     public function getFuturePaymentsByStartDate($date) {
-        return $this->getData("SELECT * FROM FuturePayment WHERE start_date=" . $date);
+        return $this->getData("SELECT * FROM FuturePayments WHERE start_date=" . $date);
     }
 
     public function getFuturePaymentsByEndDate($date) {
-        return $this->getData("SELECT * FROM FuturePayment WHERE end_date=" . $date);
+        return $this->getData("SELECT * FROM FuturePayments WHERE end_date=" . $date);
     }
 
+    public function getNextPaymentId() {
+        return $this->getData("SELECT Payment_id FROM Future_Payments ORDER BY Payment_id DESC")[0]->Payment_id + 1;
+    }
 
-
+    public function insertFuturePayment($id, $to, $from, $amount, $start_date, $frequency, $end_date) {
+        $this->insertData("INSERT INTO FuturePayments (Payment_id, To_accid, From_accid, Amount, Future_Payments_Start_date, Frequency, End_date) VALUES (" . 
+            "$id" .
+            ", $to" .
+            ", $from" .
+            ", $amount" .
+            ", '$start_date'" .
+            ", $frequency" .
+            ", '$end_date')");
+    }
 
 	function __construct()
 	{
