@@ -70,6 +70,13 @@ class profile extends Controller
 	{
 		if(isset($_POST['editcontactinformation']) && $this->validateEditContactInformationData())
 		{
+
+            $countryModel = $this->model('CountryModel');
+            $countryModel->insertCountry($_SESSION['city'], $_SESSION['province'], $_SESSION['country']);
+
+            $addressModel = $this->model('AddressModel');
+            $addressModel->insertAddress($_SESSION['street'], $_SESSION['postal'], $_SESSION['city']);
+
 			if($_SESSION['login_type'] == 'Client')
 			{
 				//NEED EDIT CLIENT QUERY
@@ -82,13 +89,6 @@ class profile extends Controller
                 $employeeModel = $this->model('EmployeeModel');
                 $employeeModel->updateEmployeeById($_SESSION['login_id'], $_POST['first_name'], $_POST['last_name'], $_POST['street_address'], $_POST['email'], $_POST['phone']);
 			}
-
-            $addressModel = $this->model('AddressModel');
-            $addressModel->insertAddress($_SESSION['street'], $_SESSION['postal'], $_SESSION['city']);
-
-            $countryModel = $this->model('CountryModel');
-            $countryModel->insertCountry($_SESSION['city'], $_SESSION['province'], $_SESSION['country']);
-
 
 			header("Location:/profile");
 		}
