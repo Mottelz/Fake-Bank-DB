@@ -4,7 +4,7 @@ class account extends Controller
 {
 	public function index()
 	{
-	//	var_dump($_SESSION['login_id']);
+
 		$this->checkIsLoggedIn();
 		$this->checkToggle();
 		$accountModel = $this->model('AccountModel');
@@ -78,7 +78,7 @@ class account extends Controller
 		{
 			if($_SESSION['login_type'] == 'Client')
 			{
-				//var_dump($accountAll);
+
 				$accountModel = $this->model('AccountModel');
 
 				$account_id = $accountModel->getNextAccountId();
@@ -90,9 +90,11 @@ class account extends Controller
 				$Interest_Rate_Type = $_POST['type'];
 				$Interest_Rate_Service = $_POST['service'];
 
-				$accountModel->addAccountById($account_id, $client_id,
+			if($accountModel->addAccountById($account_id, $client_id,
 				$Account_Option, $Account_Type, $Account_Service,
-				$Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service );
+				$Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service ))
+				{echo "SUCCESS";}
+				else{echo "no";}
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{

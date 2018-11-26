@@ -1,6 +1,6 @@
 <?
 
-class payment extends Controller 
+class payment extends Controller
 {
 	public function index()
 	{
@@ -84,7 +84,7 @@ class payment extends Controller
 			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR employee_id)
 		}
 
-		$this->view('payment/editPayment', 
+		$this->view('payment/editPayment',
 			['payment_id' => $payment_id,
 			 'futurePayment' => $futurePayment,
 			 'accounts' => $accounts]);
@@ -93,11 +93,12 @@ class payment extends Controller
 	public function history()
 	{
 		$this->checkIsLoggedIn();
-		
+
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$transactionModel = $this->model('TransactionModel');
-			$transactions = $transactionModel->transactions; //All transactions (NEED QUERY FOR account_id, client_id and type)
+			$transactions = $transactionModel->getTransactionByClientId($_SESSION['login_id']);
+
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
