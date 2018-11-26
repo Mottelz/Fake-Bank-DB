@@ -52,7 +52,7 @@ class EmployeeModel extends Model
             ", Phone = '$phone'" .
             ", Salary = $salary" .
             ", Active = $active" .
-            "' WHERE Employee_id = $id");
+            " WHERE Employee_id = $id");
     }
 
     public function updateEmployeeById($id, $first_name, $last_name, $street_address, $email, $phone) {
