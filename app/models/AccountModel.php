@@ -33,7 +33,7 @@ class AccountModel extends Model
   public function addAccountById($Account_id , $Client_id  ,
                               $Account_Option , $Account_Type , $Account_Service ,
                               $Charge_Plan_Option , $Interest_Rate_Type , $Interest_Rate_Service ) {
-      return $this->insertData("INSERT INTO Account (Account_id , Client_id , Account_Option," . 
+      return $this->insertData("INSERT INTO Account (Account_id , Client_id , Account_Option," .
                                                   "Account_Type, Account_Service, Balance," .
                                                   "Charge_Plan_Option , Interest_Rate_Type," . "Interest_Rate_Service) VALUES" .
                 "(" . $Account_id
