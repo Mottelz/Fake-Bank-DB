@@ -34,7 +34,6 @@ class payment extends Controller
 		{
 			$futurePaymentModel = $this->model('FuturePaymentModel');
 			$futurePayments = $futurePaymentModel->getFuturePaymentsByClientId($_SESSION['login_id']);
-			var_dump($_SESSION['login_id']);
 			var_dump($futurePayments);
 		}
 		else //$_SESSION['login_type'] == 'Employee'
