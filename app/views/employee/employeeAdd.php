@@ -88,6 +88,27 @@
 		<br />
 
 		<div>
+			City<br />
+			<input type="text" name="city" required class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
+			Province<br />
+			<input type="text" name="province" required class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
+			Country<br />
+			<input type="text" name="country" required class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			Phone<br />
 			<input type="text" name="phone" required class="form-control" required style="width:auto;"/>
 		</div>
