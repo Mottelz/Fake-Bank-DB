@@ -89,10 +89,8 @@ class account extends Controller
 				$Charge_Plan_Option = $_POST['option'];
 				$Interest_Rate_Type = $_POST['type'];
 				$Interest_Rate_Service = $_POST['service'];
-var_dump($_POST);
-				$accountModel->addAccountById($account_id, $client_id,
-				$Account_Option, $Account_Type, $Account_Service,
-				$Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service );
+
+				$accountModel->addAccountById($account_id, $client_id, $Account_Option, $Account_Type, $Account_Service, $Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service );
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{
