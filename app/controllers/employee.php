@@ -133,7 +133,43 @@ class employee extends Controller
 	{
 		if(isset($_POST['editemployee']) && $this->validateEditEmployeeData())
 		{
-			//NEED EDIT EMPLOYEE QUERY
+			$employeeModel = $this->model('EmployeeModel');
+
+			$employeeID = $employeeModel->getNextEmployeeId();
+			$firstName = $_POST['first_name'];
+			$lastName = $_POST['last_name'];
+			$password = $_POST['password'];
+			$branchID = $_POST['branch_id'];
+			$department = $_POST['department'];
+			$title = $_POST['title'];
+			$startDate = $_POST['start_date'];
+			$birthDate = $_POST['birth_date'];
+			$streetAddress = $_POST['street_address'];
+			$postalCode = $_POST['postal_code'];
+			$city = $_POST['city'];
+			$province = $_POST['province'];
+			$country = $_POST['country'];
+			$phone = $_POST['phone'];
+			$email = $_POST['email'];
+			$salary = $_POST['salary'];
+			$active = $_POST['active'];
+
+			$countryModel = $this->model('CountryModel');
+			$contries = $countryModel->getCityByCity($city);
+
+			// Insert new country entry if there is no country for the given city
+			if(!$countries)
+				$countryModel->insertCountry($city, $province, $country);
+
+			$addressModel = $this->model('AddressModel');
+			$addresses = $addressModel->getAddressByStreet($streetAddress);
+
+			// Insert new address entry if there is no address for the given street address
+			if(!$addresses)
+				$addressModel->insertAddress($streetAddress, $postalCode, $city);
+
+			// Insert new employee
+			$employeeModel->updateEmployee($employeeID, $firstName, $lastName, $branchID, $department, $title, $startDate, $birthDate, $streetAddress, $phone, $email, $salary, $active);
 			
 			header("Location:/employee");
 		}

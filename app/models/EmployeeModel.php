@@ -39,6 +39,22 @@ class EmployeeModel extends Model
     		", " . $active . ")");
     }
 
+    public function updateEmployee($id, $first_name, $last_name, $branch_id, $department, $title, $start_date, $birth_date, $street_address, $phone, $email, $salary, $active) {
+        return $this->getData("UPDATE Employee SET ".
+            "First_name = '$first_name'" .
+            "Last_name = '$last_name'" .
+            "Branch_id = $branch_id" .
+            "Department = '$department'" .
+            "Title = '$title'" .
+            "Employee_start_date = '$start_date'" .
+            "Birth_date = '$birth_date'" .
+            "Street_address = '$street_address'" .
+            "Phone = '$phone'" .
+            "Salary = $salary" .
+            "Active = $active" .
+            "' WHERE Employee_id = $id");
+    }
+
     public function updateEmployeeById($id, $first_name, $last_name, $street_address, $email, $phone) {
         return $this->getData("UPDATE Employee SET ".
             "First_name='".$first_name.
