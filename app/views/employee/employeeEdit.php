@@ -6,7 +6,7 @@
 	$employee_branch_id = $employee->Branch_id;
 	$department = $employee->Department;
 	$title = $employee->Title;
-	$start_date = $employee->Start_date;
+	$start_date = $employee->Employee_start_date;
 	$birth_date = $employee->Birth_date;
 	$street_address = $employee->Street_address;
 	$phone = $employee->Phone;
