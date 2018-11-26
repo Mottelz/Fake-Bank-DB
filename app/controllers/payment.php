@@ -134,8 +134,8 @@ class payment extends Controller
 			$endDate = $_POST['end_date'];
 
 			$futurePaymentModel->insertFuturePayment($paymentID, $to, $from, $amount, $startDate, $frequency, $endDate);
-			
-			//header("Location:/payment/futurePayments");
+
+			header("Location:/payment/futurePayments");
 		}
 	}
 
