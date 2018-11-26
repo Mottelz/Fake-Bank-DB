@@ -60,7 +60,7 @@ class TransactionModel extends Model
     }
 
     public function updateAccountBalance($id, $amount){
-		return $this->getData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id);
+		$this->updateData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id);
 	}
 
 
