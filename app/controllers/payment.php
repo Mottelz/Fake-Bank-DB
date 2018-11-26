@@ -154,8 +154,8 @@ class payment extends Controller
 			$endDate = $_POST['end_date'];
 
 			$futurePaymentModel->updateFuturePayment($paymentID, $to, $from, $amount, $startDate, $frequency, $endDate);
-			
-			//header("Location:/payment/futurePayments");
+
+			header("Location:/payment/futurePayments");
 		}
 	}
 
@@ -191,6 +191,7 @@ class payment extends Controller
 	public function validateEditFuturePaymentsData()
 	{
 		$now = date('Y/m/d');
+		$start_date = date('Y/m/d', strtotime($_POST['start_date']));
 		$end_date = date('Y/m/d', strtotime($_POST['end_date']));
 
 		if($_POST['amount'] <= 0)
@@ -198,6 +199,8 @@ class payment extends Controller
 		else if($_POST['frequency'] <= 0)
 			return false;
 		else if($end_date < $now)
+			return false;
+		else if($end_date < $start_date)
 			return false;
 
 		return true;
