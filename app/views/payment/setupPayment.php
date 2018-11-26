@@ -39,7 +39,7 @@
 						$account_id = $account->Account_id;
 						$type = $account->Account_type;
 				?>
-						<option value="<?= $account_id ?>">ID#<?= $account_id ?> : <?= $Type ?></option>
+						<option value="<?= $account_id ?>">ID#<?= $account_id ?> : <?= $type ?></option>
 				<?php
 					}
 				?>
