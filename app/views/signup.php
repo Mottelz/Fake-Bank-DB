@@ -71,6 +71,13 @@
 		<br />
 
 		<div>
+			Postal Code<br />
+			<input type="text" name="postal_code" required class="form-control" style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			City<br />
 			<input type="text" name="city" required class="form-control" style="width:auto;"/>
 		</div>
@@ -87,13 +94,6 @@
 		<div>
 			Country<br />
 			<input type="text" name="country" required class="form-control" style="width:auto;"/>
-		</div>
-
-		<br />
-
-		<div>
-			Postal Code<br />
-			<input type="text" name="postal_code" required class="form-control" style="width:auto;"/>
 		</div>
 
 		<br />
