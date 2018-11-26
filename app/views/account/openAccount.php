@@ -20,6 +20,7 @@
 			<select name="type" class="form-control" required>
 				<option selected disabled value="">---Select Type---</option>
 				<?php
+				var_dump($accounts);
 					for($index = 0; $index < count($accounts); $index++)
 					{
 						$account = $accounts[$index];
