@@ -168,7 +168,7 @@ class employee extends Controller
 				$addressModel->insertAddress($streetAddress, $postalCode, $city);
 
 			// Insert new employee
-			$employeeModel->updateEmployee($employeeID, $firstName, $lastName, $branchID, $department, $title, $startDate, $birthDate, $streetAddress, $phone, $email, $salary, $active);
+			$employeeModel->updateEmployee($employee_id, $firstName, $lastName, $branchID, $department, $title, $startDate, $birthDate, $streetAddress, $phone, $email, $salary, $active);
 			
 			header("Location:/employee");
 		}
