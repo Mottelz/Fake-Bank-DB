@@ -17,24 +17,18 @@ class EmployeeModel extends Model
         return $this->getData("SELECT * FROM Employee WHERE branch_id=" . $id);
     }
 
-    public function updateEmployeeById($id, $branch_id, $title, $first_name, $last_name, $salary, $street_address, $password, $department, $email, $phone, $start_date, $active) {
-        return $this->getData("UPDATE Employee SET Branch_id='".$branch_id.
-            "', Title='".$title.
-            "', First_name='".$first_name.
+    public function updateEmployeeById($id, $first_name, $last_name, $street_address, $email, $phone) {
+        return $this->getData("UPDATE Employee SET ".
+            "First_name='".$first_name.
             "', Last_name='".$last_name.
-            "', Salary='".$salary.
             "', Street_address='".$street_address.
-            "', Employee_password='".$password.
-            "', Department='".$department.
             "', Email='".$email.
             "', Phone='".$phone.
-            "', Start_date'".$start_date.
-            "', Active='".$active.
             "' WHERE Employee_id='".$id."'");
     }
 
     public function updateEmployeePassword($id, $password) {
-        return $this->getData("UPDATE Client SET Employee_password='".$password."' WHERE Client_id='".$id."'");
+        return $this->getData("UPDATE Client SET Employee_password='".$password."' WHERE Employee_id='".$id."'");
     }
 
 	private $data = 

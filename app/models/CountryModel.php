@@ -28,6 +28,10 @@ class CountryModel extends Model
             ", '" . $country . "')");
     }
 
+    public function updateCityByStreet($street){
+
+    }
+
 //	private $data =
 //	'{
 //		"Country" : [{
