@@ -27,7 +27,7 @@
 		<div>
 			To<br />
 
-			<select name="to" class="form-control" required style="width:auto;">
+			<select name="to" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
 					for($index = 0; $index < count($accounts); $index++)
