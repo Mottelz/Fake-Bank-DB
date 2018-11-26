@@ -22,7 +22,7 @@ class CountryModel extends Model
     }
 
     public function insertCountry($city, $province, $country) {
-        $this->insertData("INSERT INTO Country (City, Province, Country) VALUES (" .
+        $this->insertData("INSERT IGNORE INTO Country (City, Province, Country) VALUES (" .
             "'" . $city . "'" .
             ", '" . $province . "'" .
             ", '" . $country . "')");
