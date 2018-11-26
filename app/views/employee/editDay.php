@@ -4,7 +4,6 @@
 	$sched_id = $schedule->Sched_id;
 	$sched_type = $schedule->Sched_type;
 	$date = $schedule->Sched_date;
-	var_dump($sched_id);
 ?>
 
 <html>
