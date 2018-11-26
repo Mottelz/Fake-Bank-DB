@@ -41,7 +41,7 @@
 					for($index = 0; $index < count($branches); $index++)
 					{
 						$branch = $branches[$index];
-						$branch_id = $branch->branch_id;
+						$branch_id = $branch->Branch_id;
 				?>
 						<option><?= $branch_id ?></option>
 				<?php
