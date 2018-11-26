@@ -145,7 +145,7 @@
 
 		<div>
 			Active<br />
-			<select required class="form-control" required style="width:auto;">
+			<select name="active" required class="form-control" required style="width:auto;">
 				<option selected value="1">Yes</option>
 				<option value="0">No</option>
 			</select>
