@@ -14,7 +14,7 @@ class account extends Controller
 			['acc_toggle' => $_SESSION['acc_toggle'],
 			 'accounts' => $account]);
 
-$accountAll = $accountModel->getAllAccounts());
+$accountAll = $accountModel->getAllAccounts();
 			 $this->view('account/openAccount',
 	 			['accounts' => $accountAll]);
 	}
