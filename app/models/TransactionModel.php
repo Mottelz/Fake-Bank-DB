@@ -55,12 +55,14 @@ class TransactionModel extends Model
     }
 
     public function computeBalanceAfterTrans($to, $from, $amount) {
-    	$this->updateAccountBalance($to, $amount);
-    	$this->updateAccountBalance($from, -($amount));
+    	$this->computeAccountBalance($to, $amount);
+    	$this->computeAccountBalance($from, -($amount));
     }
 
-    public function updateAccountBalance($id, $amount){
-		$this->updateData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id);
+    public function computeAccountBalance($id, $amount){
+    	$balance = $this->getData("SELECT Balance FROM Account WHERE Account_id = $id")[0]->Balance;
+    	$newBalance = $balance + $amount;
+		$this->updateData("UPDATE Account SET Balance=" . $newBalance . " WHERE Account_id = " . $id);
 	}
 
 
