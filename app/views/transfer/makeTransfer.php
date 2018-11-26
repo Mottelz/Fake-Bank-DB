@@ -34,9 +34,9 @@
 					{
 						$account = $accounts[$index];
 						$account_id = $account->Account_id;
-						$type = $account->type;
+						$type = $account->Account_Type;
 				?>
-						<option><?= $account_id ?></option>
+						<option>ID#<?= $account_id ?> : <?= $type ?></option>
 				<?php
 					}
 				?>
@@ -54,9 +54,9 @@
 					{
 						$account = $accounts[$index];
 						$account_id = $account->Account_id;
-						$type = $account->type;
+						$type = $account->Account_Type;
 				?>
-						<option value="<?= $account_id ?>"><?= $type ?></option>
+						<option value="<?= $account_id ?>">ID#<?= $account_id ?> : <?= $type ?></option>
 				<?php
 					}
 				?>
