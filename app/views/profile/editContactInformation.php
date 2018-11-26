@@ -1,18 +1,21 @@
 <?php
 	$user = $data['user'];
 	$login_type = $data['login_type'];
-	$user_id = $login_type == 'Client' ? $user->client_id : $user->employee_id;
-	$branch_id = $user->branch_id;
-	$first_name = $user->first_name;
-	$last_name = $user->last_name;
-	$street_address = $user->street_address;
-	$join_date = $user->join_date;
-	$email = $user->email;
-	$phone = $user->phone;
+	$user_id = $login_type == 'Client' ? $user->Client_id : $user->Employee_id;
+	$branch_id = $user->Branch_id;
+	$first_name = $user->First_name;
+	$last_name = $user->Last_name;
+	$street_address = $user->Street_address;
+	$join_date = $user->Join_date;
+	$email = $user->Email;
+	$phone = $user->Phone;
 
 	$address = $data['address'];
-	$postal_code = $address->postal_code;
-	$city = $address->city;
+	$postal_code = $address->Postal_code;
+	$city = $address->City;
+
+    $country = $data['country']->Country;
+    $province = $data['country']->Province;
 ?>
 
 <html>
@@ -61,8 +64,15 @@
         <br />
 
         <div>
+            Province<br />
+            <input type="text" name="province" value="<?=$province ?>" required class="form-control" style="width:auto;"/>
+        </div>
+
+        <br />
+
+        <div>
             Country<br />
-            <input type="text" name="country" value="<?= $country ?>" required class="form-control" style="width:auto;"/>
+            <input type="text" name="country" value="<?=$country ?>" required class="form-control" style="width:auto;"/>
         </div>
 
 		<br />

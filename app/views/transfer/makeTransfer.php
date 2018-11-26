@@ -24,9 +24,9 @@
 	<br />
 
 	<form method="POST" action="/transfer">
+		
 		<div>
 			To<br />
-
 			<select name="to" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
@@ -34,10 +34,7 @@
 					{
 						$account = $accounts[$index];
 						$account_id = $account->Account_id;
-						$type = $account->Account_Type;
-						//$balance = $account->Balance;
-
-
+						$type = $account->type;
 				?>
 						<option><?= $account_id ?></option>
 				<?php

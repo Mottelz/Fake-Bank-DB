@@ -88,20 +88,22 @@ class employee extends Controller
 			$employeeID = $employeeModel->getNextEmployeeId();
 			$firstName = $_POST['first_name'];
 			$lastName = $_POST['last_name'];
+			$branchID = $_POST['branch_id'];
 			$department = $_POST['department'];
 			$title = $_POST['title'];
-			$branchID = $_POST['branch_id'];
 			$startDate = $_POST['start_date'];
 			$birthDate = $_POST['birth_date'];
 			$joinDate = date('Y-m-d');
 			$password = $_POST['password'];
 			$streetAddress = $_POST['street_address'];
+			$postalCode = $_POST['postal_code'];
 			$city = $_POST['city'];
 			$province = $_POST['province'];
 			$country = $_POST['country'];
-			$postalCode = $_POST['postal_code'];
 			$phone = $_POST['phone'];
 			$email = $_POST['email'];
+			$salary = $_POST['salary'];
+			$active = $_POST['active'];
 
 			$countryModel = $this->model('CountryModel');
 			$contries = $countryModel->getCityByCity($city);
