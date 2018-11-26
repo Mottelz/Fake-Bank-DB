@@ -29,9 +29,9 @@ class account extends Controller
 		$accountOption = $accountModel->getAccountOptions();
 		$accountService = $accountModel->getAccountService();
 		$this->view('account/openAccount',
-		['accounttype' => $accountType],
-		['accountoptions' => $accountOption],
-		['accountservice' => $accountService]
+			['accounttype' => $accountType,
+			'accountoptions' => $accountOption,
+			'accountservice' => $accountService]
 		);
 	}
 
