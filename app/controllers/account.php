@@ -8,13 +8,14 @@ class account extends Controller
 		$this->checkIsLoggedIn();
 		$this->checkToggle();
 		$accountModel = $this->model('AccountModel');
-		$account = $accountModel->getAccountById($_SESSION['login_id']);
 
+		$account = $accountModel->getAccountById($_SESSION['login_id']);
 		$this->view('account/accountSummary',
 			['acc_toggle' => $_SESSION['acc_toggle'],
 			 'accounts' => $account]);
 
-$accountAll = $accountModel->getAllAccounts();
+			 $accountAll = $accountModel->getAllAccounts();
+
 			 $this->view('account/openAccount',
 	 			['accounts' => $accountAll]);
 	}
@@ -70,6 +71,7 @@ $accountAll = $accountModel->getAllAccounts();
 		{
 			if($_SESSION['login_type'] == 'Client')
 			{
+				var_dump($accountAll);
 				$clientModel = $this->model('ClientModel');
 
 				$account_id = $clientModel->getNextAccountId();
