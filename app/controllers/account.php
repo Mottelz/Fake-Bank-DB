@@ -81,8 +81,8 @@ class account extends Controller
 				//var_dump($accountAll);
 				$accountModel = $this->model('AccountModel');
 
-				$account_id = $clientModel->getNextAccountId();
-				$client_id = $clientModel->$_SESSION['login_id'];
+				$account_id = $accountModel->getNextAccountId();
+				$client_id = $_SESSION['login_id'];
 				$Account_Option = $_POST['option'];
 				$Account_Type = $_POST['type'];
 				$Account_Service = $_POST['service'];

@@ -17,9 +17,11 @@ class AccountModel extends Model
     public function getAccountType() {
         return $this->getData("SELECT DISTINCT Account_Type FROM Account");
     }
+
     public function getAccountService() {
           return $this->getData("SELECT DISTINCT Account_Service  FROM Account");
-    }  
+    }
+
     public function getAccountOptions() {
             return $this->getData("SELECT DISTINCT Account_Option  FROM Account");
     }

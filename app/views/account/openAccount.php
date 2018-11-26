@@ -4,8 +4,7 @@
 		$accountType = $data['accounttype'];
 		$accountOption = $data['accountoptions'];
 		$accountService = $data['accountservice'];
-		var_dump($accountOption);
-		var_dump($accountService);
+
 	?>
 
 </head>
