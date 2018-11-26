@@ -45,7 +45,8 @@ class ClientModel extends Model
             ", Street_address = '$street_address'" .
             ", Department = '$department'" .
             ", Email = '$email'" .
-            ", Phone = '$phone'");
+            ", Phone = '$phone'" .
+            " WHERE Client_id = $id");
     }
 
     public function updateClientById($id, $first_name, $last_name, $street_address, $email, $phone) {
