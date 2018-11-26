@@ -13,6 +13,10 @@ class account extends Controller
 		$this->view('account/accountSummary',
 			['acc_toggle' => $_SESSION['acc_toggle'],
 			 'accounts' => $account]);
+
+$accountAll = $accountModel->getAllAccounts();
+			 $this->view('account/openAccount',
+	 			['accounts' => $accountAll]);
 	}
 
 	public function new()
