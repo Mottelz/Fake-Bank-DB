@@ -29,7 +29,7 @@
 </thead>
 <tbody>
 		<?php
-		var_dump($transactions);
+
 			for($index = 0; $index < count($transactions); $index++)
 			{
 				$transaction = $transactions[$index];

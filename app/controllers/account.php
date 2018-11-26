@@ -20,7 +20,7 @@ class account extends Controller
 	 			['accounts' => $accountAll]);*/
 	}
 
-	public function new()
+	public function newAccount()
 	{
 		$this->checkIsLoggedIn();
 		$this->checkOpenAccountData();

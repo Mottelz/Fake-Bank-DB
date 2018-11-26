@@ -33,11 +33,11 @@
 			for($index = 0; $index < count($transactions); $index++)
 			{
 				$transaction = $transactions[$index];
-				$to = $transaction->to;
-				$from = $transaction->from;
-				$amount = $transaction->amount;
-				$by = $transaction->by;
-				$date = $transaction->date;
+				$to = $transaction->To_accid ;
+				$from = $transaction->From_accid ;
+				$amount = $transaction->Amount;
+				$by = $transaction->Client_id;
+				$date = $transaction->Trans_date ;
 		?>
 				<tr><th scope="row">
 					<?= $date ?></
@@ -45,7 +45,7 @@
 					<td><?= $to ?></td>
 					<td><?= $from ?></td>
 					<td><?= $amount ?></td>
-					<td><?= $by ?></td>
+					<td>Client <?= $by ?></td>
 				</tr>
 
 		<?php
