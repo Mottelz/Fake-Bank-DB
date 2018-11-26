@@ -40,7 +40,7 @@ class EmployeeModel extends Model
     }
 
     public function updateEmployee($id, $first_name, $last_name, $branch_id, $department, $title, $start_date, $birth_date, $street_address, $phone, $email, $salary, $active) {
-        return $this->getData("UPDATE Employee SET ".
+        $this->getData("UPDATE Employee SET ".
             "First_name = '$first_name'" .
             ", Last_name = '$last_name'" .
             ", Branch_id = $branch_id" .
