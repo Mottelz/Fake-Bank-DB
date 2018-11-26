@@ -90,7 +90,13 @@ class account extends Controller
 				$Interest_Rate_Type = $_POST['type'];
 				$Interest_Rate_Service = $_POST['service'];
 
-				$accountModel->addAccountById($account_id, $client_id, $Account_Option, $Account_Type, $Account_Service, $Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service );
+				if($accountModel->addAccountById($account_id, $client_id, $Account_Option, $Account_Type, $Account_Service, $Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service )){
+					$message = "Account successfully created.";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}else{
+					$message = "Account creation failed.";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+				}
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{
