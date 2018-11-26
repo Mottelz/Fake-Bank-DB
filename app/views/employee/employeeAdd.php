@@ -34,6 +34,13 @@
 		<br />
 
 		<div>
+			Password<br />
+			<input type="password" name="password" required class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			Branch #<br />
 			<select name="branch_id" required class="form-control" required style="width:auto;">
 				<option selected disabled value="">---Select Branch---</option>
