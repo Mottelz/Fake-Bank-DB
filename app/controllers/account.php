@@ -93,8 +93,8 @@ class account extends Controller
 			if($accountModel->addAccountById($account_id, $client_id,
 				$Account_Option, $Account_Type, $Account_Service,
 				$Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service ))
-				{echo "SUCCESS"}
-				else{echo "no"}
+				{echo "SUCCESS";}
+				else{echo "no";}
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{

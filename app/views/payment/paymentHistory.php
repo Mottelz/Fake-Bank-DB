@@ -44,7 +44,7 @@
 					<td><?= $to ?></td>
 					<td><?= $from ?></td>
 					<td><?= $amount ?></td>
-					<td><?= $by ?></td>
+					<td>Client <?= $by ?></td>
 				</tr>
 		<?php
 			}
