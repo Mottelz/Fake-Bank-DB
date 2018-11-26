@@ -35,6 +35,13 @@
 		<br />
 
 		<div>
+			Password<br />
+			<input type="password" class="form-control" name="password" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			Birth Date<br />
 			<input type="date" class="form-control" name="birth_date" required style="width:auto;"/>
 		</div>

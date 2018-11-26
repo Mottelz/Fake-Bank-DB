@@ -41,7 +41,7 @@ class client extends Controller
 
 	public function edit($client_id)
 	{
-		$this->checkEditClientData();
+		$this->checkEditClientData($client_id);
 
 		$clientModel = $this->model('ClientModel');
 		$client = $clientModel->getClientById($client_id)[0];
@@ -105,11 +105,43 @@ class client extends Controller
 		}
 	}
 
-	public function checkEditClientData()
+	public function checkEditClientData($client_id)
 	{
 		if(isset($_POST['editclient']) && $this->validateEditClientData())
 		{
-			//NEED EDIT CLIENT QUERY
+			$clientModel = $this->model('ClientModel');
+
+			$firstName = $_POST['first_name'];
+			$lastName = $_POST['last_name'];
+			$birthDate = $_POST['birth_date'];
+			$joinDate = date('Y-m-d');
+			$password = $_POST['password'];
+			$branchID = $_POST['branch_id'];
+			$department = null;
+			$streetAddress = $_POST['street_address'];
+			$city = $_POST['city'];
+			$province = $_POST['province'];
+			$country = $_POST['country'];
+			$postalCode = $_POST['postal_code'];
+			$phone = $_POST['phone'];
+			$email = $_POST['email'];
+
+			$countryModel = $this->model('CountryModel');
+			$contries = $countryModel->getCityByCity($city);
+
+			// Insert new country entry if there is no country for the given city
+			if(!$countries)
+				$countryModel->insertCountry($city, $province, $country);
+
+			$addressModel = $this->model('AddressModel');
+			$addresses = $addressModel->getAddressByStreet($streetAddress);
+
+			// Insert new address entry if there is no address for the given street address
+			if(!$addresses)
+				$addressModel->insertAddress($streetAddress, $postalCode, $city);
+
+			// Insert new client
+			$clientModel->updateClient($client_id, $branchID, $firstName, $lastName, $birthDate, $joinDate, $streetAddress, $department, $email, $phone);
 
 			header("Location:/client");
 		}
