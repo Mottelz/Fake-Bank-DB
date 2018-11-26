@@ -15,13 +15,13 @@ class client extends Controller
 	public function details($client_id)
 	{
 		$clientModel = $this->model('ClientModel');
-		$client = $clientModel->clients[0]; //Arbitrary client (NEED QUERY FOR client_id)
+		$client = $clientModel->getClientById($client_id)[0];
 
 		$addressModel = $this->model('AddressModel');
-		$address = $addressModel->addresses[0]; //Arbitrary address (NEED QUERY FOR street_address)
+		$address = $addressModel->getAddressByStreet($client->Street_address)[0];
 
 		$countryModel = $this->model('CountryModel');
-		$country = $countryModel->countries[0]; //Arbitrary country (NEED QUERY FOR city)
+		$country = $countryModel->getCityByCity($address->City)[0];
 
 		$this->view('client/clientDetails',
 			['client' => $client,
