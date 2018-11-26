@@ -45,7 +45,7 @@ class employee extends Controller
 
 	public function edit($employee_id)
 	{
-		$this->checkEditEmployeeData();
+		$this->checkEditEmployeeData($employee_id);
 
 		$employeeModel = $this->model('EmployeeModel');
 		$employee = $employeeModel->getEmployeeById($employee_id)[0];
@@ -129,13 +129,12 @@ class employee extends Controller
 		}
 	}
 
-	public function checkEditEmployeeData()
+	public function checkEditEmployeeData($employee_id)
 	{
 		if(isset($_POST['editemployee']) && $this->validateEditEmployeeData())
 		{
 			$employeeModel = $this->model('EmployeeModel');
 
-			$employeeID = $employeeModel->getNextEmployeeId();
 			$firstName = $_POST['first_name'];
 			$lastName = $_POST['last_name'];
 			$password = $_POST['password'];
