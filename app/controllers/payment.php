@@ -71,7 +71,7 @@ class payment extends Controller
 		$this->checkEditFuturePaymentsData($payment_id);
 
 		$futurePaymentModel = $this->model('FuturePaymentModel');
-		$futurePayment = $futurePaymentModel->getFuturePaymentsById($payment_id)[0]
+		$futurePayment = $futurePaymentModel->getFuturePaymentsById($payment_id)[0];
 
 		if($_SESSION['login_type'] == 'Client')
 		{
