@@ -30,8 +30,8 @@ class AccountModel extends Model
 		return $this->getData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id);
 	}
 
-  public function addAccountById($Account_id , $Client_id  , $Account_Option , $Account_Type ,
-                                $Account_Service , $Balance , $Charge_Plan_Option , $Interest_Rate_Type ,
+  public function addAccountById($Account_id , $Client_id  ,
+                              $Account_Option , $Account_Type ,   $Account_Service , $Charge_Plan_Option , $Interest_Rate_Type ,
                                 $Interest_Rate_Service ) {
       return $this->insertData("INSERT INTO Account (Account_id , Client_id , Account_Option,
                                                   Account_Type, Account_Service, Balance,
