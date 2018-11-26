@@ -58,6 +58,13 @@
 			<input type="text" name="city" value="<?= $city ?>" required class="form-control" style="width:auto;"/>
 		</div>
 
+        <br />
+
+        <div>
+            Country<br />
+            <input type="text" name="country" value="<?= $country ?>" required class="form-control" style="width:auto;"/>
+        </div>
+
 		<br />
 
 		<div>
