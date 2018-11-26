@@ -5,7 +5,7 @@
 	$to = $futurePayment->To_accid;
 	$from = $futurePayment->From_accid;
 	$amount = $futurePayment->Amount;
-	$start_date = $futurePayment->Start_date;
+	$start_date = $futurePayment->Future_Payments_Start_date;
 	$frequency = $futurePayment->Frequency;
 	$end_date = $futurePayment->End_date;
 
