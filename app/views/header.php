@@ -1,6 +1,7 @@
 <?php
 	$account_type = $data['account_type'];
 	$acc_toggle = $data['acc_toggle'];
+  var_dump($account_type);
 ?>
 
   <html>
