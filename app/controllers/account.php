@@ -24,8 +24,10 @@ class account extends Controller
 	{
 		$this->checkIsLoggedIn();
 		$this->checkOpenAccountData();
-
-		$this->view('account/openAccount');
+		$accountModel = $this->model('AccountModel');
+$accountAll = $accountModel->getAllAccounts();
+		$this->view('account/openAccount',
+		['accounts' => $accountAll]);
 	}
 
 	public function details($account_id)
