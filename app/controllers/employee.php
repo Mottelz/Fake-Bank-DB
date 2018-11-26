@@ -125,9 +125,9 @@ class employee extends Controller
 			$date = $_POST['date'];
 
 			$scheduleModel->updateSchedule($schedID, $schedType, $date);
-
+			var_dump($sched_id);
 			$employee_id = $scheduleMode->getScheduleById($sched_id)[0]->Employee_id;
-			header("Location:/employee/details/$employee_id");
+			//header("Location:/employee/details/$employee_id");
 		}
 	}
 
