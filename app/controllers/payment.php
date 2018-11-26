@@ -145,7 +145,7 @@ class payment extends Controller
 		{
 			$futurePaymentModel = $this->model('FuturePaymentModel');
 
-			$paymentID = $futurePaymentModel->getNextPaymentId();
+			$paymentID = $payment_id;
 			$to = $_POST['to'];
 			$from = $_POST['from'];
 			$amount = $_POST['amount'];
