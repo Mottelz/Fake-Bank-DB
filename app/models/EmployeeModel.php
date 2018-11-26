@@ -17,6 +17,28 @@ class EmployeeModel extends Model
         return $this->getData("SELECT * FROM Employee WHERE branch_id=" . $id);
     }
 
+    public function getNextEmployeeId() {
+        return $this->getData("SELECT Employee_id FROM Employee ORDER BY Employee_id DESC")[0]->Employee_id + 1;
+    }
+
+    public function insertEmployee($id, $first_name, $last_name, $password, $branch_id, $department, $title, $start_date, $birth_date, $street_address, $phone, $email, $salary, $active) {
+    	$this->insertData("INSERT INTO Employee (Employee_id, First_name, Last_name, Password, Branch_id, Department, Title, Employee_start_date, Birth_date, Street_address, Phone, Email, Salary, Active) VALUES (" .
+    		"$id" . 
+    		", $first_name" .
+    		", $last_name" .
+    		", $password" .
+    		", $branch_id" .
+    		", $department" .
+    		", $title" .
+    		", $start_date" .
+    		", $birth_date" .
+    		", $street_address" .
+    		", $phone" .
+    		", $email" ,
+    		", $salary" ,
+    		", $active)");
+    }
+
     public function updateEmployeeById($id, $first_name, $last_name, $street_address, $email, $phone) {
         return $this->getData("UPDATE Employee SET ".
             "First_name='".$first_name.
