@@ -16,7 +16,7 @@
 
 	<br />
 
-	<form method="POST" action="/account/newAccount">
+	<form method="POST" action="/account/new">
 		<div>Open A New Account</div>
 
 		<div class="form-group" style="display: inline-block">	 Type
