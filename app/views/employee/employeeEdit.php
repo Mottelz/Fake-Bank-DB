@@ -15,9 +15,9 @@
 	$active = $employee->Active;
 
 	$address = $data['address'];
-	$postal_code = $address->Postal_Code;
+	$postal_code = $address->Postal_code;
 	$city = $address->City;
-	
+
 	$branches = $data['branches'];
 ?>
 
@@ -59,7 +59,7 @@
 					for($index = 0; $index < count($branches); $index++)
 					{
 						$branch = $branches[$index];
-						$branch_id = $branch->branch_id;
+						$branch_id = $branch->Branch_id;
 				?>
 						<option <?= $employee_branch_id == $branch_id ? 'selected' : '' ?>><?= $branch_id ?></option>
 				<?php
