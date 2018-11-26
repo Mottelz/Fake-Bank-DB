@@ -1,7 +1,6 @@
 <?php
 	$login_type = $_SESSION['login_type'];
 	//$acc_toggle = $data['acc_toggle'];
-  var_dump($login_type);
 ?>
 
   <html>
