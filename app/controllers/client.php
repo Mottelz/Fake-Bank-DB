@@ -50,7 +50,7 @@ class client extends Controller
 		$address = $addressModel->addresses[0]; //Arbitrary address (NEED QUERY FOR street_address)
 
 		$branchModel = $this->model('BranchModel');
-		$branches = $branchModel->branches;
+		$branches = $branchModel->getAllBranches();
 
 
 		$this->view('client/clientEdit',
