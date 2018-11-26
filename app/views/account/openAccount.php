@@ -1,8 +1,9 @@
 <html>
 <head>
 	<?= $this->header();
-		$accounts = $data['accounts'];
-			var_dump($accounts);
+		$accountType = $data['accounttype'];
+		$accountOption = $data['accountoptions'];
+		$accountService = $data['accountservice'];
 	?>
 
 </head>
@@ -22,9 +23,9 @@
 				<option selected disabled value="">---Select Type---</option>
 				<?php
 
-					for($index = 0; $index < count($accounts); $index++)
+					for($index = 0; $index < count($accountType); $index++)
 					{
-						$account = $accounts[$index];
+						$account = $accountType[$index];
 						$type = $account->Account_Type;
 				?>
 						<option><?= $type ?></option>
@@ -41,9 +42,9 @@
 			<select name="option" class="form-control" required>
 				<option selected disabled value="">---Select Option---</option>
 				<?php
-					for($index = 0; $index < count($accounts); $index++)
+					for($index = 0; $index < count($accountOption); $index++)
 					{
-						$account = $accounts[$index];
+						$account = $accountOption[$index];
 						$option = $account->Account_Option;
 				?>
 						<option><?= $option ?></option>
@@ -60,9 +61,9 @@
 			<select name="service" class="form-control" required>
 				<option selected disabled value="">---Select Service---</option>
 				<?php
-					for($index = 0; $index < count($accounts); $index++)
+					for($index = 0; $index < count($accountService); $index++)
 					{
-						$account = $accounts[$index];
+						$account = $accountService[$index];
 						$service = $account->Account_Service ;
 				?>
 						<option><?= $service ?></option>

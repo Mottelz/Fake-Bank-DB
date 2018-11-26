@@ -25,9 +25,14 @@ class account extends Controller
 		$this->checkIsLoggedIn();
 		$this->checkOpenAccountData();
 		$accountModel = $this->model('AccountModel');
-$accountAll = $accountModel->getAllAccounts();
+		$accountType = $accountModel->getAccountType();
+		$accountOption = $accountModel->getAccountOptions();
+		$accountService = $accountModel->getAccountService();
 		$this->view('account/openAccount',
-		['accounts' => $accountAll]);
+		['accounttype' => $accountType],
+		['accountoptions' => $accountOption],
+		['accountservice' => $accountService]
+		);
 	}
 
 	public function details($account_id)
@@ -74,7 +79,7 @@ $accountAll = $accountModel->getAllAccounts();
 			if($_SESSION['login_type'] == 'Client')
 			{
 				//var_dump($accountAll);
-				$clientModel = $this->model('ClientModel');
+				$accountModel = $this->model('AccountModel');
 
 				$account_id = $clientModel->getNextAccountId();
 				$client_id = $clientModel->$_SESSION['login_id'];
