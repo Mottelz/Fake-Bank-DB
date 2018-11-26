@@ -28,10 +28,10 @@ class TransactionModel extends Model
 	       return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
 	  }
 
-		public function insertPayment($To_accid , $From_accid  , $Amount) {
+		/*public function insertPayment($To_accid , $From_accid  , $Amount) {
     	$this->insertData("INSERT INTO Transaction_Table  VALUES (
 
-    }
+    }*/
 
 
 	function __construct()
