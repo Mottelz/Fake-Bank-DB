@@ -18,6 +18,10 @@
 	$postal_code = $address->Postal_code;
 	$city = $address->City;
 
+	$countryObj = $data['country'];
+	$province = $countryObj->Province;
+	$country = $countryObj->Country;
+
 	$branches = $data['branches'];
 ?>
 
@@ -106,6 +110,13 @@
 		<br />
 
 		<div>
+			Postal Code<br />
+			<input type="text" name="postal_code" value="<?= $postal_code ?>" required class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			City<br />
 			<input type="text" name="city" value="<?= $city ?>" required class="form-control" required style="width:auto;"/>
 		</div>
@@ -113,8 +124,15 @@
 		<br />
 
 		<div>
-			Postal Code<br />
-			<input type="text" name="postal_code" value="<?= $postal_code ?>" required class="form-control" required style="width:auto;"/>
+			Province<br />
+			<input type="text" name="province" value="<?= $province ?>" required class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
+			Country<br />
+			<input type="text" name="country" value="<?= $country ?>" required class="form-control" required style="width:auto;"/>
 		</div>
 
 		<br />

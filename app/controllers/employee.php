@@ -53,12 +53,16 @@ class employee extends Controller
 		$addressModel = $this->model('AddressModel');
 		$address = $addressModel->getAddressByStreet($employee->Street_address)[0];
 
+		$countryModel = $this->model('CountryModel');
+		$country = $countryModel->getCityByCity($address->City)[0];
+
 		$branchModel = $this->model('BranchModel');
 		$branches = $branchModel->getAllBranches();
 
 		$this->view('employee/employeeEdit',
 			['employee' => $employee,
 			 'address' => $address,
+			 'country' => $country,
 			 'branches' => $branches]);
 	}
 
