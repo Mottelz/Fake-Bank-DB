@@ -35,13 +35,11 @@ class ClientModel extends Model
             ", '" . $email . "')");
     }
 
-    public function updateClientById($id, $branch_id, $first_name, $last_name, $street_address, $password, $department, $email, $phone) {
-        return $this->updateData("UPDATE Client SET Branch_id='".$branch_id.
-            "', First_name='".$first_name.
+    public function updateClientById($id, $first_name, $last_name, $street_address, $email, $phone) {
+        return $this->updateData("UPDATE Client SET " .
+            "First_name='".$first_name.
             "', Last_name='".$last_name .
             "', Street_address='".$street_address.
-            "', Password='".$password.
-            "', Department='".$department.
             "', Email='".$email.
             "', Phone='".$phone.
             "' WHERE Client_id='".$id."'");
