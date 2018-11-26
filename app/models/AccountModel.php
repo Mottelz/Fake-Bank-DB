@@ -36,15 +36,15 @@ class AccountModel extends Model
       return $this->insertData("INSERT INTO Account (Account_id , Client_id , Account_Option,
                                                   Account_Type, Account_Service, Balance,
                                                   Charge_Plan_Option , Interest_Rate_Type, Interest_Rate_Service ) VALUES
-                (" ."'" .   $Account_id
+                (" . $Account_id
                   .", " .$Client_id
                   .", '" .$Account_Option
-              .", '" .$Account_Type
-              .", '" .$Account_Service
-              .", '" . 0
+              ."', '" .$Account_Type
+              ."', '" .$Account_Service
+              ."', " . 0
               .", '" .$Charge_Plan_Option
-              .", '" .$Interest_Rate_Type
-              .", '" .$Interest_Rate_Service. "')");
+              ."', '" .$Interest_Rate_Type
+              ."', '" .$Interest_Rate_Service. "')");
   }
 
   public function getNextAccountId() {
