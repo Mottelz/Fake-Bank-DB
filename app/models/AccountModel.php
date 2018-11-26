@@ -14,6 +14,16 @@ class AccountModel extends Model
         return $this->getData("SELECT * FROM Account");
     }
 
+    public function getAccountType() {
+        return $this->getData("SELECT DISTINCT Account_Type FROM Account");
+    }
+    public function getAccountService() {
+          return $this->getData("SELECT DISTINCT Account_Service  FROM Account");
+    }  
+    public function getAccountOptions() {
+            return $this->getData("SELECT DISTINCT Account_Option  FROM Account");
+    }
+
 	public function updateAccountBalance($id, $amount){
 		return $this->getData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id);
 	}
