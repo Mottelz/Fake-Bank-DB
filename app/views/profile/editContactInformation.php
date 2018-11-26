@@ -13,7 +13,12 @@
 	$address = $data['address'];
 	$postal_code = $address->Postal_code;
 	$city = $address->City;
+
+    $country = $data['country']->Country;
+    $province = $data['country']->Province;
 ?>
+
+<?php var_dump($data)?>
 
 <html>
 <head>
@@ -62,14 +67,14 @@
 
         <div>
             Province<br />
-            <input type="text" name="province" value="<?= $province ?>" required class="form-control" style="width:auto;"/>
+            <input type="text" name="province" value="<?=$province ?>" required class="form-control" style="width:auto;"/>
         </div>
 
         <br />
 
         <div>
             Country<br />
-            <input type="text" name="country" value="<?= $country ?>" required class="form-control" style="width:auto;"/>
+            <input type="text" name="country" value="<?=$country ?>" required class="form-control" style="width:auto;"/>
         </div>
 
 		<br />
