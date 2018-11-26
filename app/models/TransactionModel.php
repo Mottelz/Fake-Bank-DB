@@ -41,6 +41,19 @@ class TransactionModel extends Model
 		return $this->getData("SELECT * FROM Transaction_Table t INNER JOIN Account a ON t.From_accid = a.Account_id WHERE Trans_type = 'Transfer' AND Client_id = $client_id");
 	}
 
+	public function insertTransfer($trans_id, $to , $from, $amount, $date) {
+    	$inserted = $this->insertData("INSERT INTO Transaction_Table (Trans_id, To_accid, From_accid, Amount, Trans_date, Trans_type)  VALUES (" .
+    		"$trans_id" .
+    		", $to" .
+    		", $from" .
+    		", $amount" .
+    		", '$date'" .
+    		", 'Transfer')");
+    	
+   		if($inserted)
+    		$this->computeBalanceAfterTrans($to, $from, $amount);
+    }
+
 	public function getClientPayments($client_id) {
 		return $this->getData("SELECT * FROM Transaction_Table t INNER JOIN Account a ON t.From_accid = a.Account_id WHERE Trans_type = 'Payment' AND Client_id = $client_id");
 	}

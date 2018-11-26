@@ -50,17 +50,15 @@ class transfer extends Controller
 	{
 		if(isset($_POST['maketransfer']) && $this->validateMakeTransferData())
 		{
-			//NEED CREATE ACCOUNT QUERY
+			$transactionModel = $this->model('TransactionModel');
 
+			$trans_id = $transactionModel->getNextTransId();
+			$to = $_POST['to'];
+			$from = $_POST['from'];
+			$amount = $_POST['amount'];
+			$date = date('Y-m-d');
 
-
-
-			$_SESSION["login_type"];	//Employee or Client
-
-
-			$_SESSION["login_id"];	//Client_Id or Employee_Id
-
-
+			$transactionModel->insertTransfer($trans_id, $to, $from, $amount, $date);
 
 			header("Location:/transfer/history");
 		}
