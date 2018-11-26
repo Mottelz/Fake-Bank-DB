@@ -160,9 +160,9 @@
 
 		<div>
 			Active<br />
-			<select required class="form-control" required style="width:auto;">
-				<option value="true"  <?= $active == true ? 'selected' : '' ?>>Yes</option>
-				<option value="false" <?= $active == false ? 'selected' : '' ?>>No</option>
+			<select name="active" class="form-control" required style="width:auto;">
+				<option value="1"  <?= $active == 1 ? 'selected' : '' ?>>Yes</option>
+				<option value="0" <?= $active == 0 ? 'selected' : '' ?>>No</option>
 			</select>
 		</div>
 
