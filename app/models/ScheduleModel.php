@@ -29,6 +29,7 @@ class ScheduleModel extends Model
     }
 
     public function updateSchedule($id, $sched_type, $sched_date) {
+    	var_dump($id . " " . $sched_type . " " . $sched_date)
     	$this->updateData("UPDATE Schedule SET " .
             "Sched_type = '" . $sched_type . "'" .
             ", Sched_date = '" . $sched_date . "'" .
