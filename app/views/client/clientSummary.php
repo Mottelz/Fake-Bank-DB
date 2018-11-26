@@ -36,13 +36,13 @@
 		for($index = 0; $index < count($clients); $index++)
 		{
 			$client = $clients[$index];
-			$client_id = $client->client_id;
-			$branch_id = $client->branch_id;
-			$first_name = $client->first_name;
-			$last_name = $client->last_name;
-			$join_date = $client->join_date;
-			$email = $client->email;
-			$phone = $client->phone;
+			$client_id = $client->Client_id;
+			$branch_id = $client->Branch_id;
+			$first_name = $client->First_name;
+			$last_name = $client->Last_name;
+			$join_date = $client->Join_date;
+			$email = $client->Email;
+			$phone = $client->Phone;
 	?>
 
 			<tr>

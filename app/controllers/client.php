@@ -7,7 +7,7 @@ class client extends Controller
 		$this->checkIsLoggedIn();
 
 		$clientModel = $this->model('ClientModel');
-		$clients = $clientModel->clients;
+		$clients = $clientModel->getAllClients();
 
 		$this->view('client/clientSummary', ['clients' => $clients]);
 	}
