@@ -4,6 +4,7 @@
 	$client_branch_id = $client->Branch_id;
 	$first_name = $client->First_name;
 	$last_name = $client->Last_name;
+	$birth_date = $client->Birth_date;
 	$street_address = $client->Street_address;
 	$join_date = $client->Join_date;
 	$email = $client->Email;
@@ -52,6 +53,20 @@
 		<br />
 
 		<div>
+			Birth Date<br />
+			<input type="date" name="birth_date"  class="form-control" value="<?= $birth_date ?>" required style="width:auto;" />
+		</div>
+
+		<br />
+
+		<div>
+			Join Date<br />
+			<input type="date" name="join_date"  class="form-control" value="<?= $join_date ?>" required style="width:auto;" />
+		</div>
+
+		<br />
+
+		<div>
 			Branch #<br />
 
 
@@ -81,6 +96,13 @@
 		<br />
 
 		<div>
+			Postal Code<br />
+			<input type="text" name="postal_code" class="form-control" value="<?= $postal_code ?>" required  style="width:auto;" />
+		</div>
+
+		<br />
+
+		<div>
 			City<br />
 			<input type="text" name="city"  class="form-control" value="<?= $city ?>" required  style="width:auto;" />
 		</div>
@@ -88,8 +110,15 @@
 		<br />
 
 		<div>
-			Postal Code<br />
-			<input type="text" name="postal_code" class="form-control" value="<?= $postal_code ?>" required  style="width:auto;" />
+			Province<br />
+			<input type="text" name="province"  class="form-control" value="<?= $province ?>" required  style="width:auto;" />
+		</div>
+
+		<br />
+
+		<div>
+			Country<br />
+			<input type="text" name="country"  class="form-control" value="<?= $country ?>" required  style="width:auto;" />
 		</div>
 
 		<br />
