@@ -74,7 +74,7 @@ class profile extends Controller
             $countryModel->insertCountry($_POST['city'], $_POST['province'], $_POST['country']);
 
             $addressModel = $this->model('AddressModel');
-            $addressModel->insertAddress($_POST['street'], $_POST['postal'], $_POST['city']);
+            $addressModel->insertAddress($_POST['street'], $_POST['postal_code'], $_POST['city']);
 
 			if($_SESSION['login_type'] == 'Client')
 			{
