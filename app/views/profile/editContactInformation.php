@@ -18,8 +18,6 @@
     $province = $data['country']->Province;
 ?>
 
-<?php var_dump($data)?>
-
 <html>
 <head>
 	<?= $this->header() ?>
