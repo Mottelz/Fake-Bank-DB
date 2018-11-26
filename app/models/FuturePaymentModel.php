@@ -43,11 +43,11 @@ class FuturePaymentModel extends Model
     public function updateFuturePayment($id, $to, $from, $amount, $start_date, $frequency, $end_date) {
         $this->updateData("UPDATE Future_Payments SET " . 
             "To_accid = $to" .
-            "From_accid = $from" .
-            "Amount = $amount" .
-            "Future_Payments_Start_date = $start_date" .
-            "Frequency = $frequency" .
-            "End_date = $end_date" .
+            ", From_accid = $from" .
+            ", Amount = $amount" .
+            ", Future_Payments_Start_date = $start_date" .
+            ", Frequency = $frequency" .
+            ", End_date = $end_date" .
             " WHERE Payment_id = $id");
     }
 
