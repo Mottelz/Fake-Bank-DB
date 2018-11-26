@@ -120,7 +120,7 @@ class employee extends Controller
 				$addressModel->insertAddress($streetAddress, $postalCode, $city);
 
 			// Insert new employee
-			$employeeModel->insertEmployee();
+			$employeeModel->insertEmployee($employeeID, $firstName, $lastName, $password, $branchID, $department, $title, $startDate, $birthDate, $streetAddress, $phone, $email, $salary, $active);
 
 			header("Location:/employee");
 		}
