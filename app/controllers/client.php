@@ -34,7 +34,7 @@ class client extends Controller
 		$this->checkAddClientData();
 
 		$branchModel = $this->model('BranchModel');
-		$branches = $branchModel->branches;
+		$branches = $branchModel->getAllBranches();
 
 		$this->view('client/clientAdd', ['branches' => $branches]);
 	}
