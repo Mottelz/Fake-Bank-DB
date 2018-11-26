@@ -64,12 +64,6 @@ class TransactionModel extends Model
     	$newBalance = $balance + $amount;
 		$this->updateData("UPDATE Account SET Balance=" . $newBalance . " WHERE Account_id = " . $id);
 	}
-
-
-	function __construct()
-	{
-		$this->transactions = json_decode($this->data)->Transaction;
-	}
 }
 
 ?>
