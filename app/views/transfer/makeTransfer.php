@@ -24,26 +24,22 @@
 	<br />
 
 	<form method="POST" action="/transfer">
+		
 		<div>
 			To<br />
-			<select name="to" class="form-control" required style="width:auto;">
+			<select name="to" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
-					for($index = 0; $index < count($accounts); $index++){
-
-					$account = $accounts[$index];
-					$account_id = $account->Account_id;
-					$type = $account->Account_Type;
-					//$balance = $account->Balance;
-
-					$accountModel = $this->model('AccountModel');
-					var_dump($accountModel->getAccountById($account_id));
-					
-					?>
-
-					<option value="<?= $account_id ?>"><?= $type ?></option>
-
-					<? }?>
+					for($index = 0; $index < count($accounts); $index++)
+					{
+						$account = $accounts[$index];
+						$account_id = $account->Account_id;
+						$type = $account->type;
+				?>
+						<option><?= $account_id ?></option>
+				<?php
+					}
+				?>
 			</select>
 		</div>
 

@@ -54,10 +54,10 @@ class profile extends Controller
 		}
 
 		$addressModel = $this->model('AddressModel');
-        $address = $addressModel->getAddressByStreet($user->street_address)[0];
+        $address = $addressModel->getAddressByStreet($user->Street_address)[0];
 
         $countryModel = $this->model('CountryModel');
-        $country = $countryModel->getCityByCity($address->city)[0];
+        $country = $countryModel->getCityByCity($address->City)[0];
 
 		$this->view('profile/editContactInformation',
             ['login_type' => $_SESSION['login_type'],
@@ -70,12 +70,11 @@ class profile extends Controller
 	{
 		if(isset($_POST['editcontactinformation']) && $this->validateEditContactInformationData())
 		{
-
             $countryModel = $this->model('CountryModel');
-            $countryModel->insertCountry($_SESSION['city'], $_SESSION['province'], $_SESSION['country']);
+            $countryModel->insertCountry($_POST['city'], $_POST['province'], $_POST['country']);
 
             $addressModel = $this->model('AddressModel');
-            $addressModel->insertAddress($_SESSION['street'], $_SESSION['postal'], $_SESSION['city']);
+            $addressModel->insertAddress($_POST['street'], $_POST['postal_code'], $_POST['city']);
 
 			if($_SESSION['login_type'] == 'Client')
 			{
