@@ -1,9 +1,6 @@
-<?= $this->header();
-		$accountType = $data['accounttype'];
-		$accountOption = $data['accountoptions'];
-		$accountService = $data['accountservice'];
-
-	?>
+<?php
+	$accounts = $data['accounts'];
+?>
 
 <html>
 <head>
@@ -28,17 +25,18 @@
 
 	<form method="POST" action="/transfer">
 		
-		<div class="form-group" style="display: inline-block">	 Type
-			<select name="type" class="form-control" required>
-				<option selected disabled value="">---Select Type---</option>
+		<div>
+			To<br />
+			<select name="to" required>
+				<option selected disabled value="">---Select Account---</option>
 				<?php
-
-					for($index = 0; $index < count($accountType); $index++)
+					for($index = 0; $index < count($accounts); $index++)
 					{
-						$account = $accountType[$index];
-						$type = $account->Account_Type;
+						$account = $accounts[$index];
+						$account_id = $account->Account_id;
+						$type = $account->type;
 				?>
-						<option><?= $type ?></option>
+						<option><?= $account_id ?></option>
 				<?php
 					}
 				?>
