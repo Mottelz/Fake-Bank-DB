@@ -70,7 +70,6 @@ class profile extends Controller
 	{
 		if(isset($_POST['editcontactinformation']) && $this->validateEditContactInformationData())
 		{
-
             $countryModel = $this->model('CountryModel');
             $countryModel->insertCountry($_POST['city'], $_POST['province'], $_POST['country']);
 
