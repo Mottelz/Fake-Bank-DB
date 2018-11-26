@@ -45,9 +45,9 @@ class FuturePaymentModel extends Model
             "To_accid = $to" .
             ", From_accid = $from" .
             ", Amount = $amount" .
-            ", Future_Payments_Start_date = $start_date" .
+            ", Future_Payments_Start_date = '$start_date'" .
             ", Frequency = $frequency" .
-            ", End_date = $end_date" .
+            ", End_date = '$end_date'" .
             " WHERE Payment_id = $id");
     }
 
