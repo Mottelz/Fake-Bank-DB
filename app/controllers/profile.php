@@ -72,7 +72,7 @@ class profile extends Controller
 		{
 
             $countryModel = $this->model('CountryModel');
-            $countryModel->insertCountry($_POST['city'], $_POST['province'], $_SESSION['country']);
+            $countryModel->insertCountry($_POST['city'], $_POST['province'], $_POST['country']);
 
             $addressModel = $this->model('AddressModel');
             $addressModel->insertAddress($_POST['street'], $_POST['postal'], $_POST['city']);
