@@ -76,8 +76,6 @@ class profile extends Controller
                 $clientModel = $this->model('ClientModel');
                 $clientModel->updateClientById($_SESSION['login_id'], $_POST['first_name'], $_POST['last_name'], $_POST['street_address'], $_POST['email'], $_POST['phone']);
 
-                $addressModel = $this->model('AddressModel');
-                $addressModel->insertCountry($_SESSION['city'], $_SESSION['province'], $_SESSION['country']);
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{

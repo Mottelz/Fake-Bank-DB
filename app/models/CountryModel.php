@@ -27,10 +27,7 @@ class CountryModel extends Model
             ", '" . $province . "'" .
             ", '" . $country . "')");
     }
-
-    public function updateCityByStreet($street){
-
-    }
+    
 
 //	private $data =
 //	'{
