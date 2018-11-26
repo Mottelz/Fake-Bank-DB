@@ -34,7 +34,7 @@ class TransactionModel extends Model
 	}
 
 	public function getClientPayments($client_id) {
-		return $this->getData("SELECT * FROM Transaction_Table t WHERE Trans_type = 'Payment');
+		return $this->getData("SELECT * FROM Transaction_Table t WHERE Trans_type = 'Payment'");
 	}
 
 		/*public function insertPayment($To_accid , $From_accid  , $Amount) {
