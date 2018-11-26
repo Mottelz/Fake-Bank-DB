@@ -40,10 +40,10 @@
 					for($index = 0; $index < count($accounts); $index++)
 					{
 						$account = $accounts[$index];
-						$account_id = $account->account_id;
-						$type = $account->type;
+						$account_id = $account->Account_id;
+						$type = $account->Account_Type;
 				?>
-						<option value="<?= $account_id ?>"><?= $type ?></option>
+						<option value="<?= $account_id ?>">ID#<?= $account_id ?> : <?= $type ?></option>
 				<?php
 					}
 				?>
