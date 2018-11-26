@@ -24,20 +24,16 @@
 	<br />
 
 	<form method="POST" action="/transfer">
+		
 		<div>
 			To<br />
-
-			<select name="to" required>
-				<option selected disabled value="">---Select Account---</option>
+			<select name="branch_id" required>
+				<option selected disabled value="">---Select Branch---</option>
 				<?php
 					for($index = 0; $index < count($accounts); $index++)
 					{
 						$account = $accounts[$index];
 						$account_id = $account->Account_id;
-						$type = $account->Account_Type;
-						//$balance = $account->Balance;
-
-
 				?>
 						<option><?= $account_id ?></option>
 				<?php
