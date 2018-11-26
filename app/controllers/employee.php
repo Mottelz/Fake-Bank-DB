@@ -120,7 +120,7 @@ class employee extends Controller
 
 			// Insert new employee
 			$employeeModel->insertEmployee($employeeID, $firstName, $lastName, $password, $branchID, $department, $title, $startDate, $birthDate, $streetAddress, $phone, $email, $salary, $active);
-var_dump($employeeID);
+var_dump($_POST);
 			//header("Location:/employee");
 		}
 	}
