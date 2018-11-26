@@ -54,10 +54,10 @@ class profile extends Controller
 		}
 
 		$addressModel = $this->model('AddressModel');
-        $address = $addressModel->getAddressByStreet($user->street_address)[0];
+        $address = $addressModel->getAddressByStreet($user->Street_address)[0];
 
         $countryModel = $this->model('CountryModel');
-        $country = $countryModel->getCityByCity($address->city)[0];
+        $country = $countryModel->getCityByCity($address->City)[0];
 
 		$this->view('profile/editContactInformation',
             ['login_type' => $_SESSION['login_type'],
