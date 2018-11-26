@@ -42,13 +42,19 @@ class TransactionModel extends Model
 	}
 
 	public function insertPayment($trans_id, $to , $from, $amount, $date) {
-    	$this->insertData("INSERT INTO Transaction_Table (Trans_id, To_accid, From_accid, Amount, Trans_date, Trans_type)  VALUES (" .
+    	echo $this->insertData("INSERT INTO Transaction_Table (Trans_id, To_accid, From_accid, Amount, Trans_date, Trans_type)  VALUES (" .
     		"$trans_id" .
     		", $to" .
     		", $from" .
     		", $amount" .
     		", '$date'" .
     		", 'Payment')");
+    }
+
+    public function computeBalanceAfterTrans($to, $from, $amount) {
+    	$accountModel = $this->model("AccountModel");
+    	$accountModel->updateAccountBalance($to, $amount);
+    	$accountModel->updateAccountBalance($from, -($amount));
     }
 
 
