@@ -60,7 +60,7 @@ class transfer extends Controller
 
 			$transactionModel->insertTransfer($trans_id, $to, $from, $amount, $date);
 
-			//header("Location:/transfer/history");
+			header("Location:/transfer/history");
 		}
 	}
 
