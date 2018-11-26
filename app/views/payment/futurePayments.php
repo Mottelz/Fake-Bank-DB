@@ -37,16 +37,17 @@
 	</thead>
 <body>
 		<?php
+		//var_dump($futurePayments);
 			for($index = 0; $index < count($futurePayments); $index++)
 			{
 				$futurePayment = $futurePayments[$index];
-				$payment_id = $futurePayment->payment_id;
-				$to = $futurePayment->to;
-				$from = $futurePayment->from;
-				$amount = $futurePayment->amount;
-				$start_date = $futurePayment->start_date;
-				$frequency = $futurePayment->frequency;
-				$end_date = $futurePayment->end_date;
+				$payment_id = $futurePayment->Payment_id ;
+				$to = $futurePayment->To_accid ;
+				$from = $futurePayment->From_accid ;
+				$amount = $futurePayment->Amount ;
+				$start_date = $futurePayment->Future_Payments_Start_date;
+				$frequency = $futurePayment->Frequency ;
+				$end_date = $futurePayment->End_date ;
 		?>
 				<tr>
 					<td><?= $to ?></td>
