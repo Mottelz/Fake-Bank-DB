@@ -1,7 +1,7 @@
 <?php
-	$account_type = $data['account_type'];
-	$acc_toggle = $data['acc_toggle'];
-  var_dump($account_type);
+	$login_type = $_SESSION['login_type'];
+	//$acc_toggle = $data['acc_toggle'];
+  var_dump($login_type);
 ?>
 
   <html>
@@ -22,7 +22,7 @@
 
         <!-- Links -->
         <ul class="navbar-nav">
-          <?php if($account_type == 'Client') { ?>
+          <?php if($login_type == 'Client') { ?>
             <li class="nav-item">
               <a class="nav-link" href="/account">Account summary</a>
             </li>
@@ -43,11 +43,11 @@
         </a>
 			</div>
 				<div style="margin-left:auto;">
-            <?php if($account_type != 'Client') { ?>
+            <?php if($login_type != 'Client') { ?>
               <a href="/client" class="btn btn-primary btn-sm">Clients</a>
             <?php } ?>
 
-            <?php if($account_type != 'Client') { ?>
+            <?php if($login_type != 'Client') { ?>
               <a href="/employee" class="btn btn-secondary btn-sm">Employees</a>
             <?php } ?>
 					</div>
