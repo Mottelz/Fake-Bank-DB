@@ -51,7 +51,7 @@ class TransactionModel extends Model
     		", 'Payment')");
 
     	if($inserted)
-    		echo 'ya';
+    		$this->computeBalanceAfterTrans($to, $from, $amount);
     }
 
     public function computeBalanceAfterTrans($to, $from, $amount) {
