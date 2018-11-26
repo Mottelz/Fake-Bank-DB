@@ -37,7 +37,7 @@
 	</thead>
 <body>
 		<?php
-		var_dump($futurePayments);
+		//var_dump($futurePayments);
 			for($index = 0; $index < count($futurePayments); $index++)
 			{
 				$futurePayment = $futurePayments[$index];

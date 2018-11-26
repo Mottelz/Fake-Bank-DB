@@ -13,6 +13,10 @@ class FuturePaymentModel extends Model
         return $this->getData("SELECT * FROM FuturePayment WHERE payment_id=" . $id);
     }
 
+		public function getFuturePaymentsByClientId($id) {
+        return $this->getData("SELECT * FROM Future_Payments INNER JOIN Account ON Future_Payments.From_accid = Account.Account_id where Client_id=". $id);
+		}
+
     public function getFuturePaymentsByStartDate($date) {
         return $this->getData("SELECT * FROM FuturePayment WHERE start_date=" . $date);
     }
@@ -21,7 +25,7 @@ class FuturePaymentModel extends Model
         return $this->getData("SELECT * FROM FuturePayment WHERE end_date=" . $date);
     }
 
-	private $data = 
+	private $data =
 	'{
 		"FuturePayment" : [{
 			"payment_id" : 1,
