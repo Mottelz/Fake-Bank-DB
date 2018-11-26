@@ -94,7 +94,6 @@ class employee extends Controller
 			$title = $_POST['title'];
 			$startDate = $_POST['start_date'];
 			$birthDate = $_POST['birth_date'];
-			$joinDate = date('Y-m-d');
 			$streetAddress = $_POST['street_address'];
 			$postalCode = $_POST['postal_code'];
 			$city = $_POST['city'];
@@ -121,8 +120,8 @@ class employee extends Controller
 
 			// Insert new employee
 			$employeeModel->insertEmployee($employeeID, $firstName, $lastName, $password, $branchID, $department, $title, $startDate, $birthDate, $streetAddress, $phone, $email, $salary, $active);
-
-			header("Location:/employee");
+var_dump($employeeID);
+			//header("Location:/employee");
 		}
 	}
 
