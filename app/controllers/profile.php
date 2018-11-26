@@ -101,7 +101,6 @@ class profile extends Controller
             if($_SESSION['login_type'] == 'Client')
             {
                 $clientModel = $this->model('ClientModel');
-                $_SESSION['login_id'];
                 $clientModel->updateClientPassword($_SESSION['login_id'], $_POST['newpassword']);
             }
             else //$_SESSION['login_type'] == 'Employee'

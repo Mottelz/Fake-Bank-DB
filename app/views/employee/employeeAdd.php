@@ -67,6 +67,20 @@
 		<br />
 
 		<div>
+			Start Date<br />
+			<input type="date" name="start_date" class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
+			Birth Date<br />
+			<input type="date" name="birth_date" class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			Street Address<br />
 			<input type="text" name="street_address" required class="form-control" required style="width:auto;"/>
 		</div>
@@ -118,13 +132,6 @@
 		<div>
 			Salary<br />
 			<input type="number" name="salary" step="0.01" required class="form-control" required style="width:auto;"/>
-		</div>
-
-		<br />
-
-		<div>
-			Start Date<br />
-			<input type="date" name="start_date" class="form-control" required style="width:auto;"/>
 		</div>
 
 		<br />
