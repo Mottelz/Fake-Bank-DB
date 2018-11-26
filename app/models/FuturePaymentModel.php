@@ -14,7 +14,7 @@ class FuturePaymentModel extends Model
     }
 
 	public function getFuturePaymentsByClientId($id) {
-        return $this->getData("SELECT Payment_id, To_accid, From_accid, Frequency, Future_Payments_Start_date, End_date, Amount FROM Future_Payments");
+        return $this->getData("SELECT Payment_id, To_accid, From_accid, Frequency, Future_Payments_Start_date, End_date, Amount, Account_id FROM Future_Payments f INNER JOIN Account a ON f.From_accid = a.Account_id");
 	}
 
     public function getFuturePaymentsByStartDate($date) {
