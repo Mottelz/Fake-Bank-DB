@@ -1,6 +1,9 @@
-<?php
-	$branches = $data['branches'];
-?>
+<?= $this->header();
+		$accountType = $data['accounttype'];
+		$accountOption = $data['accountoptions'];
+		$accountService = $data['accountservice'];
+
+	?>
 
 <html>
 <head>
@@ -25,17 +28,17 @@
 
 	<form method="POST" action="/transfer">
 		
-		<div>
-			Branch #<br />
-			<select name="branch_id" required>
-				<option selected disabled value="">---Select Branch---</option>
+		<div class="form-group" style="display: inline-block">	 Type
+			<select name="type" class="form-control" required>
+				<option selected disabled value="">---Select Type---</option>
 				<?php
-					for($index = 0; $index < count($branches); $index++)
+
+					for($index = 0; $index < count($accountType); $index++)
 					{
-						$branch = $branches[$index];
-						$branch_id = $branch->Branch_id;
+						$account = $accountType[$index];
+						$type = $account->Account_Type;
 				?>
-						<option><?= $branch_id ?></option>
+						<option><?= $type ?></option>
 				<?php
 					}
 				?>
