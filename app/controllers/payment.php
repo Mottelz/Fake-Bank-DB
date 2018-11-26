@@ -119,7 +119,7 @@ class payment extends Controller
 			$to = $_POST['to'];
 			$from = $_POST['from'];
 			$amount = $_POST['amount'];
-			$date = $_POST['date'];
+			$date = date('Y-m-d');
 
 			$transactionModel->insertPayment($trans_id, $to, $from, $amount, $date);
 
