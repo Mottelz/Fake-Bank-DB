@@ -71,17 +71,17 @@ class payment extends Controller
 		$this->checkEditFuturePaymentsData($payment_id);
 
 		$futurePaymentModel = $this->model('FuturePaymentModel');
-		$futurePayment = $futurePaymentModel->futurePayments[0]; //Arbitrary future payments (NEED QUERY FOR payment_id HERE)
+		$futurePayment = $futurePaymentModel->getFuturePaymentsById($payment_id)[0]
 
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$accountModel = $this->model('AccountModel');
-			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR client_id)
+			$accounts = $accountModel->getAccountsByUserId($_SESSION['login_id']);
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
 			$accountModel = $this->model('AccountModel');
-			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR employee_id)
+			$accounts = $accountModel->getAccountsByUserId($_SESSION['login_id']);
 		}
 
 		$this->view('payment/editPayment',

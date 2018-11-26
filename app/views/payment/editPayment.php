@@ -2,12 +2,12 @@
 	$payment_id = $data['payment_id'];
 
 	$futurePayment = $data['futurePayment'];
-	$to = $futurePayment->to;
-	$from = $futurePayment->from;
-	$amount = $futurePayment->amount;
-	$start_date = $futurePayment->start_date;
-	$frequency = $futurePayment->frequency;
-	$end_date = $futurePayment->end_date;
+	$to = $futurePayment->To_accid;
+	$from = $futurePayment->From_accid;
+	$amount = $futurePayment->Amount;
+	$start_date = $futurePayment->Start_date;
+	$frequency = $futurePayment->Frequency;
+	$end_date = $futurePayment->End_date;
 
 	$accounts = $data['accounts'];
 ?>
@@ -43,10 +43,10 @@
 					for($index = 0; $index < count($accounts); $index++)
 					{
 						$account = $accounts[$index];
-						$account_id = $account->account_id;
-						$type = $account->type;
+						$account_id = $account->Account_id;
+						$type = $account->Account_Type;
 				?>
-						<option value="<?= $account_id ?>" <?= $from == $account_id ? 'selected' : ''; ?>><?= $type ?></option>
+						<option value="<?= $account_id ?>" <?= $from == $account_id ? 'selected' : ''; ?>>ID#<?= $account_id ?> <?= $type ?></option>
 				<?php
 					}
 				?>
