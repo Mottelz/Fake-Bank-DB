@@ -29,7 +29,7 @@ class TransactionModel extends Model
 	  }
 
 		public function insertPayment($To_accid , $From_accid  , $Amount) {
-    	$this->insertData("INSERT INTO Transaction_Table  VALUES ("
+    	$this->insertData("INSERT INTO Transaction_Table  VALUES (
 
     }
 
