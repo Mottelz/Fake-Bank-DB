@@ -48,13 +48,13 @@ class employee extends Controller
 		$this->checkEditEmployeeData();
 
 		$employeeModel = $this->model('EmployeeModel');
-		$employee = $employeeModel->employees[0]; //Arbitrary employee (NEED QUERY FOR employee_id)
+		$employee = $employeeModel->getEmployeeById($employee_id)[0];
 
 		$addressModel = $this->model('AddressModel');
-		$address = $addressModel->addresses[0]; //Arbitrary address (NEED QUERY FOR street_address)
+		$address = $addressModel->getAddressByCity($employee->City)[0];
 
 		$branchModel = $this->model('BranchModel');
-		$branches = $branchModel->branches;
+		$branches = $branchModel->getAllBranches();
 
 		$this->view('employee/employeeEdit',
 			['employee' => $employee,
@@ -120,8 +120,8 @@ class employee extends Controller
 
 			// Insert new employee
 			$employeeModel->insertEmployee($employeeID, $firstName, $lastName, $password, $branchID, $department, $title, $startDate, $birthDate, $streetAddress, $phone, $email, $salary, $active);
-var_dump($_POST);
-			//header("Location:/employee");
+
+			header("Location:/employee");
 		}
 	}
 

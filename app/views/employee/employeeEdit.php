@@ -1,21 +1,23 @@
 <?php
 	$employee = $data['employee'];
-	$employee_id = $employee->employee_id;
-	$first_name = $employee->first_name;
-	$last_name = $employee->last_name;
-	$employee_branch_id = $employee->branch_id;
-	$department = $employee->department;
-	$title = $employee->title;
-	$street_address = $employee->street_address;
-	$phone = $employee->phone;
-	$email = $employee->email;
-	$salary = $employee->salary;
-	$start_date = $employee->start_date;
-	$active = $employee->active;
+	$employee_id = $employee->Employee_id;
+	$first_name = $employee->First_name;
+	$last_name = $employee->Last_name;
+	$employee_branch_id = $employee->Branch_id;
+	$department = $employee->Department;
+	$title = $employee->Title;
+	$start_date = $employee->Start_date;
+	$birth_date = $employee->Birth_date;
+	$street_address = $employee->Street_address;
+	$phone = $employee->Phone;
+	$email = $employee->Email;
+	$salary = $employee->Salary;
+	$active = $employee->Active;
 
 	$address = $data['address'];
-	$postal_code = $address->postal_code;
-	$city = $address->city;
+	$postal_code = $address->Postal_Code;
+	$city = $address->City;
+	
 	$branches = $data['branches'];
 ?>
 
@@ -83,6 +85,20 @@
 		<br />
 
 		<div>
+			Start Date<br />
+			<input type="date" name="start_date" value="<?= $start_date ?>" class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
+			Birth Date<br />
+			<input type="date" name="birth_date" value="<?= $birth_date ?>" class="form-control" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			Street Address<br />
 			<input type="text" name="street_address" value="<?= $street_address ?>" required class="form-control" required style="width:auto;"/>
 		</div>
@@ -120,13 +136,6 @@
 		<div>
 			Salary<br />
 			<input type="number" name="salary" step="0.01" value="<?= $salary ?>" required class="form-control" required style="width:auto;"/>
-		</div>
-
-		<br />
-
-		<div>
-			Start Date<br />
-			<input type="date" name="start_date" value="<?= $start_date ?>" class="form-control" required style="width:auto;"/>
 		</div>
 
 		<br />
