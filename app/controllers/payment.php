@@ -33,12 +33,13 @@ class payment extends Controller
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$futurePaymentModel = $this->model('FuturePaymentModel');
-			$futurePayments = $futurePaymentModel->futurePayments; //All future payments (NEED QUERY FOR account_id and client_id)
+			$futurePayments = $futurePaymentModel->getFuturePaymentsByClientId($_SESSION['login_id']);
+			var_dump($futurePayments);
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
 			$futurePaymentModel = $this->model('FuturePaymentModel');
-			$futurePayments = $futurePaymentModel->futurePayments; //All future payments (NEED QUERY FOR account_id and employee_id)
+			$futurePayments = $futurePaymentModel->getFuturePaymentsByClientId($_SESSION['login_id']);
 		}
 
 		$this->view('payment/futurePayments', ['futurePayments' => $futurePayments]);
