@@ -1,5 +1,5 @@
 <?php
-	$accounts = $data['accounts'];
+	$branches = $data['branches'];
 ?>
 
 <html>
@@ -26,16 +26,16 @@
 	<form method="POST" action="/transfer">
 		
 		<div>
-			To<br />
+			Branch #<br />
 			<select name="branch_id" required>
 				<option selected disabled value="">---Select Branch---</option>
 				<?php
-					for($index = 0; $index < count($accounts); $index++)
+					for($index = 0; $index < count($branches); $index++)
 					{
-						$account = $accounts[$index];
-						$account_id = $account->Account_id;
+						$branch = $branches[$index];
+						$branch_id = $branch->Branch_id;
 				?>
-						<option><?= $account_id ?></option>
+						<option><?= $branch_id ?></option>
 				<?php
 					}
 				?>
