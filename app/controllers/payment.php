@@ -97,7 +97,7 @@ class payment extends Controller
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$transactionModel = $this->model('TransactionModel');
-			$transactions = $transactionModel->getTransactionByClientId($_SESSION['login_id']);
+			$transactions = $transactionModel->getClientPayments($_SESSION['login_id']);
 
 		}
 		else //$_SESSION['login_type'] == 'Employee'
@@ -113,7 +113,7 @@ class payment extends Controller
 	{
 		if(isset($_POST['makepayment']) && $this->validateMakePaymentData())
 		{
-			//NEED CREATE PAYMENT QUERY
+			$transactionModel = $this->model('TransactionModel');
 
 			header("Location:/payment/history");
 		}
