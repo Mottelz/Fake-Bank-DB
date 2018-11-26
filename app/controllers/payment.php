@@ -98,8 +98,7 @@ class payment extends Controller
 		{
 			$transactionModel = $this->model('TransactionModel');
 			$transactions = $transactionModel->getTransactionByClientId($_SESSION['login_id']);
-			$transactions = $transactionModel->transactions; //All transactions (NEED QUERY FOR account_id, client_id and type)
-			$this->view('payment/paymentHistory', ['transactions' => $transactions]);
+
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
