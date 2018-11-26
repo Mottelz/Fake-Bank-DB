@@ -10,12 +10,12 @@ class payment extends Controller
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$accountModel = $this->model('AccountModel');
-			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR client_id)
+			$accounts = $accountModel->getAccountsByUserId($_SESSION['login_id']);
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
 			$accountModel = $this->model('AccountModel');
-			$accounts = $accountModel->accounts; //All accounts (NEED QUERY FOR employee_id)
+			$accounts = $accountModel->getAccountsByUserId($_SESSION['login_id']);
 		}
 
 		$this->view('payment/makePayment', ['accounts' => $accounts]);

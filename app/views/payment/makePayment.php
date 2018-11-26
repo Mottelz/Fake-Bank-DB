@@ -1,6 +1,5 @@
 <?php
 	$accounts = $data['accounts'];
-	var_dump($accounts);
 ?>
 
 <html>
