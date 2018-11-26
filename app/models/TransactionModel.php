@@ -26,7 +26,8 @@ class TransactionModel extends Model
     }
 
 	public function getTransferByClientId($id) {
-		return $this->getData("SELECT * FROM Transaction_Table INNER JOIN Account ON Transaction_Table.From_accid = Account.Account_id where  Trans_type ='Transfer' OR Client_id =" . $id );
+		return $this->getData("SELECT * FROM Transaction_Table INNER JOIN Account ON
+			Transaction_Table.From_accid = Account.Account_id where  Trans_type ='Transfer' OR Client_id =" . $id );
 	}
 
 	public function getAccountLoss($id) {
@@ -38,7 +39,7 @@ class TransactionModel extends Model
 	}
 
 	public function getClientTransfers($client_id) {
-		return $this->getData("SELECT * FROM Transaction_Table t INNER JOIN Account a ON t.From_accid = a.Account_id WHERE Trans_type = 'Transfer' AND Client_id = $client_id");
+		return $this->getData("SELECT * FROM Transaction_Table t INNER JOIN Account a ON t.From_accid = a.Account_id WHERE Trans_type = 'Transfer' OR Client_id = $client_id");
 	}
 
 	public function insertTransfer($trans_id, $to , $from, $amount, $date) {
