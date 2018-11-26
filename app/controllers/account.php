@@ -93,7 +93,7 @@ var_dump($_POST);
 				$accountModel->addAccountById($account_id, $client_id,
 				$Account_Option, $Account_Type, $Account_Service,
 				$Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service );
-
+			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{
 				//NEED CREATE ACCOUNT QUERY (FOR EMPLOYEE)
