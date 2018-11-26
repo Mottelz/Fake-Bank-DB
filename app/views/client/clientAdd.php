@@ -35,6 +35,13 @@
 		<br />
 
 		<div>
+			Birth Date<br />
+			<input type="date" class="form-control" name="birth_date" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
 			Branch #<br />
 			<select name="branch_id" class="form-control" required style="width:auto;">
 				<option selected disabled value="">---Select Branch---</option>
@@ -59,6 +66,13 @@
 		</div>
 
 		<br />
+	
+		<div>
+			Postal Code<br />
+			<input type="text" class="form-control" name="postal_code" required style="width:auto;"/>
+		</div>
+		
+		<br />
 
 		<div>
 			City<br />
@@ -68,8 +82,15 @@
 		<br />
 
 		<div>
-			Postal Code<br />
-			<input type="text" class="form-control" name="postal_code" required style="width:auto;"/>
+			Province<br />
+			<input type="text" class="form-control" name="province" required style="width:auto;"/>
+		</div>
+
+		<br />
+
+		<div>
+			Country<br />
+			<input type="text" class="form-control" name="country" required style="width:auto;"/>
 		</div>
 
 		<br />
