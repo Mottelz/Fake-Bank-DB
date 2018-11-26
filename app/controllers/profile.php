@@ -74,13 +74,23 @@ class profile extends Controller
 			{
 				//NEED EDIT CLIENT QUERY
                 $clientModel = $this->model('ClientModel');
-                $clientModel->updateClientById($_SESSION['login_id'], $_POST['branch_id'], $_POST['first_name'], $_POST['last_name'], $_POST['street_address'], $_POST['password'], $_POST['department'], $_POST['email'], $_POST['phone']);
+                $clientModel->updateClientById($_SESSION['login_id'], $_POST['first_name'], $_POST['last_name'], $_POST['street_address'], $_POST['email'], $_POST['phone']);
+
+                $addressModel = $this->model('AddressModel');
+                $addressModel->insertCountry($_SESSION['city'], $_SESSION['province'], $_SESSION['country']);
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{
                 $employeeModel = $this->model('EmployeeModel');
-                $employeeModel->updateEmployeeById($_SESSION['login_id'], $_POST['branch_id'], $_POST['title'], $_POST['first_name'], $_POST['last_name'], $_POST['salary'], $_POST['street_address'], $_POST['password'], $_POST['department'], $_POST['email'], $_POST['phone'], $_POST['start_date'], $_POST['active']);
+                $employeeModel->updateEmployeeById($_SESSION['login_id'], $_POST['first_name'], $_POST['last_name'], $_POST['street_address'], $_POST['email'], $_POST['phone']);
 			}
+
+            $addressModel = $this->model('AddressModel');
+            $addressModel->insertAddress($_SESSION['street'], $_SESSION['postal'], $_SESSION['city']);
+
+            $countryModel = $this->model('CountryModel');
+            $countryModel->insertCountry($_SESSION['city'], $_SESSION['province'], $_SESSION['country']);
+
 
 			header("Location:/profile");
 		}
