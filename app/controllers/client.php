@@ -44,18 +44,21 @@ class client extends Controller
 		$this->checkEditClientData();
 
 		$clientModel = $this->model('ClientModel');
-		$client = $clientModel->clients[0]; //Arbitrary client (NEED QUERY FOR client_id)
+		$client = $clientModel->getClientById($client_id)[0];
 
 		$addressModel = $this->model('AddressModel');
-		$address = $addressModel->addresses[0]; //Arbitrary address (NEED QUERY FOR street_address)
+		$address = $addressModel->getAddressByStreet($client->Street_address)[0];
+
+		$countryModel = $this->model('CountryModel');
+		$country = $countryModel->getCityByCity($address->City)[0];
 
 		$branchModel = $this->model('BranchModel');
 		$branches = $branchModel->getAllBranches();
 
-
 		$this->view('client/clientEdit',
 			['client' => $client,
 			 'address' => $address,
+			 'country' => $country,
 			 'branches' => $branches]);
 	}
 

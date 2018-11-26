@@ -1,17 +1,21 @@
 <?php
 	$client = $data['client'];
-	$client_id = $client->client_id;
-	$client_branch_id = $client->branch_id;
-	$first_name = $client->first_name;
-	$last_name = $client->last_name;
-	$street_address = $client->street_address;
-	$join_date = $client->join_date;
-	$email = $client->email;
-	$phone = $client->phone;
+	$client_id = $client->Client_id;
+	$client_branch_id = $client->Branch_id;
+	$first_name = $client->First_name;
+	$last_name = $client->Last_name;
+	$street_address = $client->Street_address;
+	$join_date = $client->Join_date;
+	$email = $client->Email;
+	$phone = $client->Phone;
 
 	$address = $data['address'];
-	$postal_code = $address->postal_code;
-	$city = $address->city;
+	$postal_code = $address->Postal_code;
+	$city = $address->City;
+
+	$countryObj = $data['country'];
+	$province = $countryObj->Province;
+	$country = $countryObj->Country;
 
 	$branches = $data['branches'];
 ?>
