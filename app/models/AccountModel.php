@@ -17,9 +17,11 @@ class AccountModel extends Model
     public function getAccountType() {
         return $this->getData("SELECT DISTINCT Account_Type FROM Account");
     }
+
     public function getAccountService() {
           return $this->getData("SELECT DISTINCT Account_Service  FROM Account");
-    }  
+    }
+
     public function getAccountOptions() {
             return $this->getData("SELECT DISTINCT Account_Option  FROM Account");
     }
@@ -28,8 +30,8 @@ class AccountModel extends Model
 		return $this->getData("UPDATE Account SET Balance=" . $amount . " WHERE Account_id=" . $id);
 	}
 
-  public function addAccountById($Account_id , $Client_id  , $Account_Option , $Account_Type ,
-                                $Account_Service , $Balance , $Charge_Plan_Option , $Interest_Rate_Type ,
+  public function addAccountById($Account_id , $Client_id  ,
+                              $Account_Option , $Account_Type ,   $Account_Service , $Charge_Plan_Option , $Interest_Rate_Type ,
                                 $Interest_Rate_Service ) {
       return $this->insertData("INSERT INTO Account (Account_id , Client_id , Account_Option,
                                                   Account_Type, Account_Service, Balance,
