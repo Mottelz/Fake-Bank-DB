@@ -6,11 +6,11 @@ class FuturePaymentModel extends Model
 	public $futurePayments;
 
 	public function getAllFuturePayments() {
-	    return $this->getData("SELECT * FROM FuturePayments");
+	    return $this->getData("SELECT * FROM Future_Payments");
     }
 
     public function getFuturePaymentsById($id) {
-        return $this->getData("SELECT * FROM FuturePayments WHERE payment_id=" . $id);
+        return $this->getData("SELECT * FROM Future_Payments WHERE payment_id=" . $id);
     }
 
 	public function getFuturePaymentsByClientId($id) {
@@ -22,7 +22,7 @@ class FuturePaymentModel extends Model
     }
 
     public function getFuturePaymentsByEndDate($date) {
-        return $this->getData("SELECT * FROM FuturePayments WHERE end_date=" . $date);
+        return $this->getData("SELECT * FROM Future_Payments WHERE end_date=" . $date);
     }
 
     public function getNextPaymentId() {
@@ -30,7 +30,7 @@ class FuturePaymentModel extends Model
     }
 
     public function insertFuturePayment($id, $to, $from, $amount, $start_date, $frequency, $end_date) {
-        $this->insertData("INSERT INTO FuturePayments (Payment_id, To_accid, From_accid, Amount, Future_Payments_Start_date, Frequency, End_date) VALUES (" . 
+        $this->insertData("INSERT INTO Future_Payments (Payment_id, To_accid, From_accid, Amount, Future_Payments_Start_date, Frequency, End_date) VALUES (" . 
             "$id" .
             ", $to" .
             ", $from" .
