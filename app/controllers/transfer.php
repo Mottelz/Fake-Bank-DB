@@ -35,12 +35,12 @@ class transfer extends Controller
 		if($_SESSION['login_type'] == 'Client')
 		{
 			$transactionModel = $this->model('TransactionModel');
-			$transactions = $transactionModel->getTransferByClientId($_SESSION['login_id']);
+			$transactions = $transactionModel->getClientTransfers($_SESSION['login_id']);
 		}
 		else //$_SESSION['login_type'] == 'Employee'
 		{
 			$transactionModel = $this->model('TransactionModel');
-				$transactions = $transactionModel->getTransferByClientId($_SESSION['login_id']);
+				$transactions = $transactionModel->getClientTransfers($_SESSION['login_id']);
 		}
 
 		$this->view('transfer/transferHistory', ['transactions' => $transactions]);

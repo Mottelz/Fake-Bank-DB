@@ -37,6 +37,10 @@ class TransactionModel extends Model
 	    return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
 	}
 
+	public function getClientTransfers($client_id) {
+		return $this->getData("SELECT * FROM Transaction_Table t INNER JOIN Account a ON t.From_accid = a.Account_id WHERE Trans_type = 'Transfer' AND Client_id = $client_id");
+	}
+
 	public function getClientPayments($client_id) {
 		return $this->getData("SELECT * FROM Transaction_Table t INNER JOIN Account a ON t.From_accid = a.Account_id WHERE Trans_type = 'Payment' AND Client_id = $client_id");
 	}
