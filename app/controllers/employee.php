@@ -51,7 +51,7 @@ class employee extends Controller
 		$employee = $employeeModel->getEmployeeById($employee_id)[0];
 
 		$addressModel = $this->model('AddressModel');
-		$address = $addressModel->getAddressByCity($employee->City)[0];
+		$address = $addressModel->getAddressByStreet($employee->Street_address)[0];
 
 		$branchModel = $this->model('BranchModel');
 		$branches = $branchModel->getAllBranches();
