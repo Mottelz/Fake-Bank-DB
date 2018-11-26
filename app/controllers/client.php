@@ -114,7 +114,7 @@ class client extends Controller
 			$firstName = $_POST['first_name'];
 			$lastName = $_POST['last_name'];
 			$birthDate = $_POST['birth_date'];
-			$joinDate = date('Y-m-d');
+			$joinDate = $_POST['join_date'];
 			$password = $_POST['password'];
 			$branchID = $_POST['branch_id'];
 			$department = null;
