@@ -16,8 +16,8 @@ class account extends Controller
 
 			 $accountAll = $accountModel->getAllAccounts();
 
-			 $this->view('account/openAccount',
-	 			['accounts' => $accountAll]);
+			 /*$this->view('account/openAccount',
+	 			['accounts' => $accountAll]);*/
 	}
 
 	public function new()
@@ -71,7 +71,7 @@ class account extends Controller
 		{
 			if($_SESSION['login_type'] == 'Client')
 			{
-				var_dump($accountAll);
+				//var_dump($accountAll);
 				$clientModel = $this->model('ClientModel');
 
 				$account_id = $clientModel->getNextAccountId();
