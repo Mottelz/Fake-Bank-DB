@@ -21,15 +21,17 @@
 
         <!-- Links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/account">Account summary</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/payment">Payment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/transfer">Transfer</a>
-          </li>
+          <?php if($account_type == 'Client') { ?>
+            <li class="nav-item">
+              <a class="nav-link" href="/account">Account summary</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/payment">Payment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/transfer">Transfer</a>
+            </li>
+          <?php } ?>
           <li class="nav-item">
             <a class="nav-link" href="/profile">Profile</a>
           </li>
@@ -40,13 +42,13 @@
         </a>
 			</div>
 				<div style="margin-left:auto;">
-        <?php if(true/*$account_type == 'Employee'*/) { ?>
-          <a href="/client" class="btn btn-primary btn-sm">Clients</a>
-          <?php } ?>
+            <?php if($account_type != 'Client') { ?>
+              <a href="/client" class="btn btn-primary btn-sm">Clients</a>
+            <?php } ?>
 
-            <?php if(true/*$acc_toggle == 'Business'*/) { ?>
+            <?php if($account_type != 'Client') { ?>
               <a href="/employee" class="btn btn-secondary btn-sm">Employees</a>
-              <?php } ?>
+            <?php } ?>
 					</div>
       </nav>
 

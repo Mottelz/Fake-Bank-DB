@@ -20,7 +20,14 @@ class login extends Controller
 		{			
 			$_SESSION['acc_toggle'] = "Personal"; //Set to personal accounts as default
 
-			header("Location:/account");
+			if($_POST['login'] == 'client')
+			{
+				header("Location:/account");
+			}
+			else //$_POST['login'] == 'employee'
+			{
+				header("Location:/client");
+			}
 		}
 	}
 
