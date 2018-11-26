@@ -123,7 +123,7 @@ class payment extends Controller
 
 			$transactionModel->insertPayment($trans_id, $to, $from, $amount, $date);
 
-			header("Location:/payment/history");
+			//header("Location:/payment/history");
 		}
 	}
 
