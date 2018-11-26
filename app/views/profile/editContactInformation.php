@@ -65,14 +65,14 @@
 
         <div>
             Province<br />
-            <input type="text" name="province" value="<?=$province ?>" required class="form-control" style="width:auto;"/>
+            <input type="text" name="province" value="<?= $province ?>" required class="form-control" style="width:auto;"/>
         </div>
 
         <br />
 
         <div>
             Country<br />
-            <input type="text" name="country" value="<?=$country ?>" required class="form-control" style="width:auto;"/>
+            <input type="text" name="country" value="<?= $country ?>" required class="form-control" style="width:auto;"/>
         </div>
 
 		<br />
