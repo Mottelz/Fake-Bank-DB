@@ -49,7 +49,7 @@ class TransactionModel extends Model
     		", $amount" .
     		", '$date'" .
     		", 'Transfer')");
-    	
+    	var_dump($inserted);
    		if($inserted)
     		$this->computeBalanceAfterTrans($to, $from, $amount);
     }
