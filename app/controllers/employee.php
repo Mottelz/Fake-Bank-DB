@@ -26,7 +26,7 @@ class employee extends Controller
 		$scheduleModel = $this->model('ScheduleModel');
 		$schedules = $scheduleModel->getScheduleByEmployeeId($employee->Employee_id);
 
-		$this->view('employee/employeeDetails', 
+		$this->view('employee/employeeDetails',
 			['employee' => $employee,
 			 'address' => $address,
 			 'country' => $country,
@@ -77,10 +77,18 @@ class employee extends Controller
 	{
 		$scheduleModel = $this->model('ScheduleModel');
 		$schedule = $scheduleModel->getScheduleById($sched_id)[0];
-		
+
 		$this->checkEditDayData($sched_id);
 
 		$this->view('employee/editDay', ['schedule' => $schedule]);
+	}
+
+	public function bankInfo()
+	{
+		$transactionModel = $this->model('TransactionModel');
+		$transactions = $transactionModel->//query
+
+		$this->view('employee/checkBankInfo', ['info' => $transactions]);
 	}
 
 	public function checkAddEmployeeData()
@@ -169,7 +177,7 @@ class employee extends Controller
 
 			// Update employee
 			$employeeModel->updateEmployee($employee_id, $firstName, $lastName, $branchID, $department, $title, $startDate, $birthDate, $streetAddress, $phone, $email, $salary, $active);
-			
+
 			header("Location:/employee");
 		}
 	}
@@ -185,7 +193,7 @@ class employee extends Controller
 			$date = $_POST['date'];
 
 			$scheduleModel->insertSchedule($schedID, $employee_id, $schedType, $date);
-			
+
 			header("Location:/employee/details/$employee_id");
 		}
 	}

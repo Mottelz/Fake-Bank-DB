@@ -38,6 +38,7 @@ class TransactionModel extends Model
 	    return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
 	}
 
+
 	public function getClientTransfers($client_id) {
 		return $this->getData("SELECT * FROM Transaction_Table t INNER JOIN Account a ON t.From_accid = a.Account_id WHERE Trans_type = 'Transfer' OR Client_id = $client_id");
 	}
@@ -82,6 +83,19 @@ class TransactionModel extends Model
     	$newBalance = $balance + $amount;
 		$this->updateData("UPDATE Account SET Balance=" . $newBalance . " WHERE Account_id = " . $id);
 	}
+
+
+	public function getAccountProfit($id) {
+	    return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
+	}
+	public function getAccountProfit($id) {
+			return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
+	}
+	public function getAccountProfit($id) {
+			return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
+	}
+
+
 }
 
 ?>

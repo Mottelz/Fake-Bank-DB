@@ -1,5 +1,5 @@
 <?php
-	$employees = $data['employees'];
+	$info = $data['info'];
 ?>
 
 <html>
@@ -14,7 +14,7 @@
 			<div class="col-md-8">
 	<br />
 
-	<div><h2>Employee Summary</h2></div>
+	<div><h2>Bank Summary</h2></div>
 
 	<br />
 
