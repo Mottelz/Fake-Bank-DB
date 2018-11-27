@@ -77,6 +77,14 @@ class Automation extends Controller {
 
         return $total;
     }
+
+    function processPayments() {
+        $transactionModel = $this->model('TransactionModel');
+        $futurePaymentsModel = $this->model('FuturePaymentsModel');
+        $today = (new \DateTime())->format('Y-m-d');
+
+
+    }
 }
 //TODO: Make transfers on the dates they need to be made.
 //TODO: Charge clients monthly.

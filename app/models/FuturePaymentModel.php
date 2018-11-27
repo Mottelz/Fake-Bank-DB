@@ -18,11 +18,15 @@ class FuturePaymentModel extends Model
 	}
 
     public function getFuturePaymentsByStartDate($date) {
-        return $this->getData("SELECT * FROM FuturePayments WHERE start_date=" . $date);
+        return $this->getData("SELECT * FROM FuturePayments WHERE Future_Payments_Start_date=" . $date);
     }
 
     public function getFuturePaymentsByEndDate($date) {
-        return $this->getData("SELECT * FROM Future_Payments WHERE end_date=" . $date);
+        return $this->getData("SELECT * FROM Future_Payments WHERE End_date=" . $date);
+    }
+
+    public function getActiveFuturePayments($today) {
+	    return $this->getData("SELECT * FROM Future_Payments WHERE End_date>'".$today."' AND Future_Payments_Start_date<'".$today."'");
     }
 
     public function getNextPaymentId() {
@@ -51,10 +55,6 @@ class FuturePaymentModel extends Model
             " WHERE Payment_id = $id");
     }
 
-	function __construct()
-	{
-		$this->futurePayments = json_decode($this->data)->FuturePayment;
-	}
 }
 
 ?>
