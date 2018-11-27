@@ -22,7 +22,7 @@ class BranchModel extends Model
     }
 
     function payrollByCity($city) {
-        return $this->getData("SELECT e.Salary, City FROM Address_Table t INNER JOIN Employee e ON t.Street_address = e.Street_address WHERE t.City='".$city."' AND e.Active=1");
+        return $this->getData("SELECT e.Salary FROM Address_Table t INNER JOIN Employee e ON t.Street_address = e.Street_address WHERE t.City='".$city."' AND e.Active=1");
     }
 
     function payroll() {
