@@ -1,5 +1,5 @@
 <?
-require_once 'app/core/Model.php';
+require_once 'app/core/Automation.php';
 class employee extends Controller
 {
 	public function index()
