@@ -87,7 +87,7 @@ class employee extends Controller
 	{
 		$automation = new Automation();
 		$transactionModel = $this->model('TransactionModel');
-		$monthlyPayroll = $automaiton->monthlyPayroll();//query
+		$monthlyPayroll = $automation->monthlyPayroll();//query
 
 
 
