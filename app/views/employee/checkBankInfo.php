@@ -1,6 +1,16 @@
 <?php
 	$monthlyPayroll = $data['monthlyPayroll'];
-	var_dump($monthlyPayroll);
+	$monthlyPayroll = $data['monthlyPayroll'];
+	$monthlyPayrollByCity = $data['monthlyPayrollByCity'];
+	$monthlyPayrollByBranch = $data['monthlyPayrollByBranch'];
+	$annualLosses = $data['montannualLosseshlyPayroll'];
+	$annualLossesByBranch = $data['annualLossesByBranch'];
+	$annualLossesByCity = $data['annualLossesByCity'];
+	$annualProfits = $data['annualProfits'];
+	$annualProfitsByBranch = $data['annualProfitsByBranch'];
+	$annualProfitsByCity = $data['annualProfitsByCity'];
+	$processPayments = $data['processPayment'];
+	
 ?>
 
 <html>

@@ -86,12 +86,30 @@ class employee extends Controller
 	public function bankInfo()
 	{
 		$automation = new Automation();
-		$transactionModel = $this->model('TransactionModel');
+
 		$monthlyPayroll = $automation->monthlyPayroll();//query
+		$monthlyPayrollByCity = $automation->monthlyPayrollByCity($_POST['city']);//query
+		$monthlyPayrollByBranch = $automation->monthlyPayrollByBranch($_POST['branch']);//query
+		$annualLosses = $automation->annualLosses();//query
+		$annualLossesByBranch = $automation->annualLossesByBranch($_POST['branch']);//query
+		$annualLossesByCity = $automation->annualLossesByCity($_POST['city']);//query
+		$annualProfits = $automation->annualProfits();//query
+		$annualProfitsByBranch = $automation->annualProfitsByBranch($_POST['branch']);//query
+		$annualProfitsByCity = $automation->annualProfitsByCity($_POST['city']);//query
+		$processPayments = $automation->processPayments() {
 
-
-
-		$this->view('employee/checkBankInfo', ['monthlyPayroll' => $monthlyPayroll]);
+		$this->view('employee/checkBankInfo', [
+			'monthlyPayroll' => $monthlyPayroll,
+			'monthlyPayrollByCity' => $monthlyPayrollByCity,
+			'monthlyPayrollByBranch' => $monthlyPayrollByBranch,
+			'annualLosses' => $montannualLosseshlyPayroll,
+			'annualLossesByBranch' => $annualLossesByBranch,
+			'annualLossesByCity' => $annualLossesByCity,
+			'annualProfits' => $annualProfits,
+			'annualProfitsByBranch' => $annualProfitsByBranch,
+			'annualProfitsByCity' => $annualProfitsByCity,
+			'processPayments' => $processPayments
+		]);
 	}
 
 	public function checkAddEmployeeData()

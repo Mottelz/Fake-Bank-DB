@@ -56,7 +56,7 @@ class EmployeeModel extends Model
     }
 
     public function updateEmployeeById($id, $first_name, $last_name, $street_address, $email, $phone) {
-        return $this->getData("UPDATE Employee SET ".
+        return $this->updateData("UPDATE Employee SET ".
             "First_name='".$first_name.
             "', Last_name='".$last_name.
             "', Street_address='".$street_address.
@@ -66,7 +66,7 @@ class EmployeeModel extends Model
     }
 
     public function updateEmployeePassword($id, $password) {
-        return $this->getData("UPDATE Client SET Employee_password='".$password."' WHERE Employee_id='".$id."'");
+        return $this->updateData("UPDATE Client SET Employee_password='".$password."' WHERE Employee_id='".$id."'");
     }
 
 	private $data = 
