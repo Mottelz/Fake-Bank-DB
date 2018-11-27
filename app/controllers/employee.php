@@ -1,6 +1,6 @@
 <?
 require_once '../core/Model.php'
-class employee extends Controller
+class employee 
 {
 	public function index()
 	{
