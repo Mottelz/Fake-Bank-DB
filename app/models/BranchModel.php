@@ -17,6 +17,18 @@ class BranchModel extends Model
         return $this->getData("SELECT * FROM Branch WHERE manager_id=" . $id);
     }
 
+    function payrollByBranch($branch_id) {
+    return $this->getData("SELECT Salary FROM Employee WHERE Active=1 AND Branch_id=".$branch_id);
+    }
+
+    function payrollByCity($city) {
+        return $this->getData("SELECT e.Salary, City FROM Address_Table t INNER JOIN Employee e ON t.Street_address = e.Street_address WHERE t.City='".$city."' AND e.Active=1");
+    }
+
+    function payroll() {
+		return $this->getData("SELECT Salary FROM Employee WHERE Active=1");
+    }
+
 
 	function __construct()
 	{
