@@ -59,6 +59,7 @@ class employee extends Controller
 		$branchModel = $this->model('BranchModel');
 		$branches = $branchModel->getAllBranches();
 
+
 		$this->view('employee/employeeEdit',
 			['employee' => $employee,
 			 'address' => $address,
@@ -96,7 +97,13 @@ class employee extends Controller
 		$annualProfits = $automation->annualProfits();//query
 		$annualProfitsByBranch = $automation->annualProfitsByBranch($_POST['branch']);//query
 		$annualProfitsByCity = $automation->annualProfitsByCity($_POST['city']);//query
-		$processPayments = $automation->processPayments() {
+		//$processPayments = $automation->processPayments() {
+
+		$branchModel = $this->model('BranchModel');
+		$branches = $branchModel->getAllBranches();
+
+		$countryModel = $this->model('CountryModel');
+		$city = $countryModel->getAllCities();
 
 		$this->view('employee/checkBankInfo', [
 			'monthlyPayroll' => $monthlyPayroll,
@@ -108,7 +115,9 @@ class employee extends Controller
 			'annualProfits' => $annualProfits,
 			'annualProfitsByBranch' => $annualProfitsByBranch,
 			'annualProfitsByCity' => $annualProfitsByCity,
-			'processPayments' => $processPayments
+			'city' => $city,
+			'branches' => $branches
+			//'processPayments' => $processPayments
 		]);
 	}
 

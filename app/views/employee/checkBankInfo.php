@@ -9,8 +9,9 @@
 	$annualProfits = $data['annualProfits'];
 	$annualProfitsByBranch = $data['annualProfitsByBranch'];
 	$annualProfitsByCity = $data['annualProfitsByCity'];
-	$processPayments = $data['processPayment'];
-	
+	//$processPayments = $data['processPayment'];
+	$city = $data['city'];
+	$branches = $data['branches'];
 ?>
 
 <html>
@@ -25,7 +26,22 @@
 			<div class="col-md-8">
 	<br />
 
-	<div><h2>Bank Summary</h2></div>
+	<div><h1>Bank Summary</h1></div>
+	<h2>Get Losses By City:</h2>
+		<select name="to" required>
+				<option selected disabled value="">---Select Account---</option>
+				<?php
+					for($index = 0; $index < count($city); $index++)
+					{
+						$city = $city[$index];
+						$CityName = $city->City;
+						$type = $account->Account_Type;
+				?>
+						<option value="<?= $CityName ?>"></option>
+				<?php
+					}
+				?>
+			</select>
 
 	<br />
 	<br />
