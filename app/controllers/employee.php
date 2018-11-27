@@ -86,7 +86,7 @@ class employee extends Controller
 	public function bankInfo()
 	{
 		$transactionModel = $this->model('TransactionModel');
-		$transactions = $transactionModel->//query
+		//$transactions = $transactionModel->//query
 
 		$this->view('employee/checkBankInfo', ['info' => $transactions]);
 	}
