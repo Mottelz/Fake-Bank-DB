@@ -4,35 +4,23 @@ class account extends Controller
 {
 	public function index()
 	{
-
+		var_dump($_SESSION['login_id']);
 		$this->checkIsLoggedIn();
 		$this->checkToggle();
 		$accountModel = $this->model('AccountModel');
+		$account = $accountModel->getAccountById($_SESSION['login_id']);
 
-		$account = $accountModel->getAccountsByUserId($_SESSION['login_id']);
-		$this->view('account/accountSummary',
+		$this->view('account/accountSummary', 
 			['acc_toggle' => $_SESSION['acc_toggle'],
 			 'accounts' => $account]);
-
-			 $accountAll = $accountModel->getAllAccounts();
-
-			 /*$this->view('account/openAccount',
-	 			['accounts' => $accountAll]);*/
 	}
 
 	public function new()
 	{
 		$this->checkIsLoggedIn();
 		$this->checkOpenAccountData();
-		$accountModel = $this->model('AccountModel');
-		$accountType = $accountModel->getAccountType();
-		$accountOption = $accountModel->getAccountOptions();
-		$accountService = $accountModel->getAccountService();
-		$this->view('account/openAccount',
-			['accounttype' => $accountType,
-			'accountoptions' => $accountOption,
-			'accountservice' => $accountService]
-		);
+
+		$this->view('account/openAccount');
 	}
 
 	public function details($account_id)
@@ -46,16 +34,14 @@ class account extends Controller
 		$transactions = $transactionModel->getTransactionByAccountId($account_id);
 		//var_dump($transactions);
 		$annualProfits =0;
-		for($index = 0; $index < count($transactionModel->getAccountProfit($account_id)); $index++){
-			$annualProfits += $transactionModel->getAccountProfit($account_id)[$index]->Amount;
-		}
-
-		$annualLosses=0;
+		
+		 //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
+		 var_dump($transactionModel->getAccountLoss($account_id));
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
-			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index]->Amount;
+			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index]->;
 		}
-		$this->view('account/accountDetails',
-			['account' => $account,
+		$this->view('account/accountDetails', 
+			['account' => $account, 
 			 'transactions' => $transactions,
 		     'annualProfits' => $annualProfits,
 		     'annualLosses' => $annualLosses]);
@@ -78,39 +64,21 @@ class account extends Controller
 		{
 			if($_SESSION['login_type'] == 'Client')
 			{
-
-				$accountModel = $this->model('AccountModel');
-
-				$account_id = $accountModel->getNextAccountId();
-				$client_id = $_SESSION['login_id'];
-				$Account_Option = $_POST['option'];
-				$Account_Type = $_POST['type'];
-				$Account_Service = $_POST['service'];
-				$Charge_Plan_Option = $_POST['option'];
-				$Interest_Rate_Type = $_POST['type'];
-				$Interest_Rate_Service = $_POST['service'];
-
-				if($accountModel->addAccountById($account_id, $client_id, $Account_Option, $Account_Type, $Account_Service, $Charge_Plan_Option, $Interest_Rate_Type, $Interest_Rate_Service )){
-					$message = "Account successfully created.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
-				}else{
-					$message = "Account creation failed.";
-					echo "<script type='text/javascript'>alert('$message');</script>";
-				}
+				//NEED CREATE ACCOUNT QUERY (FOR CLIENT)
 			}
 			else //$_SESSION['login_type'] == 'Employee'
 			{
 				//NEED CREATE ACCOUNT QUERY (FOR EMPLOYEE)
 			}
 
-			//header("Location:/account");
+			header("Location:/account");
 		}
 	}
 
 	public function validateOpenAccountData()
 	{
 		//INSERT VALIDATION (AS NEEDED)
-
+		
 		return true;
 	}
 }

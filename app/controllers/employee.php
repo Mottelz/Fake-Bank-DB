@@ -1,5 +1,5 @@
 <?
-
+require_once '../core/Model.php'
 class employee extends Controller
 {
 	public function index()
@@ -86,9 +86,9 @@ class employee extends Controller
 	public function bankInfo()
 	{
 		$transactionModel = $this->model('TransactionModel');
-		//$transactions = $transactionModel->//query
+		$monthlyPayroll = $transactionModel->monthlyPayroll();//query
 
-		$this->view('employee/checkBankInfo', ['info' => $transactions]);
+		$this->view('employee/checkBankInfo', ['monthlyPayroll' => $monthlyPayroll]);
 	}
 
 	public function checkAddEmployeeData()
