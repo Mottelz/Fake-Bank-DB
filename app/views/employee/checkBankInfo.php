@@ -28,14 +28,13 @@
 
 	<div><h1>Bank Summary</h1></div>
 	<h2>Get Losses By City:</h2>
-		<select name="to" required>
+		<select name="city" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
 					for($index = 0; $index < count($city); $index++)
 					{
 						$city = $city[$index];
 						$CityName = $city->City;
-						$type = $account->Account_Type;
 				?>
 						<option value="<?= $CityName ?>"></option>
 				<?php
@@ -43,6 +42,20 @@
 				?>
 			</select>
 
+	<h2>Get Losses By Branch:</h2>
+		<select name="branch" required>
+				<option selected disabled value="">---Select Account---</option>
+				<?php
+					for($index = 0; $index < count($branches); $index++)
+					{
+						$branch = $branches[$index];
+						$branchName = $branch->Branch_id;
+				?>
+						<option value="<?= $branchName ?>"></option>
+				<?php
+					}
+				?>
+			</select>
 	<br />
 	<br />
 
