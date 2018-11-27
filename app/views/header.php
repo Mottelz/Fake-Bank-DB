@@ -35,6 +35,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/profile">Profile</a>
           </li>
+          <?php else if($login_type != 'Client') { ?>
+          <li class="nav-item">
+              <a class="nav-link" href="/employee/bankInfo">Bank Information</a>
+            </li>
+          <?php } ?>
         </ul>
 				<div style="margin-left:20px;">
         <a class="navbar-brand" href="#">
@@ -48,7 +53,7 @@
 
             <?php if($login_type != 'Client') { ?>
               <a href="/employee" class="btn btn-secondary btn-sm">Employees</a>
-            <?php } ?>
+            
 					</div>
       </nav>
 
