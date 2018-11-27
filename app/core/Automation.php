@@ -10,7 +10,7 @@ class Automation extends Controller {
         $total = 0;
 
         foreach ($allSalaries as $salary) {
-            $total += ($salary/12);
+            $total += ($salary->Salary/12);
         }
 
         return $total;
@@ -23,7 +23,7 @@ class Automation extends Controller {
         $total = 0;
 
         foreach ($allSalaries as $salary) {
-            $total += ($salary/12);
+            $total += ($salary->Salary/12);
         }
 
         return $total;
@@ -36,7 +36,7 @@ class Automation extends Controller {
         $total = 0;
 
         foreach ($allSalaries as $salary) {
-            $total += ($salary/12);
+            $total += ($salary->Salary/12);
         }
 
         return $total;
@@ -48,7 +48,7 @@ class Automation extends Controller {
         $total = 0;
 
         foreach ($allSalaries as $salary) {
-            $total += $salary;
+            $total += $salary->Salary;
         }
 
         return $total;
@@ -60,7 +60,7 @@ class Automation extends Controller {
         $total = 0;
 
         foreach ($allSalaries as $salary) {
-            $total += $salary;
+            $total += $salary->Salary;
         }
 
         return $total;
@@ -72,7 +72,7 @@ class Automation extends Controller {
         $total = 0;
 
         foreach ($allSalaries as $salary) {
-            $total += $salary;
+            $total += $salary->Salary;
         }
 
         return $total;
@@ -83,7 +83,15 @@ class Automation extends Controller {
         $futurePaymentsModel = $this->model('FuturePaymentsModel');
         $today = (new \DateTime())->format('Y-m-d');
 
+        $activePayments = $futurePaymentsModel->getActiveFuturePayments($today);
 
+        foreach ($activePayments as $payment) {
+            $diff = date_diff(date_create($payment->Future_Payments_Start_date), date_create($today));
+            if ($diff % $payment->Frequency == 0) {
+                $transtId = $transactionModel->getNextTransId();
+                $transactionModel->insertTransfer($transtId, $payment->To_accid, $payment->From_accid, $payment->Amount, $today);
+            }
+        }
     }
 }
 //TODO: Make transfers on the dates they need to be made.
