@@ -41,6 +41,42 @@ class Automation extends Controller {
 
         return $total;
     }
+
+    function annualLosses() {
+        $branchModel = $this->model('BranchModel');
+        $allSalaries = $branchModel->payroll();
+        $total = 0;
+
+        foreach ($allSalaries as $salary) {
+            $total += $salary;
+        }
+
+        return $total;
+    }
+
+    function annualLossesByBranch($branch) {
+        $branchModel = $this->model('BranchModel');
+        $allSalaries = $branchModel->payrollByBranch($branch);
+        $total = 0;
+
+        foreach ($allSalaries as $salary) {
+            $total += $salary;
+        }
+
+        return $total;
+    }
+
+    function annualLossesByCity($city) {
+        $branchModel = $this->model('BranchModel');
+        $allSalaries = $branchModel->payrollByCity($city);
+        $total = 0;
+
+        foreach ($allSalaries as $salary) {
+            $total += $salary;
+        }
+
+        return $total;
+    }
 }
 //TODO: Make transfers on the dates they need to be made.
 //TODO: Charge clients monthly.
