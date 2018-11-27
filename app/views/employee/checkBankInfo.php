@@ -1,6 +1,6 @@
 <?php
-	$monthlyPaylroll = $data['monthlyPaylroll'];
-	var_dump($monthlyPaylroll);
+	$monthlyPayroll = $data['monthlyPayroll'];
+	var_dump($monthlyPayroll);
 ?>
 
 <html>
