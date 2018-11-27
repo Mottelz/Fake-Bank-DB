@@ -85,18 +85,9 @@ class TransactionModel extends Model
 	}
 
 
-//	public function getAccountProfit($id) {
-//	    return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
-//	}
-//
-//	public function getAccountProfit($id) {
-//			return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
-//	}
-//
-//	public function getAccountProfit($id) {
-//			return $this->getData("SELECT Amount FROM Transaction_Table WHERE From_accid=" . $id ." AND  (	Trans_type = 'Sale')");
-//	}
-
+	public function getTotalTransactions($id) {
+	    return $this->getData("SELECT COUNT(Amount) FROM Transaction_Table WHERE From_accid=" . $id . " OR To_accid= "  . $id);
+	}
 
 }
 

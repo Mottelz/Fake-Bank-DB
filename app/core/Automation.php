@@ -93,6 +93,30 @@ class Automation extends Controller {
             }
         }
     }
+
+    function getAllProfits(){
+        //get all accounts
+        //for each account,
+            //fees = 10.00
+            //if count of transactions > 5
+                //Fees += (transactionCount -5) * 4.5
+            //chargeAccountFees()
+
+        //get accounts by branch
+        //for each account,
+        //fees = 10.00
+        //if count of transactions > 5
+            //Fees += (transactionCount -5) * 4.5
+            //chargeAccountFees()
+
+        //get accounts by city
+        //for each account,
+            //fees = 10.00
+            //if count of transactions > 5
+                //Fees += (transactionCount -5) * 4.5
+            //chargeAccountFees()
+    }
+
 }
 //TODO: Make transfers on the dates they need to be made.
 //TODO: Charge clients monthly.
