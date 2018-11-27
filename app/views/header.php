@@ -35,7 +35,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/profile">Profile</a>
           </li>
-          <?php elseif($login_type != 'Client') { ?>
+          <?php if($login_type != 'Client') { ?>
           <li class="nav-item">
               <a class="nav-link" href="/employee/bankInfo">Bank Information</a>
             </li>
