@@ -85,8 +85,11 @@ class employee extends Controller
 
 	public function bankInfo()
 	{
+		$automation = new Automation();
 		$transactionModel = $this->model('TransactionModel');
-		$monthlyPayroll = $transactionModel->monthlyPayroll();//query
+		$monthlyPayroll = $automaiton->monthlyPayroll();//query
+
+
 
 		$this->view('employee/checkBankInfo', ['monthlyPayroll' => $monthlyPayroll]);
 	}
