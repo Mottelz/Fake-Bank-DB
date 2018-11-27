@@ -53,7 +53,7 @@
 
             <?php if($login_type != 'Client') { ?>
               <a href="/employee" class="btn btn-secondary btn-sm">Employees</a>
-            
+            <?php } ?>
 					</div>
       </nav>
 
