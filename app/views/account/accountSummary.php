@@ -3,6 +3,7 @@
 	$acc_toggle = $data['acc_toggle'];
 
 	$toggleTo = $acc_toggle == 'Personal' ? 'Business' : 'Personal';
+var_dump($accounts);
 ?>
 
   <html>
@@ -37,7 +38,6 @@
             </thead>
             <tbody>
               <?php
-              //var_dump($accounts);
 				for($index = 0; $index < count($accounts); $index++)
 				{
 					$account = $accounts[$index];
