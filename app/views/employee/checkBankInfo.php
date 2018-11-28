@@ -27,7 +27,7 @@
 			<div class="col-md-8">
 	<br />
 
-<?php var_dump($city[1]); ?>
+
 	<div><h1>Bank Summary</h1></div>
 	<h2>Get Losses By City:</h2>
 		<select name="city" required>
@@ -49,7 +49,7 @@
 		<select name="branch" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
-				var_dump($branches);
+
 					for($index = 0; $index < count($branches); $index++)
 					{
 						$branch = $branches[$index];
@@ -63,8 +63,9 @@
 			<h3><?= $annualLossesByBranch ?></h3>
 	<br />
 	<br />
-
-<button class="btn btn-lg btn-primary btn-block" name="login" value="employee" type="submit">Submit</button>
+		<div>
+		<button class="btn btn-lg btn-primary btn-block" name="submit" value="employee" type="submit">Submit</button>
+		</div>
 </div>
 </div>
 </div>
