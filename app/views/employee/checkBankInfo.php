@@ -12,7 +12,7 @@
 	//$processPayments = $data['processPayment'];
 	$city = $data['city'];
 	$branches = $data['branches'];
-		var_dump($city);
+		var_dump($city[0]);
 ?>
 
 <html>
@@ -32,12 +32,13 @@
 		<select name="city" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
-
-				foreach($city as $cityName) {
-						
-
+var_dump($city[0]);
+					for($index = 0; $index < count($city); $index++)
+					{
+						$something = $city[$index];
+						$CityName = $something->City;
 				?>
-						<option value="<?= $cityName->City ?>"></option>
+						<option value="<?= $CityName ?>"></option>
 				<?php
 					}
 				?>
