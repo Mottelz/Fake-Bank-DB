@@ -14,6 +14,14 @@ class AccountModel extends Model
         return $this->getData("SELECT * FROM Account");
     }
 
+    public function getAccountsByCity($city) {
+        return $this->getData("SELECT a.Account_id FROM Address_Table t INNER JOIN Client c ON t.Street_address = c.Street_address  INNER JOIN Account a ON a.Client_id = c.Client_id WHERE t.City='".$city."'");
+    }
+
+    public function getAccountsByBranch($branch) {
+        return $this->getData("SELECT a.Account_id FROM Client c INNER JOIN Account a ON a.Client_id = c.Client_id WHERE c.Branch_id='".$branch."'");
+    }
+
     public function getAccountType() {
         return $this->getData("SELECT DISTINCT Account_Type FROM Account");
     }
