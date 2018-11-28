@@ -4,7 +4,7 @@ class account extends Controller
 {
 	public function index()
 	{
-		var_dump($_SESSION['login_id']);
+		
 		$this->checkIsLoggedIn();
 		$this->checkToggle();
 		$accountModel = $this->model('AccountModel');
