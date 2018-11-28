@@ -27,7 +27,7 @@
 	<br />
 
 
-	<div><h1>Bank Summary</h1></div>
+	<div><h1>Bank Summary</h1></div> </br></br></br>
 	<h2>Get Losses By City:</h2>
 		<select name="city" required>
 				<option selected disabled value="">---Select Account---</option>
@@ -138,7 +138,7 @@
 			<h3><?= $monthlyPayrollByCity ?></h3>
 	<br />
 	<br />
-		<div>
+		<div style="width:auto;">
 		<button class="btn btn-lg btn-primary btn-block" name="submit" value="employee" type="submit">Submit</button>
 		</div>
 </div>
