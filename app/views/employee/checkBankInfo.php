@@ -33,12 +33,11 @@
 				<option selected disabled value="">---Select Account---</option>
 				<?php
 
-					for($index = 0; $index < count($city); $index++)
-					{
-					//	$something = $city[$index];
+				foreach($city as $cityName) {
+						
 
 				?>
-						<option value="<?= $city[$index]; ?>"></option>
+						<option value="<?= $cityName->City ?>"></option>
 				<?php
 					}
 				?>
