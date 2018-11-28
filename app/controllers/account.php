@@ -19,8 +19,15 @@ class account extends Controller
 	{
 		$this->checkIsLoggedIn();
 		$this->checkOpenAccountData();
-
-		$this->view('account/openAccount');
+		$accountModel = $this->model('AccountModel');
+		$accountType = $accountModel->getAccountType();
+		$accountOption = $accountModel->getAccountOptions();
+		$accountService = $accountModel->getAccountService();
+		$this->view('account/openAccount',
+			['accounttype' => $accountType,
+			'accountoptions' => $accountOption,
+			'accountservice' => $accountService]
+		);
 	}
 
 	public function details($account_id)
@@ -36,7 +43,7 @@ class account extends Controller
 		$annualProfits =0;
 
 		 //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
-		 var_dump($transactionModel->getAccountLoss($account_id));
+	//	 var_dump($transactionModel->getAccountLoss($account_id));
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
 			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index];
 		}
