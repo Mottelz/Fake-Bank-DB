@@ -6,9 +6,11 @@ class CountryModel extends Model
 	public $countries;
 
 	public function getAllCities() {
-	    return $this->getData("SELECT DISTINCT City FROM Country");
+	    return $this->getData("SELECT * FROM Country");
     }
-
+		public function getAllUniqueCities() {
+				return $this->getData("SELECT DISTINCT City FROM Country");
+		}
     public function getCityByProvince($province) {
         return $this->getData("SELECT * FROM Country WHERE province='".$province."'");
     }
