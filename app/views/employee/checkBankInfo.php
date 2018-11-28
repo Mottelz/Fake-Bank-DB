@@ -31,6 +31,7 @@
 		<select name="city" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
+				var_dump($city);
 					for($index = 0; $index < count($city); $index++)
 					{
 						$city = $city[$index];
