@@ -10,7 +10,7 @@ class account extends Controller
 		$accountModel = $this->model('AccountModel');
 		$account = $accountModel->getAccountById($_SESSION['login_id']);
 
-		$this->view('account/accountSummary', 
+		$this->view('account/accountSummary',
 			['acc_toggle' => $_SESSION['acc_toggle'],
 			 'accounts' => $account]);
 	}
@@ -34,14 +34,14 @@ class account extends Controller
 		$transactions = $transactionModel->getTransactionByAccountId($account_id);
 		//var_dump($transactions);
 		$annualProfits =0;
-		
+
 		 //Arbitrary value (NEED QUERY TO COMPUTE ANNUAL LOSSES)
 		 var_dump($transactionModel->getAccountLoss($account_id));
 		for($index = 0; $index < count($transactionModel->getAccountLoss($account_id)); $index++){
-			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index]->;
+			$annualLosses += $transactionModel->getAccountLoss($account_id)[$index];
 		}
-		$this->view('account/accountDetails', 
-			['account' => $account, 
+		$this->view('account/accountDetails',
+			['account' => $account,
 			 'transactions' => $transactions,
 		     'annualProfits' => $annualProfits,
 		     'annualLosses' => $annualLosses]);
@@ -78,7 +78,7 @@ class account extends Controller
 	public function validateOpenAccountData()
 	{
 		//INSERT VALIDATION (AS NEEDED)
-		
+
 		return true;
 	}
 }
