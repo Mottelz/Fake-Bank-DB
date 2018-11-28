@@ -60,10 +60,11 @@
 					}
 				?>
 			</select>
+			<h3><?= $annualLossesByBranch ?></h3>
 	<br />
 	<br />
 
-
+<button class="btn btn-lg btn-primary btn-block" name="login" value="employee" type="submit">Submit</button>
 </div>
 </div>
 </div>
