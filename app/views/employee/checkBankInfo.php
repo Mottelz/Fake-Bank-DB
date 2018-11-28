@@ -38,7 +38,7 @@
 					//	$something = $city[$index];
 
 				?>
-						<option value="<?= $city[$index]->City; ?>"></option>
+						<option value="<?= $city[$index]; ?>"></option>
 				<?php
 					}
 				?>
