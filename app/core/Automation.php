@@ -96,11 +96,13 @@ class Automation extends Controller {
 
     function annualProfits(){
         $accountModel = $this->model('AccountModel');
+        $transactionModel = $this->model('TransactionModel');
         $accounts = $accountModel->GetAllAccounts();
         $totalProfits = 0;
         foreach ($accounts as $account) {
+            $transactions = $transactionModel->getTotalTransactions($account->Account_id);
             $fees = 10.00;
-            if($account->transCount > 5) {
+            if($transactions->transCount > 5) {
                 $fees += ($account->transCount-5) * 4.5;
             }
             $totalProfits+= $fees;
@@ -110,11 +112,13 @@ class Automation extends Controller {
 
     function annualProfitsByBranch($branch_id) {
         $accountModel = $this->model('AccountModel');
+        $transactionModel = $this->model('TransactionModel');
         $accounts = $accountModel->GetAccountsByBranch($branch_id);
         $totalProfits = 0;
         foreach ($accounts as $account) {
+            $transactions = $transactionModel->getTotalTransactions($account->Account_id);
             $fees = 10.00;
-            if($account->transCount > 5) {
+            if($transactions->transCount > 5) {
                 $fees += ($account->transCount-5) * 4.5;
             }
             $totalProfits+= $fees;
@@ -124,11 +128,13 @@ class Automation extends Controller {
 
     function annualProfitsByCity($city) {
         $accountModel = $this->model('AccountModel');
+        $transactionModel = $this->model('TransactionModel');
         $accounts = $accountModel->GetAccountsByCity($city);
         $totalProfits = 0;
         foreach ($accounts as $account) {
+            $transactions = $transactionModel->getTotalTransactions($account->Account_id);
             $fees = 10.00;
-            if($account->transCount > 5) {
+            if($transactions->transCount > 5) {
                 $fees += ($account->transCount-5) * 4.5;
             }
             $totalProfits+= $fees;
