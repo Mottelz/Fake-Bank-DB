@@ -138,8 +138,8 @@
 			<h3><?= $monthlyPayrollByCity ?></h3>
 	<br />
 	<br />
-		<div style="width:auto;">
-		<button class="btn btn-lg btn-primary btn-block" name="submit" value="employee" type="submit">Submit</button>
+		<div>
+		<button class="btn btn-lg btn-primary btn-block" name="submit" value="employee" type="submit" style="width:auto;">Submit</button>
 		</div>
 </div>
 </div>
