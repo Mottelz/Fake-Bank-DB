@@ -116,7 +116,7 @@ class employee extends Controller
 
 		$countryModel = $this->model('CountryModel');
 		$city = $countryModel->getAllCities();
-
+		var_dump($city);
 		$this->view('employee/checkBankInfo', [
 			'monthlyPayroll' => $monthlyPayroll,
 			'monthlyPayrollByCity' => $monthlyPayrollByCity,
