@@ -36,9 +36,9 @@
 					for($index = 0; $index < count($city); $index++)
 					{
 						$city = $city[$index];
-						$CityName = $city->City;
+						//$CityName = $city->City;
 				?>
-						<option value="<?= $CityName ?>"></option>
+						<option value="<?= $City ?>"></option>
 				<?php
 					}
 				?>
