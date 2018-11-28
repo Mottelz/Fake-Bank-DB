@@ -8,7 +8,7 @@ class account extends Controller
 		$this->checkIsLoggedIn();
 		$this->checkToggle();
 		$accountModel = $this->model('AccountModel');
-		$account = $accountModel->getAccountById($_SESSION['login_id']);
+		$account = $accountModel->getAccountsByUserId($_SESSION['login_id']);
 
 		$this->view('account/accountSummary',
 			['acc_toggle' => $_SESSION['acc_toggle'],

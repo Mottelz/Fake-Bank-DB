@@ -3,7 +3,7 @@
 	$acc_toggle = $data['acc_toggle'];
 
 	$toggleTo = $acc_toggle == 'Personal' ? 'Business' : 'Personal';
-var_dump($accounts);
+
 ?>
 
   <html>
