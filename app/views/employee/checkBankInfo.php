@@ -44,7 +44,7 @@
 					}
 				?>
 			</select>
-
+			<h3><?= $annualLossesByCity ?></h3>
 	<h2>Get Losses By Branch:</h2>
 		<select name="branch" required>
 				<option selected disabled value="">---Select Account---</option>
