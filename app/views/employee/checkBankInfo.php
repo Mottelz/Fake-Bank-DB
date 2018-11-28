@@ -47,6 +47,7 @@
 		<select name="branch" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
+				var_dump($branches);
 					for($index = 0; $index < count($branches); $index++)
 					{
 						$branch = $branches[$index];
