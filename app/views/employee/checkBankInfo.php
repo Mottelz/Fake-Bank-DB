@@ -27,12 +27,13 @@
 			<div class="col-md-8">
 	<br />
 
+<?php var_dump($city[1]); ?>
 	<div><h1>Bank Summary</h1></div>
 	<h2>Get Losses By City:</h2>
 		<select name="city" required>
 				<option selected disabled value="">---Select Account---</option>
 				<?php
-var_dump($city[1]);
+
 					for($index = 0; $index < count($city); $index++)
 					{
 						$something = $city[$index];
