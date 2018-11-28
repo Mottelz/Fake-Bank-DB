@@ -86,21 +86,29 @@ class employee extends Controller
 
 	public function bankInfo()
 	{
-		if($_POST['city'])
-			$
-		else 
-			$ = null;
 		$automation = new Automation();
+		if($_POST['city']){
+				$monthlyPayrollByCity = $automation->monthlyPayrollByCity($_POST['city']);//query
+				$annualLossesByCity = $automation->annualLossesByCity($_POST['city']);//query
+		//		$annualProfitsByCity = $automation->annualProfitsByCity($_POST['city']);//query
+		}else {
+			$monthlyPayrollByCity = null;
+			$annualLossesByCity = null;
+		//	$annualProfitsByCity = null;
+		}
+		if($_POST['branch']){
+			$monthlyPayrollByBranch = $automation->monthlyPayrollByBranch($_POST['branch']);//query
+			$annualLossesByBranch = $automation->annualLossesByBranch($_POST['branch']);//query
+		//	$annualProfitsByBranch = $automation->annualProfitsByBranch($_POST['branch']);//query
+		}else {
+			$monthlyPayrollByBranch = null;
+			$annualLossesByBranch = null;
+		//	$annualProfitsByBranch = null;
+		}
 
 		$monthlyPayroll = $automation->monthlyPayroll();//query
-		$monthlyPayrollByCity = $automation->monthlyPayrollByCity($_POST['city']);//query
-		$monthlyPayrollByBranch = $automation->monthlyPayrollByBranch($_POST['branch']);//query
 		$annualLosses = $automation->annualLosses();//query
-		$annualLossesByBranch = $automation->annualLossesByBranch($_POST['branch']);//query
-		$annualLossesByCity = $automation->annualLossesByCity($_POST['city']);//query
-		$annualProfits = $automation->annualProfits();//query
-		$annualProfitsByBranch = $automation->annualProfitsByBranch($_POST['branch']);//query
-		$annualProfitsByCity = $automation->annualProfitsByCity($_POST['city']);//query
+		//$annualProfits = $automation->annualProfits();//query
 		//$processPayments = $automation->processPayments() {
 
 		$branchModel = $this->model('BranchModel');
@@ -116,9 +124,9 @@ class employee extends Controller
 			'annualLosses' => $montannualLosseshlyPayroll,
 			'annualLossesByBranch' => $annualLossesByBranch,
 			'annualLossesByCity' => $annualLossesByCity,
-			'annualProfits' => $annualProfits,
-			'annualProfitsByBranch' => $annualProfitsByBranch,
-			'annualProfitsByCity' => $annualProfitsByCity,
+			//'annualProfits' => $annualProfits,
+			//'annualProfitsByBranch' => $annualProfitsByBranch,
+			//'annualProfitsByCity' => $annualProfitsByCity,
 			'city' => $city,
 			'branches' => $branches
 			//'processPayments' => $processPayments

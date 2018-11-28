@@ -118,7 +118,6 @@ class Automation extends Controller {
     }
 
 }
-//TODO: Make transfers on the dates they need to be made.
-//TODO: Charge clients monthly.
+
 
 ?>
