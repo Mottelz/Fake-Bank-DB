@@ -62,7 +62,7 @@
 			<h3><?= $annualLossesByBranch ?></h3>
 
 
-
+			</br></br></br>
 
 
 			<h2>Get Profits By City:</h2>
@@ -101,7 +101,7 @@
 
 
 
-
+		</br></br></br>
 
 
 			<h2>Get Monthly Payroll By City:</h2>
