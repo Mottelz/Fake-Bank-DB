@@ -86,7 +86,7 @@ class TransactionModel extends Model
 
 
 	public function getTotalTransactions($id) {
-	    return $this->getData("SELECT COUNT(Amount) FROM Transaction_Table WHERE From_accid=" . $id . " OR To_accid= "  . $id);
+	    return $this->getData("SELECT COUNT(Amount) AS transCount FROM Transaction_Table WHERE From_accid=" . $id . " OR To_accid= "  . $id);
 	}
 
 }

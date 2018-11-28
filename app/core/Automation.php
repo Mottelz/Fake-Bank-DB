@@ -94,30 +94,51 @@ class Automation extends Controller {
         }
     }
 
-    function getAllProfits(){
-        //get all accounts
-        //for each account,
-            //fees = 10.00
-            //if count of transactions > 5
-                //Fees += (transactionCount -5) * 4.5
-            //chargeAccountFees()
+    function annualProfits(){
+        $accountModel = $this->model('AccountModel');
+        $accounts = $accountModel->GetAllAccounts();
+        $totalProfits = 0;
+        foreach ($accounts as $account) {
+            $fees = 10.00;
+            if($account->transCount > 5) {
+                $fees += ($account->transCount-5) * 4.5;
+            }
+            $totalProfits+= $fees;
+        }
+        return $totalProfits;
+    }
 
-        //get accounts by branch
-        //for each account,
-        //fees = 10.00
-        //if count of transactions > 5
-            //Fees += (transactionCount -5) * 4.5
-            //chargeAccountFees()
+    function annualProfitsByBranch($branch_id) {
+        $accountModel = $this->model('AccountModel');
+        $accounts = $accountModel->GetAccountsByBranch($branch_id);
+        $totalProfits = 0;
+        foreach ($accounts as $account) {
+            $fees = 10.00;
+            if($account->transCount > 5) {
+                $fees += ($account->transCount-5) * 4.5;
+            }
+            $totalProfits+= $fees;
+        }
+        return $totalProfits;
+    }
 
-        //get accounts by city
-        //for each account,
-            //fees = 10.00
-            //if count of transactions > 5
-                //Fees += (transactionCount -5) * 4.5
-            //chargeAccountFees()
+    function annualProfitsByCity($city) {
+        $accountModel = $this->model('AccountModel');
+        $accounts = $accountModel->GetAccountsByCity($city);
+        $totalProfits = 0;
+        foreach ($accounts as $account) {
+            $fees = 10.00;
+            if($account->transCount > 5) {
+                $fees += ($account->transCount-5) * 4.5;
+            }
+            $totalProfits+= $fees;
+        }
+        return $totalProfits;
+
     }
 
 }
 
+//TODO: Charge clients monthly.
 
 ?>
