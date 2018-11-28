@@ -12,7 +12,7 @@
 	//$processPayments = $data['processPayment'];
 	$city = $data['city'];
 	$branches = $data['branches'];
-		var_dump($city[1]);
+
 ?>
 
 <html>
@@ -39,7 +39,7 @@
 						$something = $city[$index];
 						$CityName = $something->City;
 				?>
-						<option value="<?= $CityName ?>"></option>
+						<option value="<?= $CityName ?>"><?= $CityName ?></option>
 				<?php
 					}
 				?>
@@ -55,7 +55,7 @@
 						$branch = $branches[$index];
 						$branchName = $branch->Branch_id;
 				?>
-						<option value="<?= $branchName ?>"></option>
+						<option value="<?= $branchName ?>"><?= $branchName ?></option>
 				<?php
 					}
 				?>
