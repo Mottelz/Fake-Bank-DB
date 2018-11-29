@@ -28,7 +28,8 @@
 
 <form method="POST" action="/employee/bankInfo">
 	<div><h1>Bank Summary</h1></div> </br></br></br>
-
+<h2>Overall Losses:</h2>
+<h3><?= $annualLosses ?></h3>
 	<h2>Get Losses By City:</h2>
 		<select name="cityLosses" >
 				<option selected disabled value="">---Select City---</option>
@@ -65,7 +66,8 @@
 
 			</br></br></br>
 
-
+			<h2>Overall Profits:</h2>
+			<h3><?= $annualProfits ?></h3>
 			<h2>Get Profits By City:</h2>
 		<select name="cityProfits" >
 				<option selected disabled value="">---Select City---</option>
@@ -104,7 +106,8 @@
 
 		</br></br></br>
 
-
+		<h2>Overall Monthly Payroll:</h2>
+		<h3><?= $monthlyPayroll ?></h3>
 			<h2>Get Monthly Payroll By City:</h2>
 		<select name="cityPayroll" >
 				<option selected disabled value="">---Select City---</option>
