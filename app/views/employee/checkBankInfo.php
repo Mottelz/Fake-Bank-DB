@@ -26,7 +26,7 @@
 			<div class="col-md-8">
 	<br />
 
-
+<form method="POST" action="/employee/bankInfo">
 	<div><h1>Bank Summary</h1></div> </br></br></br>
 	<h2>Get Losses By City:</h2>
 		<select name="city" required>
@@ -119,7 +119,7 @@
 					}
 				?>
 			</select>
-			<h3><?= $annualLossesByCity ?></h3>
+			<h3><?= $monthlyPayrollByCity ?></h3>
 	<h2>Get Monthly Payroll By Branch:</h2>
 		<select name="branch" required>
 				<option selected disabled value="">---Select Account---</option>
@@ -135,13 +135,14 @@
 					}
 				?>
 			</select>
-			<h3><?= $monthlyPayrollByCity ?></h3>
+			<h3><?= $monthlyPayrollByBranch?></h3>
 	<br />
 	<br />
 		<div>
 		<button class="btn btn-lg btn-primary btn-block" name="submit" value="employee" type="submit" style="width:auto;">Submit</button>
 		</div>
 		</br></br></br>
+	</form>
 </div>
 </div>
 </div>
