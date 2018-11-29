@@ -2,7 +2,7 @@
 	$monthlyPayroll = $data['monthlyPayroll'];
 	$monthlyPayrollByCity = $data['monthlyPayrollByCity'];
 	$monthlyPayrollByBranch = $data['monthlyPayrollByBranch'];
-	$annualLosses = $data['montannualLosseshlyPayroll'];
+	$annualLosses = $data['annualLosses'];
 	$annualLossesByBranch = $data['annualLossesByBranch'];
 	$annualLossesByCity = $data['annualLossesByCity'];
 	$annualProfits = $data['annualProfits'];
