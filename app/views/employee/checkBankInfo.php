@@ -29,8 +29,8 @@
 <form method="POST" action="/employee/bankInfo">
 	<div><h1>Bank Summary</h1></div> </br></br></br>
 	<h2>Get Losses By City:</h2>
-		<select name="city" required>
-				<option selected disabled value="">---Select Account---</option>
+		<select name="city" >
+				<option selected disabled value="">---Select City---</option>
 				<?php
 
 					for($index = 0; $index < count($city); $index++)
@@ -45,8 +45,8 @@
 			</select>
 			<h3><?= $annualLossesByCity ?></h3>
 	<h2>Get Losses By Branch:</h2>
-		<select name="branch" required>
-				<option selected disabled value="">---Select Account---</option>
+		<select name="branch" >
+				<option selected disabled value="">---Select Branch---</option>
 				<?php
 
 					for($index = 0; $index < count($branches); $index++)
@@ -66,8 +66,8 @@
 
 
 			<h2>Get Profits By City:</h2>
-		<select name="city" required>
-				<option selected disabled value="">---Select Account---</option>
+		<select name="city" >
+				<option selected disabled value="">---Select City---</option>
 				<?php
 
 					for($index = 0; $index < count($city); $index++)
@@ -82,8 +82,8 @@
 			</select>
 			<h3><?= $annualProfitsByCity ?></h3>
 	<h2>Get Profits By Branch:</h2>
-		<select name="branch" required>
-				<option selected disabled value="">---Select Account---</option>
+		<select name="branch" >
+				<option selected disabled value="">---Select Branch---</option>
 				<?php
 
 					for($index = 0; $index < count($branches); $index++)
@@ -105,8 +105,8 @@
 
 
 			<h2>Get Monthly Payroll By City:</h2>
-		<select name="city" required>
-				<option selected disabled value="">---Select Account---</option>
+		<select name="city" >
+				<option selected disabled value="">---Select City---</option>
 				<?php
 
 					for($index = 0; $index < count($city); $index++)
@@ -121,8 +121,8 @@
 			</select>
 			<h3><?= $monthlyPayrollByCity ?></h3>
 	<h2>Get Monthly Payroll By Branch:</h2>
-		<select name="branch" required>
-				<option selected disabled value="">---Select Account---</option>
+		<select name="branch" >
+				<option selected disabled value="">---Select Branch---</option>
 				<?php
 
 					for($index = 0; $index < count($branches); $index++)
