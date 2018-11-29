@@ -87,25 +87,38 @@ class employee extends Controller
 	public function bankInfo()
 	{
 		$automation = new Automation();
-		if($_POST['city']){
-				$monthlyPayrollByCity = $automation->monthlyPayrollByCity($_POST['cityPayroll']);//query
-				$annualLossesByCity = $automation->annualLossesByCity($_POST['cityLosses']);//query
-				$annualProfitsByCity = $automation->annualProfitsByCity($_POST['cityProfits']);//query
+	
+		if($_POST['cityPayroll']){
+			$monthlyPayrollByCity = $automation->monthlyPayrollByCity($_POST['cityPayroll']);//query
 		}else {
 			$monthlyPayrollByCity = null;
+		}
+		if($_POST['cityLosses']){
+			$annualLossesByCity = $automation->annualLossesByCity($_POST['cityLosses']);//query
+		}else {
 			$annualLossesByCity = null;
+		}
+		if($_POST['cityProfits']){
+				$annualProfitsByCity = $automation->annualProfitsByCity($_POST['cityProfits']);//query
+		}else {
 			$annualProfitsByCity = null;
 		}
-		if($_POST['branch']){
+		if($_POST['branchPayroll']){
 			$monthlyPayrollByBranch = $automation->monthlyPayrollByBranch($_POST['branchPayroll']);//query
-			$annualLossesByBranch = $automation->annualLossesByBranch($_POST['branchLosses']);//query
-			$annualProfitsByBranch = $automation->annualProfitsByBranch($_POST['branchProfits']);//query
 		}else {
-			$monthlyPayrollByBranch = null;
+				$monthlyPayrollByBranch = null;
+		}
+		if($_POST['branchLosses']){
+			$annualLossesByBranch = $automation->annualLossesByBranch($_POST['branchLosses']);//query
+		}else {
 			$annualLossesByBranch = null;
-			$annualProfitsByBranch = null;
 		}
 
+		if($_POST['branchProfits']){
+			$annualProfitsByBranch = $automation->annualProfitsByBranch($_POST['branchProfits']);//query
+		}else {
+			$annualProfitsByBranch = null;
+		}
 		$monthlyPayroll = $automation->monthlyPayroll();//query
 		$annualLosses = $automation->annualLosses();//query
 		$annualProfits = $automation->annualProfits();//query
@@ -116,7 +129,7 @@ class employee extends Controller
 
 		$countryModel = $this->model('CountryModel');
 		$city = $countryModel->getAllUniqueCities();
-		
+
 		$this->view('employee/checkBankInfo', [
 			'monthlyPayroll' => $monthlyPayroll,
 			'monthlyPayrollByCity' => $monthlyPayrollByCity,
