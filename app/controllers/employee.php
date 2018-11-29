@@ -87,7 +87,7 @@ class employee extends Controller
 	public function bankInfo()
 	{
 		$automation = new Automation();
-	
+
 		if($_POST['cityPayroll']){
 			$monthlyPayrollByCity = $automation->monthlyPayrollByCity($_POST['cityPayroll']);//query
 		}else {

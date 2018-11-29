@@ -29,7 +29,7 @@
 <form method="POST" action="/employee/bankInfo">
 	<div><h1>Bank Summary</h1></div> </br></br></br>
 <h2>Overall Losses:</h2>
-<h3><?= $annualLosses ?></h3>
+<h3>-<?= $annualLosses ?></h3>
 	<h2>Get Losses By City:</h2>
 		<select name="cityLosses" >
 				<option selected disabled value="">---Select City---</option>
@@ -45,7 +45,7 @@
 					}
 				?>
 			</select>
-			<h3><?= $annualLossesByCity ?></h3>
+			<h3>-<?= $annualLossesByCity ?></h3>
 	<h2>Get Losses By Branch:</h2>
 		<select name="branchLosses" >
 				<option selected disabled value="">---Select Branch---</option>
@@ -61,13 +61,13 @@
 					}
 				?>
 			</select>
-			<h3><?= $annualLossesByBranch ?></h3>
+			<h3>-<?= $annualLossesByBranch ?></h3>
 
 
 			</br></br></br>
 
 			<h2>Overall Profits:</h2>
-			<h3><?= $annualProfits ?></h3>
+			<h3>+<?= $annualProfits ?></h3>
 			<h2>Get Profits By City:</h2>
 		<select name="cityProfits" >
 				<option selected disabled value="">---Select City---</option>
@@ -83,7 +83,7 @@
 					}
 				?>
 			</select>
-			<h3><?= $annualProfitsByCity ?></h3>
+			<h3>+<?= $annualProfitsByCity ?></h3>
 	<h2>Get Profits By Branch:</h2>
 		<select name="branchProfits" >
 				<option selected disabled value="">---Select Branch---</option>
@@ -99,7 +99,7 @@
 					}
 				?>
 			</select>
-			<h3><?= $annualProfitsByBranch ?></h3>
+			<h3>+<?= $annualProfitsByBranch ?></h3>
 
 
 
