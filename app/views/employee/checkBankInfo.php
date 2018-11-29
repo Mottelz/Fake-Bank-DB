@@ -11,7 +11,7 @@
 	//$processPayments = $data['processPayment'];
 	$city = $data['city'];
 	$branches = $data['branches'];
-
+float round ( float $val [, int $precision = 0 [, int $mode = PHP_ROUND_HALF_UP ]] );
 ?>
 
 <html>
@@ -45,7 +45,7 @@
 					}
 				?>
 			</select></br>
-			  $ -<?= sprintf('%0.2f', $annualLossesByCity); ?>
+			  $ -<?= round($annualLossesByCity,2); ?>
 	<h2>Get Losses By Branch:</h2>
 		<select name="branchLosses" >
 				<option selected disabled value="">---Select Branch---</option>
