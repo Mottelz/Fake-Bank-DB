@@ -11,7 +11,7 @@
 	//$processPayments = $data['processPayment'];
 	$city = $data['city'];
 	$branches = $data['branches'];
-float round ( float $val [, int $precision = 0 [, int $mode = PHP_ROUND_HALF_UP ]] );
+	$nothing = "";
 ?>
 
 <html>
@@ -29,7 +29,7 @@ float round ( float $val [, int $precision = 0 [, int $mode = PHP_ROUND_HALF_UP 
 <form method="POST" action="/employee/bankInfo">
 	<div><h1>Bank Summary</h1></div> </br></br></br>
 <h2>Overall Losses:</h2>
-  $ -<?= round($annualLosses,2); ?>
+  $ -<?= if($annualLosses != null){ sprintf('%0.2f', $annualLosses);} else {$nothing} ?>
 	<h2>Get Losses By City:</h2>
 		<select name="cityLosses" >
 				<option selected disabled value="">---Select City---</option>
@@ -45,7 +45,8 @@ float round ( float $val [, int $precision = 0 [, int $mode = PHP_ROUND_HALF_UP 
 					}
 				?>
 			</select></br>
-			  $ -<?= round($annualLossesByCity,2); ?>
+			  $ -<?= if($annualLossesByCity != null){ sprintf('%0.2f', $annualLossesByCity);} else {$nothing} ?>
+
 	<h2>Get Losses By Branch:</h2>
 		<select name="branchLosses" >
 				<option selected disabled value="">---Select Branch---</option>
