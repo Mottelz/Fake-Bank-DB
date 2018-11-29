@@ -29,7 +29,7 @@
 <form method="POST" action="/employee/bankInfo">
 	<div><h1>Bank Summary</h1></div> </br></br></br>
 <h2>Overall Losses:</h2>
-  $ -<?= sprintf('%0.2f', $annualLosses); ?>
+  $ -<?= round($annualLosses,2); ?>
 	<h2>Get Losses By City:</h2>
 		<select name="cityLosses" >
 				<option selected disabled value="">---Select City---</option>
