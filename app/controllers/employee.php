@@ -26,11 +26,15 @@ class employee extends Controller
 		$scheduleModel = $this->model('ScheduleModel');
 		$schedules = $scheduleModel->getScheduleByEmployeeId($employee->Employee_id);
 
+		$branchModel = $this->model('BranchModel');
+		$branch = $branchModel->getBranchById($employee_id)[0];
+
 		$this->view('employee/employeeDetails',
 			['employee' => $employee,
 			 'address' => $address,
 			 'country' => $country,
-			 'schedules' => $schedules]);
+			 'schedules' => $schedules,
+			 'branch' => $branch]);
 	}
 
 	public function add()

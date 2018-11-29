@@ -22,6 +22,8 @@
 	$province = $countryT->Province;
 
 	$schedules = $data['schedules'];
+
+	$branch = $data['branch']
 ?>
 
 <html>
@@ -43,6 +45,7 @@
 	<tr><th>Employee #: <?= $employee_id ?></div></tr></th>
 	<tr><th>Branch #: <?= $branch_id ?></div></tr></th>
 	<tr><th>Department: <?= $department ?></div></tr></th>
+	<tr><th>Manager: <?= $branch->Manager_name ?></div></tr></th>
 	<tr><th>Name: <?= "$first_name $last_name"?></div></tr></th>
 	<tr><th>Title: <?= $title ?></div></tr></th>
 	<tr><th>Street Address: <?= $street_address ?></div></tr></th>
