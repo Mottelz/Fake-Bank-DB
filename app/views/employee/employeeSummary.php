@@ -47,7 +47,7 @@
 			$last_name = $employee->Last_name;
 			$title = $employee->Title;
 			$salary = $employee->Salary;
-			$start_date = $employee->Employee_Start_date;
+			$start_date = $employee->Employee_start_date;
 			$active = $employee->Active;
 	?>
 			<tr>
