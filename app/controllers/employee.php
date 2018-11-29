@@ -134,7 +134,7 @@ class employee extends Controller
 			'monthlyPayroll' => $monthlyPayroll,
 			'monthlyPayrollByCity' => $monthlyPayrollByCity,
 			'monthlyPayrollByBranch' => $monthlyPayrollByBranch,
-			'annualLosses' => $montannualLosseshlyPayroll,
+			'annualLosses' => $annualLosses,
 			'annualLossesByBranch' => $annualLossesByBranch,
 			'annualLossesByCity' => $annualLossesByCity,
 			'annualProfits' => $annualProfits,
