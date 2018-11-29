@@ -124,7 +124,7 @@
 					}
 				?>
 			</select></br>
-			 $ <?= if($monthlyPayrollByCity != null){ echo sprintf('%0.2f', $monthlyPayrollByCity);} else {echo $nothing;}?>
+			 $ <?php if($monthlyPayrollByCity != null){ echo sprintf('%0.2f', $monthlyPayrollByCity);} else {echo $nothing;}?>
 	<h2>Get Monthly Payroll By Branch:</h2>
 		<select name="branchPayroll" >
 				<option selected disabled value="">---Select Branch---</option>
@@ -140,7 +140,7 @@
 					}
 				?>
 			</select></br>
-			 $ <?= if($monthlyPayrollByBranch != null){ echo sprintf('%0.2f', $monthlyPayrollByBranch);} else {echo $nothing;}?>
+			 $ <?php if($monthlyPayrollByBranch != null){ echo sprintf('%0.2f', $monthlyPayrollByBranch);} else {echo $nothing;}?>
 	<br />
 	<br />
 		<div>
