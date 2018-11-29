@@ -62,13 +62,13 @@
 					}
 				?>
 			</select></br>
-			  $ -<?= sprintf('%0.2f', $annualLossesByBranch); ?>
+			  $ -<?php if($annualLossesByBranch != null){ echo sprintf('%0.2f', $annualLossesByBranch);} else {echo $nothing;} ?>
 
 
 			</br></br></br>
 
 			<h2>Overall Profits:</h2>
-			  $ +<?= sprintf('%0.2f', $annualProfits); ?>
+			  $ +<?php  if($annualProfits != null){ echo sprintf('%0.2f', $annualProfits);} else {echo $nothing;}  ?>
 			<h2>Get Profits By City:</h2>
 		<select name="cityProfits" >
 				<option selected disabled value="">---Select City---</option>
@@ -84,7 +84,7 @@
 					}
 				?>
 			</select></br>
-			  $ +<?= sprintf('%0.2f', $annualProfitsByCity); ?>
+			  $ +<?php if($annualProfitsByCity != null){ echo sprintf('%0.2f', $annualProfitsByCity);} else {echo $nothing;} ?>
 	<h2>Get Profits By Branch:</h2>
 		<select name="branchProfits" >
 				<option selected disabled value="">---Select Branch---</option>
@@ -100,7 +100,7 @@
 					}
 				?>
 			</select></br>
-			  $ +<?= sprintf('%0.2f', $annualProfitsByBranch);  ?>
+			  $ +<?php if($annualProfitsByBranch != null){ echo sprintf('%0.2f', $annualProfitsByBranch);} else {echo $nothing;}  ?>
 
 
 
@@ -108,7 +108,7 @@
 		</br></br></br>
 
 		<h2>Overall Monthly Payroll:</h2>
-		  <?= sprintf('%0.2f', $monthlyPayroll); ?>
+		 $ <?php  if($monthlyPayroll != null){ echo sprintf('%0.2f', $monthlyPayroll);} else {echo $nothing;} ?>
 			<h2>Get Monthly Payroll By City:</h2>
 		<select name="cityPayroll" >
 				<option selected disabled value="">---Select City---</option>
@@ -124,7 +124,7 @@
 					}
 				?>
 			</select></br>
-			  <?= sprintf('%0.2f', $monthlyPayrollByCity); ?>
+			 $ <?= if($monthlyPayrollByCity != null){ echo sprintf('%0.2f', $monthlyPayrollByCity);} else {echo $nothing;}?>
 	<h2>Get Monthly Payroll By Branch:</h2>
 		<select name="branchPayroll" >
 				<option selected disabled value="">---Select Branch---</option>
@@ -140,7 +140,7 @@
 					}
 				?>
 			</select></br>
-			  <?= sprintf('%0.2f', $monthlyPayrollByBranch);?>
+			 $ <?= if($monthlyPayrollByBranch != null){ echo sprintf('%0.2f', $monthlyPayrollByBranch);} else {echo $nothing;}?>
 	<br />
 	<br />
 		<div>
