@@ -65,7 +65,7 @@
 					for($index = 0; $index < count($accountService); $index++)
 					{
 						$account = $accountService[$index];
-						$service = $account->Account_Service ;
+						$service = $account->Charge_Plan_Option ;
 				?>
 						<option><?= $service ?></option>
 				<?php
