@@ -21,7 +21,7 @@ class account extends Controller
 		$this->checkOpenAccountData();
 		$accountModel = $this->model('AccountModel');
 		$accountType = $accountModel->getAccountType();
-		$accountOption = $accountModel->getAccountOptions();
+		$accountOption = $accountModel->getChargePlanOption();
 		$accountService = $accountModel->getAccountService();
 		$this->view('account/openAccount',
 			['accounttype' => $accountType,

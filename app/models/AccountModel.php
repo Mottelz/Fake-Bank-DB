@@ -30,6 +30,10 @@ class AccountModel extends Model
           return $this->getData("SELECT DISTINCT Account_Service  FROM Account");
     }
 
+    public function getChargePlanOption() {
+          return $this->getData("SELECT DISTINCT Charge_Plan_Option  FROM Account");
+    }
+
     public function getAccountOptions() {
             return $this->getData("SELECT DISTINCT Account_Option  FROM Account");
     }
