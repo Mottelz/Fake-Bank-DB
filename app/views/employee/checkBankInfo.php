@@ -29,7 +29,7 @@
 <form method="POST" action="/employee/bankInfo">
 	<div><h1>Bank Summary</h1></div> </br></br></br>
 <h2>Overall Losses:</h2>
-<h3>-<?= $annualLosses ?></h3>
+  -<?= $annualLosses ?>
 	<h2>Get Losses By City:</h2>
 		<select name="cityLosses" >
 				<option selected disabled value="">---Select City---</option>
@@ -45,7 +45,7 @@
 					}
 				?>
 			</select>
-			<h3>-<?= $annualLossesByCity ?></h3>
+			  -<?= $annualLossesByCity ?>
 	<h2>Get Losses By Branch:</h2>
 		<select name="branchLosses" >
 				<option selected disabled value="">---Select Branch---</option>
@@ -61,13 +61,13 @@
 					}
 				?>
 			</select>
-			<h3>-<?= $annualLossesByBranch ?></h3>
+			  -<?= $annualLossesByBranch ?>
 
 
 			</br></br></br>
 
 			<h2>Overall Profits:</h2>
-			<h3>+<?= $annualProfits ?></h3>
+			  +<?= $annualProfits ?>
 			<h2>Get Profits By City:</h2>
 		<select name="cityProfits" >
 				<option selected disabled value="">---Select City---</option>
@@ -83,7 +83,7 @@
 					}
 				?>
 			</select>
-			<h3>+<?= $annualProfitsByCity ?></h3>
+			  +<?= $annualProfitsByCity ?>
 	<h2>Get Profits By Branch:</h2>
 		<select name="branchProfits" >
 				<option selected disabled value="">---Select Branch---</option>
@@ -99,7 +99,7 @@
 					}
 				?>
 			</select>
-			<h3>+<?= $annualProfitsByBranch ?></h3>
+			  +<?= $annualProfitsByBranch ?>
 
 
 
@@ -107,7 +107,7 @@
 		</br></br></br>
 
 		<h2>Overall Monthly Payroll:</h2>
-		<h3><?= $monthlyPayroll ?></h3>
+		  <?= $monthlyPayroll ?>
 			<h2>Get Monthly Payroll By City:</h2>
 		<select name="cityPayroll" >
 				<option selected disabled value="">---Select City---</option>
@@ -123,7 +123,7 @@
 					}
 				?>
 			</select>
-			<h3><?= $monthlyPayrollByCity ?></h3>
+			  <?= $monthlyPayrollByCity ?>
 	<h2>Get Monthly Payroll By Branch:</h2>
 		<select name="branchPayroll" >
 				<option selected disabled value="">---Select Branch---</option>
@@ -139,7 +139,7 @@
 					}
 				?>
 			</select>
-			<h3><?= $monthlyPayrollByBranch?></h3>
+			  <?= $monthlyPayrollByBranch?>
 	<br />
 	<br />
 		<div>
